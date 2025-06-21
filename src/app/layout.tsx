@@ -6,7 +6,7 @@ import { CommandPalette } from "~/components/nav/CommandPalette";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Brown Puzzlehunt",
+  title: "Penchant Puzzlehunt",
   description: "",
   icons: [{ rel: "icon", url: "/favicon.png" }],
 };
