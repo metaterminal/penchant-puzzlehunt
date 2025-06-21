@@ -35,18 +35,35 @@ export const NUMBER_OF_GUESSES_PER_PUZZLE = 20;
  */
 
 /** Puzzles available at the beginning of the hunt that will never need to be unlocked by the team. */
-export const INITIAL_PUZZLES: string[] = ["example"];
+export const INITIAL_PUZZLES: string[] = ["playing-with-places", "rereading"];
 
 /** Adjacency list for puzzles */
-export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {};
+export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
+  "playing-with-places": ["playing-with-words", "playing-with-cards"], 
+  "playing-with-words": ["playing-with-letters"], 
+  "playing-with-cards": ["playing-with-markers"],
+};
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
 export const ROUNDS: Round[] = [
-  { name: "Example Round", puzzles: ["example"] },
+  { name: "Meta", puzzles: [
+  "playing-with-places", 
+  "playing-with-words", 
+  "playing-with-cards", 
+  "playing-with-letters", 
+  "playing-with-markers"] },
+  { name: "Feeders", puzzles: [
+    "rereading",
+  ]}
 ];
 
 /** List of meta puzzles. Solving all of the metas unlocks the runaround. */
-export const META_PUZZLES: string[] = [];
+export const META_PUZZLES: string[] = [
+  "playing-with-places", 
+  "playing-with-words", 
+  "playing-with-cards", 
+  "playing-with-letters", 
+  "playing-with-markers"];
 
 /* HINTING SYSTEM
  * Teams currently get a hint request every three hours since the start of the hunt.
