@@ -67,7 +67,7 @@ export async function handleGuess(puzzleId: string, guess: string) {
 
   // Insert the guess into the guess table
   // If the guess is correct, handle the solve
-  var isCorrect = puzzle.answer === guess;
+  var isCorrect = puzzle.answer.replace(/[^A-Z]/g, '') === guess;
   var solveType: (typeof solveTypeEnum.enumValues)[number] = "guess";
 
   // If the guess is not correct and it is not a meta puzzle
