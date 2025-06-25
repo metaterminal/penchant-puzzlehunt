@@ -22,18 +22,19 @@ export default {
       /** BEGIN_SNIPPET:COLOR_CONFIG */
       colors: {
         // Main is the primary color of the site
-        "main-bg": "#452c63",
-        "main-text": "#faf7fd", // whiter than it should be, but we need the brightness
-        "main-header": "#e7e3fc",
-        "main-accent": "#d4a7fc",
+        "main-bg": "#4de1ff",
+        "main-text": "#f7fdfb", // whiter than it should be, but we need the brightness
+        "main-header": "#e3fcfc",
+        "main-accent": "#a6e6fc",
+        "layout-gradient": "#00aacc",
 
         // Secondary is for text fields
-        "secondary-bg": "#e7e3fc",
+        "secondary-bg": "#e3fcfc",
         "secondary-text": colors.gray[300], // This text goes with a dark background
         "secondary-accent": colors.black, // This text goes with a light background
 
         // Other backgrounds
-        "footer-bg": "#322046",
+        "footer-bg": "#206b87",
         "nav-bg": "#452c63",
         "tooltip-bg": colors.gray[900],
 

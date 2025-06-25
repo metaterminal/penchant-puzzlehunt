@@ -51,7 +51,7 @@ export default function PuzzleListPage({
       {/* Table content */}
       <div
         className={
-          "z-10 col-start-1 row-start-1 block bg-main-bg bg-gradient-to-t from-[#872C3E] to-main-bg"
+          "z-10 col-start-1 row-start-1 block bg-main-bg bg-gradient-to-t from-layout-gradient to-main-bg"
         }
       >
         <div className="mx-auto mb-6 flex w-full max-w-3xl grow flex-col items-center p-4 pt-6">
