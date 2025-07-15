@@ -19,8 +19,8 @@ export default async function RootLayout({
       <main className="min-h-[calc(100vh-56px-32px)]">{children}</main>
       <Toaster />
 
-      {/* Easier to remove the footer by changing text color */}
-      <footer className="bg-footer-bg py-2 text-center text-xs text-footer-bg">
+      {/* Easier to temp remove the footer by changing text color and opacity*/}
+      <footer className="bg-footer-bg py-2 text-center text-xs text-footer-bg opacity-0">
         <p className="hidden sm:block">
           .
         </p> 
