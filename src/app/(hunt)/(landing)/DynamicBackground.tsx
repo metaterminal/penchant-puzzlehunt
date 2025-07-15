@@ -5,7 +5,7 @@ import React from "react";
 function simpleSeeded(seed: number) {
   let value = seed % 2147483647;
   return function () {
-    value = (value * 16807) % 2147483647;
+    value = (value * 16808) % 2147483647;
     return (value - 1) / 2147483646;
   };
 }
@@ -29,10 +29,10 @@ export default function DynamicBackground({ count = 150 }: { count?: number }) {
   ];
   const isOutline = rng() > 0.5;
   const shapes = Array.from({ length: count }, () => ({
-    top: `${rng() * 100}%`,
-    left: `${rng() * 100}%`,
-    width: `${rng() * 1 + 3}vw`,
-    height: `${rng() * 1 + 0.75}vw`,
+    top: `${rng() * 175}%`,
+    left: `${rng() * 150}%`,
+    width: `${rng() * 1 + 8}vw`,
+    //height: `${rng() * 1 + 3}vw`,
     opacity: rng() * 0.3 + 0.2,
     color: colors[Math.floor(rng() * colors.length)],
     animation:
@@ -47,12 +47,12 @@ export default function DynamicBackground({ count = 150 }: { count?: number }) {
             key={i}
             // className={`absolute -rotate-45 ${d.blur} ${d.color} ${d.animation}`}
             // className={`absolute -rotate-90 blur-sm ${d.color} ${d.animation} rounded-lg`}
-            className={`absolute -rotate-90 ${d.color} ${d.animation} rounded-lg`}
+            className={`absolute -rotate-90 ${d.color} ${d.animation} rounded-full`}
             style={{
               top: d.top,
               left: d.left,
               width: d.width,
-              height: d.height,
+              height: d.width,
               opacity: d.opacity,
             }}
           />
