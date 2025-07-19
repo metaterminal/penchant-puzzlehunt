@@ -1,5 +1,5 @@
 "use client";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 import Link from "next/link";
 import DynamicBackground from "~/app/(hunt)/(landing)/DynamicBackground";
 

@@ -42,33 +42,12 @@ import { deleteTeam, updateTeam } from "../actions";
 import { logout } from "../../login/actions";
 import { AsYouType, parsePhoneNumberFromString } from "libphonenumber-js";
 import { roleEnum, interactionModeEnum } from "~/server/db/schema";
-import { IN_PERSON } from "~/hunt.config";
 import {
   Member,
   deserializeMembers,
   serializeMembers,
 } from "~/lib/team-members";
-
-const zPhone = z.string().transform((arg, ctx) => {
-  if (!arg) {
-    return "";
-  }
-
-  const phone = parsePhoneNumberFromString(arg, {
-    defaultCountry: "US",
-    extract: false,
-  });
-
-  if (phone && phone.isValid()) {
-    return phone.number;
-  }
-
-  ctx.addIssue({
-    code: z.ZodIssueCode.custom,
-    message: "Invalid number",
-  });
-  return z.NEVER;
-});
+import { REMOTE } from "~/hunt.config";
 
 export const profileFormSchema = z
   .object({
@@ -88,10 +67,6 @@ export const profileFormSchema = z
         message: "At least one email required",
       }),
     interactionMode: z.enum(interactionModeEnum.enumValues),
-    numCommunity: z.string().max(30, { message: "Max 30 characters" }),
-    phoneNumber: zPhone,
-    roomNeeded: z.boolean(),
-    solvingLocation: z.string().max(255, { message: "Max 255 characters" }),
     role: z.enum(roleEnum.enumValues),
     password: z
       .string()
@@ -100,17 +75,23 @@ export const profileFormSchema = z
       .or(z.literal("")),
     confirmPassword: z.string().or(z.literal("")),
   })
-  .refine(
-    (data) =>
-      !(data.interactionMode === "in-person" && data.phoneNumber === ""),
-    {
-      message: "Required",
-      path: ["phoneNumber"],
-    },
-  )
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords must match",
     path: ["confirmPassword"],
+  })
+  .refine((data) => {
+    const max =
+      data.interactionMode === "solo"
+        ? 1
+        : data.interactionMode === "half"
+        ? 3
+        : Infinity;
+
+    const count = data.members.filter((m) => m.email || m.name).length;
+    return count <= max;
+  }, {
+    path: ["members"],
+    message: "Too many team members for the selected mode.",
   });
 
 type TeamInfoFormProps = {
@@ -118,24 +99,9 @@ type TeamInfoFormProps = {
   displayName: string;
   role: "admin" | "user" | "testsolver";
   memberString: string;
-  interactionMode: "in-person" | "remote";
-  numCommunity: string;
-  phoneNumber: string;
-  roomNeeded: boolean;
-  solvingLocation: string;
+  interactionMode: "full" | "half" | "solo";
 };
 type ProfileFormValues = z.infer<typeof profileFormSchema>;
-
-export function formatPhoneNumber(phoneNumber: string | null): string {
-  if (!phoneNumber) return "";
-  const parsed = parsePhoneNumberFromString(phoneNumber);
-  if (parsed && parsed.country === "US") {
-    return parsed.formatNational();
-  } else if (parsed) {
-    return parsed.formatInternational();
-  }
-  return phoneNumber;
-}
 
 export default function ProfileForm({
   id,
@@ -143,16 +109,10 @@ export default function ProfileForm({
   role,
   memberString,
   interactionMode,
-  numCommunity,
-  phoneNumber,
-  roomNeeded,
-  solvingLocation,
 }: TeamInfoFormProps) {
   const router = useRouter();
   const { data: session, update } = useSession();
   const members = deserializeMembers(memberString);
-
-  phoneNumber = formatPhoneNumber(phoneNumber);
 
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileFormSchema),
@@ -161,10 +121,6 @@ export default function ProfileForm({
       role,
       members,
       interactionMode,
-      numCommunity,
-      phoneNumber,
-      roomNeeded,
-      solvingLocation,
       password: "",
       confirmPassword: "",
     },
@@ -188,16 +144,25 @@ export default function ProfileForm({
     }
   });
 
+  const getMaxTeamSize = () => {
+    switch (interactionMode) {
+      case "full":
+        return Infinity;
+      case "half":
+        return 3;
+      case "solo":
+        return 1;
+      default:
+        return Infinity;
+    }
+  };
+
   const onSubmit = async (data: ProfileFormValues) => {
     const result = await updateTeam(id, {
       displayName: data.displayName,
       role: data.role,
       members: serializeMembers(data.members),
       interactionMode: data.interactionMode,
-      numCommunity: data.numCommunity,
-      phoneNumber: data.phoneNumber,
-      roomNeeded: data.roomNeeded,
-      solvingLocation: data.solvingLocation,
       password: data.password,
     });
 
@@ -225,7 +190,6 @@ export default function ProfileForm({
 
     form.reset({
       ...data,
-      phoneNumber: formatPhoneNumber(data.phoneNumber),
       password: "",
       confirmPassword: "",
     });
@@ -256,12 +220,6 @@ export default function ProfileForm({
       switch (key) {
         case "members":
           return serializeMembers(currentValues[key]) !== memberString;
-        case "phoneNumber":
-          return (
-            currentValues["interactionMode"] === "in-person" &&
-            currentValues[key] !=
-              (form.formState.defaultValues as ProfileFormValues)[key]
-          );
         default:
           return (
             (currentValues as ProfileFormValues)[
@@ -307,6 +265,58 @@ export default function ProfileForm({
               </FormItem>
             )}
           />
+
+          {/* Interaction mode field */}
+          <FormField
+                    control={form.control}
+                    name="interactionMode"
+                    render={({ field }) => (
+                      <FormItem className="mb-8 space-y-3">
+                        <FormLabel className="flex flex-row justify-between">
+                          <span className="text-main-header">
+                            My team size is... <span className="text-error">*</span>
+                          </span>
+                          <FormMessage className="text-error" />
+                        </FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            value={field.value}
+                            className="flex flex-col space-y-1"
+                          >
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <RadioGroupItem
+                                value="full"
+                                disabled={new Date() > REMOTE.END_TIME}
+                              />
+                              <FormLabel
+                                className={`font-normal text-main-header opacity-${new Date() > REMOTE.END_TIME ? 50 : 100}`}
+                              >
+                                Full Squad (up to 6)
+                              </FormLabel>
+                            </FormItem>
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <RadioGroupItem value="half" />
+                              <FormLabel className="font-normal text-main-header">
+                                Half Squad (up to 3)
+                              </FormLabel>
+                            </FormItem>
+                            <FormItem className="flex items-center space-x-3 space-y-0">
+                              <RadioGroupItem
+                                value="solo"
+                                disabled={new Date() > REMOTE.END_TIME}
+                              />
+                              <FormLabel
+                                className={`font-normal text-main-header opacity-${new Date() > REMOTE.END_TIME ? 50 : 100}`}
+                              >
+                                Solo Solver
+                              </FormLabel>
+                            </FormItem>
+                          </RadioGroup>
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
 
           <div className="mb-8">
             <FormLabel className="flex flex-row justify-between">
@@ -389,7 +399,10 @@ export default function ProfileForm({
                                 ) as HTMLInputElement;
                                 prevField?.focus();
                               } else if (index === fields.length - 1) {
-                                append({ email: "", name: "" });
+                                const maxSize = getMaxTeamSize();
+                                if (fields.length < maxSize) {
+                                  append({ email: "", name: "" });
+                                }
                               } else {
                                 const nextField = document.querySelector(
                                   `[name="members.${index + 1}.name"]`,
@@ -427,173 +440,9 @@ export default function ProfileForm({
               </div>
             ))}
             <FormDescription className="pt-2">
-              We recommend 6-8 members. Press ENTER to add entries.
+              Press ENTER to add entries.
             </FormDescription>
           </div>
-
-          {/* Interaction mode field */}
-          <FormField
-            control={form.control}
-            name="interactionMode"
-            render={({ field }) => (
-              <FormItem className="mb-8 space-y-3">
-                <FormLabel className="text-main-header">
-                  We will be competing... <span className="text-error">*</span>
-                </FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    value={field.value}
-                    className="flex flex-col space-y-1"
-                  >
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <RadioGroupItem
-                        value="in-person"
-                        disabled={new Date() > IN_PERSON.END_TIME}
-                      />
-                      <FormLabel
-                        className={`font-normal text-main-text opacity-${new Date() > IN_PERSON.END_TIME ? 50 : 100}`}
-                      >
-                        In-person
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <RadioGroupItem
-                        value="remote"
-                        disabled={
-                          new Date() > IN_PERSON.END_TIME ||
-                          (new Date() > IN_PERSON.START_TIME &&
-                            field.value === "in-person")
-                        }
-                      />
-                      <FormLabel
-                        className={`font-normal text-main-text opacity-${
-                          new Date() > IN_PERSON.END_TIME ||
-                          (new Date() > IN_PERSON.START_TIME &&
-                            field.value === "in-person")
-                            ? 50
-                            : 100
-                        }`}
-                      >
-                        Remote
-                      </FormLabel>
-                    </FormItem>
-                  </RadioGroup>
-                </FormControl>
-              </FormItem>
-            )}
-          />
-
-          {/* Other fields */}
-          {form.getValues("interactionMode") === "in-person" ? (
-            // In-person fields
-            <div className="mb-8 space-y-8">
-              <FormField
-                control={form.control}
-                name="numCommunity"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="flex flex-row justify-between">
-                      <span className="text-main-header">
-                        Brown/RISD team members
-                      </span>
-                      <FormMessage className="text-error" />
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="number"
-                        min="0"
-                        value={form.watch("numCommunity")}
-                      />
-                    </FormControl>
-                    <FormDescription>
-                      Number of current undergraduate or graduate students on
-                      campus. Must have at least one to win.
-                    </FormDescription>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="phoneNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="flex flex-row justify-between">
-                      <span className="text-main-header">
-                        Phone number <span className="text-error">*</span>
-                      </span>
-                      <FormMessage className="text-error" />
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        onChange={(e) => {
-                          const formattedNumber = new AsYouType("US").input(
-                            e.target.value,
-                          );
-                          field.onChange(formattedNumber);
-                        }}
-                      />
-                    </FormControl>
-                    <FormDescription>
-                      Primary method of communication, required for in-person
-                      teams.
-                    </FormDescription>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="roomNeeded"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-center justify-between space-x-1">
-                    <div>
-                      <FormLabel className="text-main-header">
-                        Room needed
-                      </FormLabel>
-                      <FormDescription>
-                        Hunt weekend will be busy. Select this if you'll need a
-                        room.
-                      </FormDescription>
-                    </div>
-                    <FormControl>
-                      <Switch
-                        className="focus-visible:ring-offset-0 data-[state=checked]:bg-white/50 data-[state=unchecked]:bg-black/50"
-                        checked={form.watch("roomNeeded")}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="solvingLocation"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="flex flex-row justify-between">
-                      <span className="text-main-header">Solving location</span>
-                      <FormMessage className="text-error" />
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      Where can we best find you? (e.g. Barus & Holley 123,
-                      Discord, etc.)
-                    </FormDescription>
-                  </FormItem>
-                )}
-              />
-            </div>
-          ) : (
-            // Remote fields
-            <div className="mb-8 space-y-8"></div>
-          )}
 
           {/* Team permissions */}
           <div className="mb-8 space-y-8">

@@ -17,7 +17,7 @@ import { ActivityItem, ActivityChart } from "./ActivityChart";
 import { db } from "~/server/db/index";
 import { guesses, hints, teams } from "~/server/db/schema";
 import { count, eq, isNull, not, sql } from "drizzle-orm";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 
 type hintLeaderboardItem = {
   id: string;
@@ -86,14 +86,9 @@ export async function Dashboard() {
 
   /* Activity Table (chunk 4) */
   const data: Record<number, ActivityItem> = {};
-  const startDate = IN_PERSON.START_TIME;
+  const startDate = REMOTE.START_TIME;
   // Current time clamped between IN_PERSON.START_TIME and REMOTE.END_TIME
-  const endDate = new Date(
-    Math.min(
-      REMOTE.END_TIME.getTime(),
-      Math.max(IN_PERSON.START_TIME.getTime(), new Date().getTime()),
-    ),
-  );
+  const endDate = new Date(REMOTE.END_TIME.getTime());
 
   // Initialize the data object with all hours between startTime and endTime
   const totalHours =

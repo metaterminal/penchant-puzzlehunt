@@ -27,8 +27,9 @@ export const roleEnum = pgEnum("role", ["admin", "user", "testsolver"]);
 
 /** BEGIN_SNIPPET:INTERACTION_MODE_ENUM */
 export const interactionModeEnum = pgEnum("interaction_type", [
-  "in-person",
-  "remote",
+  "full",
+  "half",
+  "solo",
 ]);
 /** END_SNIPPET:INTERACTION_MODE_ENUM */
 
@@ -56,20 +57,22 @@ export const teams = createTable("team", {
   password: varchar("password", { length: 255 }).notNull(),
   role: roleEnum("role").notNull().default("user"),
   members: text("members").notNull().default("[]"),
-  interactionMode: interactionModeEnum("interaction_type").notNull(),
+  interactionMode: interactionModeEnum("interaction_type").notNull(), // solo, half, full
   createTime: timestamp("create_time", { withTimezone: true })
     .notNull()
     .defaultNow(),
   finishTime: timestamp("finish_time", { withTimezone: true }),
 
+  // Removing these, since no in-person components
+
   // Only for in-person teams
   // NOTE: defaults seem to not be working, entries still get added with NULL by default
-  numCommunity: varchar("num_community", { length: 31 }).notNull().default(""),
-  phoneNumber: varchar("phone_number", { length: 31 }).notNull().default(""),
-  roomNeeded: boolean("room_needed").notNull().default(false),
-  solvingLocation: varchar("solving_location", { length: 255 })
-    .notNull()
-    .default(""),
+  //numCommunity: varchar("num_community", { length: 31 }).notNull().default(""),
+  //phoneNumber: varchar("phone_number", { length: 31 }).notNull().default(""),
+  //roomNeeded: boolean("room_needed").notNull().default(false),
+  //solvingLocation: varchar("solving_location", { length: 255 })
+  //  .notNull()
+  //  .default(""),
 });
 /** END_SNIPPET:TEAM_SCHEMA */
 

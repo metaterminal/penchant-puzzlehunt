@@ -1,7 +1,7 @@
 "use client";
 import PuzzleTable from "./PuzzleTable";
 import EventTable from "./event/EventTable";
-import { IN_PERSON, Round } from "~/hunt.config";
+import { Round } from "~/hunt.config";
 
 export type AvailablePuzzle = {
   unlockTime: Date | null;
@@ -60,10 +60,7 @@ export default function PuzzleListPage({
           {hasFinishedHunt && (
             <div>
               <p className="text-base italic text-main-text">
-                You won the Bloscar! Congratulations on completing BPH 2025!{" "}
-                {isInPerson && new Date() < IN_PERSON.END_TIME
-                  ? "Please contact HQ at brownpuzzlehq@gmail.com for runaround."
-                  : ""}
+                FIXME FINISHING{" "}
               </p>
             </div>
           )}
@@ -76,18 +73,6 @@ export default function PuzzleListPage({
               solvedPuzzles={solvedPuzzles}
             />
           </div>
-
-          {/* Event table */}
-          {isInPerson && new Date() > IN_PERSON.START_TIME && (
-            <>
-              <h1 className="mb-2 mt-4">Events</h1>
-              <EventTable
-                availableEvents={availableEvents}
-                finishedEvents={finishedEvents}
-                inputBox={hasEventInputBox}
-              />
-            </>
-          )}
         </div>
       </div>
     </div>

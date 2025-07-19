@@ -5,7 +5,6 @@ import { teams, type interactionModeEnum } from "@/db/schema";
 import { hash } from "bcryptjs";
 import { eq } from "drizzle-orm";
 import { login } from "../login/actions";
-import { IN_PERSON } from "~/hunt.config";
 import { sendBotMessage } from "~/lib/comms";
 import { ensureError } from "~/lib/utils";
 
@@ -30,11 +29,6 @@ export async function insertTeam(teamProperties: TeamProperties) {
   });
 
   if (duplicateId) return { error: "Username already taken" };
-
-  // If the in-person end time has passed, force
-  // interactionMode to be remote
-  if (new Date() > IN_PERSON.END_TIME)
-    teamProperties.interactionMode = "remote";
 
   try {
     const hashedPassword = await new Promise<string>((resolve, reject) => {

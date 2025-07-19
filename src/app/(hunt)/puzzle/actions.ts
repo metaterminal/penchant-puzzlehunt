@@ -3,7 +3,7 @@ import { Session } from "next-auth";
 import { db } from "@/db/index";
 import { solves, unlocks } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
-import { IN_PERSON, REMOTE, INITIAL_PUZZLES } from "~/hunt.config";
+import { REMOTE, INITIAL_PUZZLES } from "~/hunt.config";
 
 // TODO: the canView functions should return a more specific type.
 // They also do not need to be async functions, so we can put them in
@@ -29,22 +29,12 @@ export async function canViewPuzzle(
   // Admin can always view the puzzle
   if (session.user.role == "admin") return "success";
 
-  // If the hunt has ended for in-person teams
-  // In-person teams can view puzzles
-  if (
-    session.user.interactionMode === "in-person" &&
-    currentTime > IN_PERSON.END_TIME
-  )
-    return "success";
-
   // If they are a testsolver, or the hunt has started for them,
   // then check whether they have unlocked the puzzle
   if (
     session.user.role === "testsolver" ||
     currentTime >
-      (session.user.interactionMode === "in-person"
-        ? IN_PERSON.START_TIME
-        : REMOTE.START_TIME)
+      REMOTE.START_TIME
   ) {
     const isInitialPuzzle = INITIAL_PUZZLES.includes(puzzleId);
     const isUnlocked = !!(await db.query.unlocks.findFirst({

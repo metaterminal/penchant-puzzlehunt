@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { IN_PERSON, REMOTE } from "@/hunt.config";
+import { REMOTE } from "@/hunt.config";
 
 export default auth(async (req) => {
   // Allow admins to access all pages
@@ -16,10 +16,7 @@ export default auth(async (req) => {
   // Protect wrapup before hunt end
   if (
     req.nextUrl.pathname.startsWith("/wrapup") &&
-    new Date() <
-      (req.auth?.user?.interactionMode === "in-person"
-        ? IN_PERSON.END_TIME
-        : REMOTE.END_TIME)
+    new Date() < REMOTE.END_TIME
   ) {
     const newUrl = new URL("./", req.nextUrl.origin);
     return Response.redirect(newUrl);

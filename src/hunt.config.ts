@@ -6,14 +6,14 @@ import { and, count, eq, ne } from "drizzle-orm";
 export const REGISTRATION_START_TIME = new Date("2024-11-17T17:00:00.000Z");
 export const REGISTRATION_END_TIME = new Date("2030-11-24T17:00:00Z");
 
-export const IN_PERSON = {
+/*export const IN_PERSON = {
   KICKOFF_DOOR_TIME: new Date("2024-04-12T15:30:00.000Z"),
   KICKOFF_TIME: new Date("2024-04-12T16:00:00.000Z"),
   START_TIME: new Date("2024-04-12T17:30:00.000Z"),
   END_TIME: new Date("2030-04-13T23:00:00.000Z"),
   WRAPUP_DOOR_TIME: new Date("2030-04-13T23:30:00.000Z"),
   WRAPUP_TIME: new Date("2030-04-14T00:00:00Z"),
-};
+};*/
 
 export const REMOTE = {
   START_TIME: new Date("2024-04-19T16:00:00.000Z"),
@@ -81,20 +81,15 @@ export function getTotalHints(role: string, interactionMode: string) {
   const initialNumberOfHints =
     role == "admin" || role == "testsolver" ? 1e6 : 1;
 
-  const huntStartTime =
-    interactionMode === "in-person" ? IN_PERSON.START_TIME : REMOTE.START_TIME;
+  const huntStartTime = REMOTE.START_TIME;
 
-  const huntEndTime =
-    interactionMode === "in-person" ? IN_PERSON.END_TIME : REMOTE.END_TIME;
+  const huntEndTime = REMOTE.END_TIME;
 
   const timeDifference =
     Math.min(new Date().getTime(), huntEndTime.getTime()) -
     huntStartTime.getTime();
 
-  const rate =
-    interactionMode === "in-person"
-      ? 3 * 60 * 60 * 1000 // 3 hours
-      : 6 * 60 * 60 * 1000; // 6 hours
+  const rate = 24 * 60 * 60 * 1000; // 24 hours
 
   return initialNumberOfHints + Math.max(Math.floor(timeDifference / rate), 0);
 }

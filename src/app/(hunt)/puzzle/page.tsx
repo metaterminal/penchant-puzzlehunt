@@ -10,7 +10,6 @@ import {
   answerTokens,
 } from "~/server/db/schema";
 import {
-  IN_PERSON,
   INITIAL_PUZZLES,
   REMOTE,
   ROUNDS,
@@ -72,9 +71,7 @@ export default async function Home() {
     if (
       (session.user.role === "user" || session.user.role === "admin") &&
       currDate <
-        (session.user.interactionMode === "in-person"
-          ? IN_PERSON.START_TIME
-          : REMOTE.START_TIME)
+        REMOTE.START_TIME
     ) {
       return (
         <div className="mb-12 px-4 pt-6 text-center">

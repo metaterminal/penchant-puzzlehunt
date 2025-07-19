@@ -17,7 +17,6 @@ import CopyButton from "@/puzzle/components/puzzle/CopyButton";
 import { canViewPuzzle } from "@/puzzle/actions";
 import {
   NUMBER_OF_GUESSES_PER_PUZZLE,
-  IN_PERSON,
   REMOTE,
   INITIAL_PUZZLES,
 } from "~/hunt.config";
@@ -99,10 +98,7 @@ export default async function DefaultPuzzlePage({
         })
       )?.createTime ?? new Date();
 
-    const huntStartTime =
-      session.user?.interactionMode === "in-person"
-        ? IN_PERSON.START_TIME
-        : REMOTE.START_TIME;
+    const huntStartTime = REMOTE.START_TIME;
 
     unlockTime = new Date(
       Math.max(teamCreateTime.getTime(), huntStartTime.getTime()),
@@ -159,8 +155,6 @@ export default async function DefaultPuzzlePage({
   const puzzleInteractionMode =
     interactionMode &&
     (session.user.role === "admin" ||
-      (session.user.interactionMode === "in-person" &&
-        new Date() > IN_PERSON.END_TIME) ||
       new Date() > REMOTE.END_TIME)
       ? interactionMode
       : session.user.interactionMode === "in-person"
