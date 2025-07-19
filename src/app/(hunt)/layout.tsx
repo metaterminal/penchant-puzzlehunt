@@ -19,49 +19,11 @@ export default async function RootLayout({
       <main className="min-h-[calc(100vh-56px-32px)]">{children}</main>
       <Toaster />
 
-      <footer className="bg-footer-bg py-2 text-center text-xs">
+      {/* Easier to temp remove the footer by changing text color and opacity*/}
+      <footer className="bg-footer-bg py-2 text-center text-xs text-footer-bg opacity-0">
         <p className="hidden sm:block">
-          Having a good time? Want support more puzzlehunts like this in the
-          future? Consider{" "}
-          <Link
-            href="https://bbis.advancement.brown.edu/BBPhenix/give-now?did=05732af4-d994-4d40-bcd6-fb42d07b6eab"
-            className="text-link hover:underline"
-          >
-            donating
-          </Link>{" "}
-          to your friendly neighborhood{" "}
-          <Link
-            href="https://brownpuzzle.club/"
-            className="text-link hover:underline"
-          >
-            puzzle club
-          </Link>{" "}
-          or checking out our{" "}
-          <Link
-            href="https://brownpuzzle.club/archive/"
-            className="text-link hover:underline"
-          >
-            archive
-          </Link>
-          !
-        </p>
-        <p className="sm:hidden">
-          Having fun? Consider{" "}
-          <Link
-            href="https://bbis.advancement.brown.edu/BBPhenix/give-now?did=05732af4-d994-4d40-bcd6-fb42d07b6eab"
-            className="text-link hover:underline"
-          >
-            donating
-          </Link>{" "}
-          or viewing our{" "}
-          <Link
-            href="https://brownpuzzle.club/archive/"
-            className="text-link hover:underline"
-          >
-            archive
-          </Link>
-          !
-        </p>
+          .
+        </p> 
       </footer>
     </body>
   );

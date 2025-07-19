@@ -58,7 +58,7 @@ export function HamburgerMenu({
     );
   return (
     <nav
-      className={`fixed z-50 flex w-full items-center justify-between ${colorMap[side]} bg-opacity-30 p-[10px] backdrop-blur-md backdrop-filter md:p-3`}
+      className={`fixed z-50 flex w-full items-center justify-between ${colorMap[side]} bg-opacity-50 p-[10px] backdrop-blur-md backdrop-filter md:p-3`}
     >
       {/* Left menu items */}
       <div className="hidden md:block">
