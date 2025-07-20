@@ -150,19 +150,7 @@ export default async function DefaultPuzzlePage({
       ({ guess }) => !(guess in tasks || guess in partialSolutions),
     ).length;
 
-  // If there is an URL query, use that for admins and after the hunt ends
-  // Otherwise, use the session interaction mode
-  const puzzleInteractionMode =
-    interactionMode &&
-    (session.user.role === "admin" ||
-      new Date() > REMOTE.END_TIME)
-      ? interactionMode
-      : session.user.interactionMode === "in-person"
-        ? "in-person"
-        : "remote";
-
-  const puzzleBody =
-    puzzleInteractionMode === "remote" ? remoteBody : inPersonBody;
+  const puzzleBody = remoteBody;
 
   return (
     <div className="w-full px-4">

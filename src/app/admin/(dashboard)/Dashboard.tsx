@@ -40,9 +40,10 @@ export async function Dashboard() {
     return acc;
   }, {});
 
-  const inPersonTeams = numTeams["in-person"] ?? 0;
-  const remoteTeams = numTeams["remote"] ?? 0;
-  const totalTeams = inPersonTeams + remoteTeams;
+  const fullTeams = numTeams["full"] ?? 0;
+  const halfTeams = numTeams["half"] ?? 0;
+  const soloTeams = numTeams["solo"] ?? 0;
+  const totalTeams = fullTeams + halfTeams + soloTeams;
 
   // Get the number of guesses
   const numGuesses = (
@@ -206,7 +207,7 @@ export async function Dashboard() {
             <CardContent>
               <div className="text-2xl font-bold">{totalTeams}</div>
               <p className="text-muted-foreground text-xs">
-                {remoteTeams} remote & {inPersonTeams} in-person
+                {fullTeams} full, {halfTeams} half, {soloTeams} solo
               </p>
             </CardContent>
           </Card>

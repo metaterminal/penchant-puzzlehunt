@@ -32,7 +32,6 @@ export default async function Home() {
   var hasFinishedHunt = false;
   var availableEvents: AvailableEvent[] = [];
   var finishedEvents: FinishedEvent[] = [];
-  const isInPerson = session?.user?.interactionMode === "in-person";
 
   // Not logged in
   if (!session?.user?.id) {
@@ -139,7 +138,6 @@ export default async function Home() {
       finishedEvents={finishedEvents}
       hasEventInputBox={!!session?.user}
       hasFinishedHunt={hasFinishedHunt}
-      isInPerson={isInPerson}
     />
   );
 }

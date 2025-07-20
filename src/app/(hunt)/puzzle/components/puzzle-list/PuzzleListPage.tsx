@@ -33,7 +33,6 @@ type PuzzleListPageProps = {
   finishedEvents: FinishedEvent[];
   hasEventInputBox: boolean;
   hasFinishedHunt: boolean;
-  isInPerson: boolean;
 };
 
 export default function PuzzleListPage({
@@ -44,7 +43,6 @@ export default function PuzzleListPage({
   finishedEvents,
   hasEventInputBox,
   hasFinishedHunt,
-  isInPerson,
 }: PuzzleListPageProps) {
   return (
     <div className="grid min-h-[calc(100vh-56px-32px)]">

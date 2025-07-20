@@ -171,18 +171,7 @@ export default async function Home() {
                       {puzzle.inPersonBody && (
                         <div className="flex justify-center">
                           <a
-                            href={`/puzzle/${puzzle.id}?interactionMode=in-person`}
-                          >
-                            <Puzzle className="size-5 text-red-500 hover:opacity-75" />
-                          </a>
-                        </div>
-                      )}
-                    </TableCell>
-                    <TableCell className="justify-center">
-                      {puzzle.remoteBody && (
-                        <div className="flex justify-center">
-                          <a
-                            href={`/puzzle/${puzzle.id}?interactionMode=remote`}
+                            href={`/puzzle/${puzzle.id}`}
                           >
                             <Puzzle className="size-5 text-red-500 hover:opacity-75" />
                           </a>
