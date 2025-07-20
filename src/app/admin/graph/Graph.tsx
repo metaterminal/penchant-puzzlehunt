@@ -470,7 +470,7 @@ export default function Graph() {
           </div>
           <input
             name="teamQuery"
-            placeholder="jcarberr"
+            placeholder="penchantusername"
             value={teamQuery}
             onChange={(e) => setTeamQuery(e.target.value)}
             onKeyDown={(e) => {
