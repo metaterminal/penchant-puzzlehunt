@@ -274,9 +274,28 @@ export default function Page() {
               <p>
                 This event was made possible by the following people in 2025:
               </p>
-              <p>
-                FIXME CREDITS
-              </p>
+              <div className="text-center">
+                <h3>Puzzle Writers</h3>
+                <p>Thomas Gordon / metaterminal<br/>
+                noneuclidean<br/>
+                Rainy<br/>
+                Zach Barnett<br/>
+                Olga Vinogradova</p>
+                <h3>Site Developers</h3>
+                <p>Thomas Gordon / metaterminal<br/>
+                Olga Vinogradova</p>
+                <h3>Additional Testsolvers</h3>
+                <p>aceaceaceaceace<br/>
+                Aren Guralp<br/>
+                clopedion<br/>
+                Cute Mage<br/>
+                Mononoko<br/>
+                ricez cakes<br/>
+                SeptaCube<br/>
+                sus1d1p<br/>
+                Tim / Soni<br/>
+                </p>
+              </div>
               <p>
                 Unfortunately, we are legally restricted from providing any 
                 identifiable information about our future employees.
