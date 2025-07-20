@@ -192,7 +192,7 @@ We use Discord for admin messages and Resend for automated hunt emails. Discord 
 
 ```
 // Message the guess channel
-  const guessMessage = `🧩 **Guess** by [${teamId}](https://www.brownpuzzlehunt.com/teams/${teamId}) on [${puzzleId}](https://www.brownpuzzlehunt.com/puzzle/${puzzleId} ): \`${guess}\` [${isCorrect ? (solveType === "guess" ? "✓" : "**E** → ✓") : "✕"}]`;
+  const guessMessage = `🧩 **Guess** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId}) on [${puzzleId}](https://penchantpuzzlehunt.com/puzzle/${puzzleId} ): \`${guess}\` [${isCorrect ? (solveType === "guess" ? "✓" : "**E** → ✓") : "✕"}]`;
   await sendBotMessage(guessMessage, "guess");
 ```
 
