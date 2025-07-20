@@ -17,7 +17,7 @@ import { ActivityItem, ActivityChart } from "./ActivityChart";
 import { db } from "~/server/db/index";
 import { guesses, hints, teams } from "~/server/db/schema";
 import { count, eq, isNull, not, sql } from "drizzle-orm";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 
 type hintLeaderboardItem = {
   id: string;
@@ -40,9 +40,10 @@ export async function Dashboard() {
     return acc;
   }, {});
 
-  const inPersonTeams = numTeams["in-person"] ?? 0;
-  const remoteTeams = numTeams["remote"] ?? 0;
-  const totalTeams = inPersonTeams + remoteTeams;
+  const fullTeams = numTeams["full"] ?? 0;
+  const halfTeams = numTeams["half"] ?? 0;
+  const soloTeams = numTeams["solo"] ?? 0;
+  const totalTeams = fullTeams + halfTeams + soloTeams;
 
   // Get the number of guesses
   const numGuesses = (
@@ -86,14 +87,9 @@ export async function Dashboard() {
 
   /* Activity Table (chunk 4) */
   const data: Record<number, ActivityItem> = {};
-  const startDate = IN_PERSON.START_TIME;
+  const startDate = REMOTE.START_TIME;
   // Current time clamped between IN_PERSON.START_TIME and REMOTE.END_TIME
-  const endDate = new Date(
-    Math.min(
-      REMOTE.END_TIME.getTime(),
-      Math.max(IN_PERSON.START_TIME.getTime(), new Date().getTime()),
-    ),
-  );
+  const endDate = new Date(REMOTE.END_TIME.getTime());
 
   // Initialize the data object with all hours between startTime and endTime
   const totalHours =
@@ -211,7 +207,7 @@ export async function Dashboard() {
             <CardContent>
               <div className="text-2xl font-bold">{totalTeams}</div>
               <p className="text-muted-foreground text-xs">
-                {remoteTeams} remote & {inPersonTeams} in-person
+                {fullTeams} full, {halfTeams} half, {soloTeams} solo
               </p>
             </CardContent>
           </Card>

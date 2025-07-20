@@ -7,7 +7,7 @@ import { columns } from "./Columns";
 import { db } from "~/server/db";
 import { and, or, eq, desc, count, lte } from "drizzle-orm";
 import { puzzles, teams, solves, guesses, unlocks, hints } from "@/db/schema";
-import { REMOTE, IN_PERSON, INITIAL_PUZZLES } from "~/hunt.config";
+import { REMOTE, INITIAL_PUZZLES } from "~/hunt.config";
 
 export default async function DefaultStatsPage({
   puzzleId,
@@ -36,16 +36,7 @@ export default async function DefaultStatsPage({
           and(
             eq(unlocks.puzzleId, puzzleId),
             eq(teams.role, "user"),
-            or(
-              and(
-                eq(teams.interactionMode, "remote"),
-                lte(unlocks.unlockTime, REMOTE.END_TIME),
-              ),
-              and(
-                eq(teams.interactionMode, "in-person"),
-                lte(unlocks.unlockTime, IN_PERSON.END_TIME),
-              ),
-            ),
+            lte(unlocks.unlockTime, REMOTE.END_TIME),
           ),
         )
         .then((res) => res[0]?.count ?? 0);
@@ -58,16 +49,7 @@ export default async function DefaultStatsPage({
       and(
         eq(guesses.puzzleId, puzzleId),
         eq(teams.role, "user"),
-        or(
-          and(
-            eq(teams.interactionMode, "remote"),
-            lte(guesses.submitTime, REMOTE.END_TIME),
-          ),
-          and(
-            eq(teams.interactionMode, "in-person"),
-            lte(guesses.submitTime, IN_PERSON.END_TIME),
-          ),
-        ),
+        lte(guesses.submitTime, REMOTE.END_TIME),
       ),
     )
     .then((res) => res[0]?.count ?? 0);
@@ -80,16 +62,7 @@ export default async function DefaultStatsPage({
       and(
         eq(hints.puzzleId, puzzleId),
         eq(teams.role, "user"),
-        or(
-          and(
-            eq(teams.interactionMode, "remote"),
-            lte(hints.requestTime, REMOTE.END_TIME),
-          ),
-          and(
-            eq(teams.interactionMode, "in-person"),
-            lte(hints.requestTime, IN_PERSON.END_TIME),
-          ),
-        ),
+        lte(hints.requestTime, REMOTE.END_TIME),
       ),
     )
     .then((res) => res[0]?.count ?? 0);
@@ -126,16 +99,7 @@ export default async function DefaultStatsPage({
       and(
         eq(solves.puzzleId, puzzleId),
         eq(teams.role, "user"),
-        or(
-          and(
-            eq(teams.interactionMode, "remote"),
-            lte(solves.solveTime, REMOTE.END_TIME),
-          ),
-          and(
-            eq(teams.interactionMode, "in-person"),
-            lte(solves.solveTime, IN_PERSON.END_TIME),
-          ),
-        ),
+        lte(solves.solveTime, REMOTE.END_TIME),
       ),
     )
     .groupBy(teams.id, unlocks.unlockTime, solves.solveTime);
@@ -145,10 +109,7 @@ export default async function DefaultStatsPage({
   if (INITIAL_PUZZLES.includes(puzzleId)) {
     statsTableData.forEach((row) => {
       const registerTime = row.team.createTime;
-      const huntStartTime =
-        row.team.interactionMode === "in-person"
-          ? IN_PERSON.START_TIME
-          : REMOTE.START_TIME;
+      const huntStartTime = REMOTE.START_TIME;
       row.unlockTime =
         registerTime > huntStartTime ? registerTime : huntStartTime;
     });
@@ -163,16 +124,7 @@ export default async function DefaultStatsPage({
       and(
         eq(guesses.puzzleId, puzzleId),
         eq(teams.role, "user"),
-        or(
-          and(
-            eq(teams.interactionMode, "remote"),
-            lte(guesses.submitTime, REMOTE.END_TIME),
-          ),
-          and(
-            eq(teams.interactionMode, "in-person"),
-            lte(guesses.submitTime, IN_PERSON.END_TIME),
-          ),
-        ),
+        lte(guesses.submitTime, REMOTE.END_TIME),
       ),
     )
     .groupBy(guesses.guess)

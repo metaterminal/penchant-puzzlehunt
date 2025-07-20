@@ -11,7 +11,7 @@ import {
   RefreshCcw,
   X,
 } from "lucide-react";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 import {
   editMessage,
   insertReply,
@@ -278,10 +278,7 @@ export default function HuntHintThreads({
     const { puzzleId, hintsRemaining, unansweredHint, isSolved } =
       hintRequestState;
     if (
-      new Date() >
-      (session?.user?.interactionMode === "in-person"
-        ? IN_PERSON.END_TIME
-        : REMOTE.END_TIME)
+      new Date() > REMOTE.END_TIME
     ) {
       return <>Hunt has ended and live hinting has closed.</>;
     }
@@ -349,10 +346,7 @@ export default function HuntHintThreads({
             !!hintRequestState.unansweredHint ||
             hintRequestState.hintsRemaining < 1 ||
             optimisticHints.some((hint) => !hint.response) ||
-            new Date() >
-              (session?.user?.interactionMode === "in-person"
-                ? IN_PERSON.END_TIME
-                : REMOTE.END_TIME)
+            new Date() > REMOTE.END_TIME
           }
           value={request}
           onChange={(e) => setRequest(e.target.value)}
@@ -370,10 +364,7 @@ export default function HuntHintThreads({
             !!hintRequestState.unansweredHint ||
             hintRequestState.hintsRemaining < 1 ||
             optimisticHints.some((hint) => !hint.response) ||
-            new Date() >
-              (session?.user?.interactionMode === "in-person"
-                ? IN_PERSON.END_TIME
-                : REMOTE.END_TIME)
+            new Date() > REMOTE.END_TIME
           }
           className="mt-2 rounded-md bg-black/30 px-3 py-2 font-medium text-main-text hover:opacity-85 disabled:opacity-50"
         >
@@ -385,10 +376,7 @@ export default function HuntHintThreads({
             now.toLocaleString("en-US", { timeZone: "America/New_York" }),
           ).getHours();
           return (
-            now <
-              (session?.user?.interactionMode === "in-person"
-                ? IN_PERSON.END_TIME
-                : REMOTE.END_TIME) &&
+            now < REMOTE.END_TIME &&
             hour >= 0 &&
             hour < 9
           );

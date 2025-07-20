@@ -17,7 +17,6 @@ import CopyButton from "@/puzzle/components/puzzle/CopyButton";
 import { canViewPuzzle } from "@/puzzle/actions";
 import {
   NUMBER_OF_GUESSES_PER_PUZZLE,
-  IN_PERSON,
   REMOTE,
   INITIAL_PUZZLES,
 } from "~/hunt.config";
@@ -99,10 +98,7 @@ export default async function DefaultPuzzlePage({
         })
       )?.createTime ?? new Date();
 
-    const huntStartTime =
-      session.user?.interactionMode === "in-person"
-        ? IN_PERSON.START_TIME
-        : REMOTE.START_TIME;
+    const huntStartTime = REMOTE.START_TIME;
 
     unlockTime = new Date(
       Math.max(teamCreateTime.getTime(), huntStartTime.getTime()),
@@ -154,21 +150,7 @@ export default async function DefaultPuzzlePage({
       ({ guess }) => !(guess in tasks || guess in partialSolutions),
     ).length;
 
-  // If there is an URL query, use that for admins and after the hunt ends
-  // Otherwise, use the session interaction mode
-  const puzzleInteractionMode =
-    interactionMode &&
-    (session.user.role === "admin" ||
-      (session.user.interactionMode === "in-person" &&
-        new Date() > IN_PERSON.END_TIME) ||
-      new Date() > REMOTE.END_TIME)
-      ? interactionMode
-      : session.user.interactionMode === "in-person"
-        ? "in-person"
-        : "remote";
-
-  const puzzleBody =
-    puzzleInteractionMode === "remote" ? remoteBody : inPersonBody;
+  const puzzleBody = remoteBody;
 
   return (
     <div className="w-full px-4">

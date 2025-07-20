@@ -10,7 +10,6 @@ import {
   answerTokens,
 } from "~/server/db/schema";
 import {
-  IN_PERSON,
   INITIAL_PUZZLES,
   REMOTE,
   ROUNDS,
@@ -33,7 +32,6 @@ export default async function Home() {
   var hasFinishedHunt = false;
   var availableEvents: AvailableEvent[] = [];
   var finishedEvents: FinishedEvent[] = [];
-  const isInPerson = session?.user?.interactionMode === "in-person";
 
   // Not logged in
   if (!session?.user?.id) {
@@ -72,9 +70,7 @@ export default async function Home() {
     if (
       (session.user.role === "user" || session.user.role === "admin") &&
       currDate <
-        (session.user.interactionMode === "in-person"
-          ? IN_PERSON.START_TIME
-          : REMOTE.START_TIME)
+        REMOTE.START_TIME
     ) {
       return (
         <div className="mb-12 px-4 pt-6 text-center">
@@ -142,7 +138,6 @@ export default async function Home() {
       finishedEvents={finishedEvents}
       hasEventInputBox={!!session?.user}
       hasFinishedHunt={hasFinishedHunt}
-      isInPerson={isInPerson}
     />
   );
 }

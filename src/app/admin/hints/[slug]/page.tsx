@@ -4,7 +4,7 @@ import { and, asc, eq } from "drizzle-orm";
 import Toast from "./Toast";
 import AdminHintThread from "./AdminHintThread";
 import GuessTable from "@/puzzle/components/puzzle/guess/GuessTable";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 
 export default async function Page({
   params,
@@ -76,10 +76,7 @@ export default async function Page({
           eq(unlocks.puzzleId, hint.puzzle.id),
         ),
       })
-    )?.unlockTime ??
-    (hint.team.interactionMode === "in-person"
-      ? IN_PERSON.START_TIME
-      : REMOTE.START_TIME);
+    )?.unlockTime ?? REMOTE.START_TIME;
 
   const previousGuesses = await db.query.guesses.findMany({
     where: and(

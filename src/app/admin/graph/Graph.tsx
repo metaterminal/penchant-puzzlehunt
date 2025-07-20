@@ -23,7 +23,6 @@ import { InferSelectModel } from "drizzle-orm";
 import { teams } from "~/server/db/schema";
 import { FormattedTime } from "~/lib/time";
 import { deserializeMembers } from "~/lib/team-members";
-import { formatPhoneNumber } from "~/app/(hunt)/teams/[slug]/ProfileForm";
 import { cn } from "~/lib/utils";
 
 const roundTextColor: Record<string, string> = {};
@@ -603,24 +602,6 @@ export default function Graph() {
                 <span className="font-semibold"> Mode: </span>
                 {searchedTeam.interactionMode}
               </p>
-              {searchedTeam.interactionMode === "in-person" && (
-                <>
-                  <p>
-                    <span className="font-semibold">
-                      Number of Brown members:{" "}
-                    </span>
-                    {searchedTeam.numCommunity}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Phone number: </span>
-                    {formatPhoneNumber(searchedTeam.phoneNumber)}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Solving location: </span>
-                    {searchedTeam.solvingLocation}
-                  </p>
-                </>
-              )}
               <p className="my-1 rounded-[2px] bg-neutral-400 pl-0.5 font-semibold text-white">
                 Members
               </p>

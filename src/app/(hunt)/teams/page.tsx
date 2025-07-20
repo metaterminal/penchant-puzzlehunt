@@ -11,7 +11,7 @@ import { db } from "~/server/db";
 import { count, max, sql } from "drizzle-orm";
 import { and, asc, desc, eq, lt } from "drizzle-orm/expressions";
 import { teams, solves } from "~/server/db/schema";
-import { IN_PERSON, REMOTE } from "~/hunt.config";
+import { REMOTE } from "~/hunt.config";
 import { FormattedTime } from "~/lib/time";
 import { Lock } from "lucide-react";
 
@@ -69,45 +69,7 @@ function Leaderboard({ data }: { data: LeaderboardItem[] }) {
 }
 
 export default async function Home() {
-  const inPersonTeams: LeaderboardItem[] = await db
-    .select({
-      id: teams.id,
-      displayName: teams.displayName,
-      // Exclude finish time if it is after hunt end
-      finishTime: sql<Date | null>`
-      CASE 
-        WHEN ${teams.finishTime} > ${IN_PERSON.END_TIME} THEN NULL
-        ELSE ${teams.finishTime}
-      END`.as("finish_time"),
-      solves: count(solves).as("solves"),
-      lastSolveTime: max(solves.solveTime).as("last_solve_time"),
-    })
-    .from(teams)
-    // Filter out admin teams and teams who registered after the hunt end
-    .where(
-      and(
-        eq(teams.interactionMode, "in-person"),
-        eq(teams.role, "user"),
-        lt(teams.createTime, IN_PERSON.END_TIME),
-      ),
-    )
-    // Get solves that were submitted before the hunt end
-    // This is used for `solves` and `lastSolveTime`
-    .leftJoin(
-      solves,
-      and(
-        eq(solves.teamId, teams.id),
-        lt(solves.solveTime, IN_PERSON.END_TIME),
-      ),
-    )
-    .groupBy(teams.id, teams.displayName, teams.finishTime)
-    .orderBy(
-      asc(sql`finish_time`),
-      desc(sql`solves`),
-      asc(sql`last_solve_time`),
-    );
-
-  const remoteTeams: LeaderboardItem[] = await db
+  const fullTeams: LeaderboardItem[] = await db
     .select({
       id: teams.id,
       displayName: teams.displayName,
@@ -124,7 +86,77 @@ export default async function Home() {
     // Filter out admin teams and teams who registered after the hunt end
     .where(
       and(
-        eq(teams.interactionMode, "remote"),
+        eq(teams.interactionMode, "full"),
+        eq(teams.role, "user"),
+        lt(teams.createTime, REMOTE.END_TIME),
+      ),
+    )
+    // Get solves that were submitted before the hunt end
+    // This is used for `solves` and `lastSolveTime`
+    .leftJoin(
+      solves,
+      and(eq(solves.teamId, teams.id), lt(solves.solveTime, REMOTE.END_TIME)),
+    )
+    .groupBy(teams.id, teams.displayName, teams.finishTime, teams.createTime)
+    .orderBy(
+      asc(sql`finish_time`),
+      desc(sql`solves`),
+      asc(sql`last_solve_time`),
+    );
+
+    const halfTeams: LeaderboardItem[] = await db
+    .select({
+      id: teams.id,
+      displayName: teams.displayName,
+      // Exclude finish time if it is after hunt end
+      finishTime: sql<Date | null>`
+      CASE 
+        WHEN ${teams.finishTime} > ${REMOTE.END_TIME} THEN NULL
+        ELSE ${teams.finishTime}
+      END`.as("finish_time"),
+      solves: count(solves).as("solves"),
+      lastSolveTime: max(solves.solveTime).as("last_solve_time"),
+    })
+    .from(teams)
+    // Filter out admin teams and teams who registered after the hunt end
+    .where(
+      and(
+        eq(teams.interactionMode, "half"),
+        eq(teams.role, "user"),
+        lt(teams.createTime, REMOTE.END_TIME),
+      ),
+    )
+    // Get solves that were submitted before the hunt end
+    // This is used for `solves` and `lastSolveTime`
+    .leftJoin(
+      solves,
+      and(eq(solves.teamId, teams.id), lt(solves.solveTime, REMOTE.END_TIME)),
+    )
+    .groupBy(teams.id, teams.displayName, teams.finishTime, teams.createTime)
+    .orderBy(
+      asc(sql`finish_time`),
+      desc(sql`solves`),
+      asc(sql`last_solve_time`),
+    );
+
+    const soloTeams: LeaderboardItem[] = await db
+    .select({
+      id: teams.id,
+      displayName: teams.displayName,
+      // Exclude finish time if it is after hunt end
+      finishTime: sql<Date | null>`
+      CASE 
+        WHEN ${teams.finishTime} > ${REMOTE.END_TIME} THEN NULL
+        ELSE ${teams.finishTime}
+      END`.as("finish_time"),
+      solves: count(solves).as("solves"),
+      lastSolveTime: max(solves.solveTime).as("last_solve_time"),
+    })
+    .from(teams)
+    // Filter out admin teams and teams who registered after the hunt end
+    .where(
+      and(
+        eq(teams.interactionMode, "solo"),
         eq(teams.role, "user"),
         lt(teams.createTime, REMOTE.END_TIME),
       ),
@@ -145,37 +177,51 @@ export default async function Home() {
   const now = new Date();
 
   return (
-    <div className="mx-auto mb-12 max-w-2xl px-4 pt-6">
+    <div className="mx-auto mb-12 max-w-3xl px-4 pt-6">
       <h1 className="mb-2 text-center">Leaderboard</h1>
-      <Tabs defaultValue="in-person" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 space-x-1 bg-footer-bg text-main-text">
+      <Tabs defaultValue="full" className="w-full">
+        <TabsList className="grid w-full grid-cols-3 space-x-1 bg-footer-bg text-main-text">
           <TabsTrigger
-            className="data-[state=active]:bg-[#5e437e] data-[state=active]:text-main-text"
-            value="in-person"
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
+            value="full"
           >
-            In-Person
-            {now > IN_PERSON.END_TIME && (
+            Full Squads
+            {now > REMOTE.END_TIME && (
               <Lock className="h-[13px] stroke-[3.5]" />
             )}
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-[#5e437e] data-[state=active]:text-main-text"
-            value="remote"
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
+            value="half"
           >
-            Remote
+            Half Squads
+            {now > REMOTE.END_TIME && (
+              <Lock className="h-[13px] stroke-[3.5]" />
+            )}
+          </TabsTrigger>
+          <TabsTrigger
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
+            value="solo"
+          >
+            Solo Solvers
             {now > REMOTE.END_TIME && (
               <Lock className="h-[13px] stroke-[3.5]" />
             )}
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="in-person">
+        <TabsContent value="full">
           <div className="w-full">
-            <Leaderboard data={inPersonTeams} />
+            <Leaderboard data={fullTeams} />
           </div>
         </TabsContent>
-        <TabsContent value="remote">
+        <TabsContent value="half">
           <div className="w-full">
-            <Leaderboard data={remoteTeams} />
+            <Leaderboard data={halfTeams} />
+          </div>
+        </TabsContent>
+        <TabsContent value="solo">
+          <div className="w-full">
+            <Leaderboard data={soloTeams} />
           </div>
         </TabsContent>
       </Tabs>

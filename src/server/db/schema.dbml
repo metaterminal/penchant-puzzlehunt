@@ -5,8 +5,9 @@ enum status {
 }
 
 enum interaction_type {
-  "in-person"
-  remote
+  full
+  half
+  solo
 }
 
 enum role {
@@ -127,12 +128,6 @@ table bph_site_team {
   interaction_type interaction_type [not null]
   create_time "timestamp with time zone" [not null, default: `now()`]
   finish_time "timestamp with time zone"
-  num_community varchar(31) [not null, default: '']
-  phone_number varchar(31) [not null, default: '']
-  room_needed boolean [not null, default: false]
-  solving_location varchar(255) [not null, default: '']
-  wants_box boolean
-  has_box boolean [not null, default: false]
 }
 
 table bph_site_unlock {

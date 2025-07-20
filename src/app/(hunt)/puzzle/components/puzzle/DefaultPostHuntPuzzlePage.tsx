@@ -171,14 +171,7 @@ export default function DefaultPostHuntPuzzlePage({
 
   // If there is an URL query, use that for admins and after the hunt ends
   // Otherwise, use the session interaction mode
-  const actualInteractionMode = interactionMode ?? "remote";
-
-  const puzzleBody =
-    actualInteractionMode === "remote-box"
-      ? remoteBoxBody
-      : actualInteractionMode === "in-person"
-        ? inPersonBody
-        : remoteBody;
+  const puzzleBody = remoteBody;
 
   return (
     <div className="w-full px-4">

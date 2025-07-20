@@ -68,8 +68,6 @@ const colorMap: Record<string, string> = {
   user: "bg-sky-200 text-sky-900",
   admin: "bg-emerald-200 text-emerald-900",
   testsolver: "bg-violet-200 text-violet-900",
-  remote: "bg-lime-200 text-lime-900",
-  "in-person": "bg-orange-200 text-orange-900",
 };
 
 export function TeamTable<TData, TValue>({
@@ -82,12 +80,12 @@ export function TeamTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([
     {
       id: "interactionMode",
-      value: ["remote", "in-person"],
+      value: ["full", "half", "solo"],
     },
   ]);
   const [interactionModeFilters, setInteractionModeFilters] = useState<
     InteractionMode[]
-  >(["remote", "in-person"]);
+  >(["full", "half", "solo"]);
 
   const [isCompact, setIsCompact] = useState(true);
   useEffect(() => {
@@ -122,7 +120,7 @@ export function TeamTable<TData, TValue>({
       columnFilters: [
         {
           id: "interactionMode",
-          value: ["remote", "in-person"],
+          value: ["full", "half", "solo"],
         },
       ],
     },
@@ -219,7 +217,7 @@ export function TeamTable<TData, TValue>({
         if (field === "interactionMode") {
           editedTeams[teamId] = {
             ...editedTeams[teamId],
-            interactionMode: newValue === "remote" ? "remote" : "in-person",
+            interactionMode: newValue === "full" ? "full" : (newValue === "half" ? "half" : "solo"),
           };
           continue;
         }
@@ -257,19 +255,19 @@ export function TeamTable<TData, TValue>({
           <div className="mx-auto hidden items-center space-x-2 text-nowrap text-sm font-medium sm:flex">
             <p
               className={cn(
-                !interactionModeFilters.includes("in-person") &&
+                !interactionModeFilters.includes("full") &&
                   "text-[#BBBBBB]",
               )}
             >
-              In Person
+              Full
             </p>
             <Checkbox
-              checked={interactionModeFilters.includes("in-person")}
+              checked={interactionModeFilters.includes("full")}
               onCheckedChange={(checked) => {
                 setInteractionModeFilters((prev) =>
                   checked
-                    ? [...prev, "in-person"]
-                    : prev.filter((mode) => mode !== "in-person"),
+                    ? [...prev, "full"]
+                    : prev.filter((mode) => mode !== "full"),
                 );
               }}
               className="border-[1.5px] border-[#BBBBBB] shadow-none data-[state=checked]:border-neutral-500 data-[state=checked]:bg-white data-[state=checked]:text-neutral-500"
@@ -277,18 +275,37 @@ export function TeamTable<TData, TValue>({
 
             <p
               className={cn(
-                !interactionModeFilters.includes("remote") && "text-[#BBBBBB]",
+                !interactionModeFilters.includes("half") && "text-[#BBBBBB]",
               )}
             >
-              Remote
+              Half
             </p>
             <Checkbox
-              checked={interactionModeFilters.includes("remote")}
+              checked={interactionModeFilters.includes("half")}
               onCheckedChange={(checked) => {
                 setInteractionModeFilters((prev) =>
                   checked
-                    ? [...prev, "remote"]
-                    : prev.filter((mode) => mode !== "remote"),
+                    ? [...prev, "half"]
+                    : prev.filter((mode) => mode !== "half"),
+                );
+              }}
+              className="border-[1.5px] border-[#BBBBBB] shadow-none data-[state=checked]:border-neutral-500 data-[state=checked]:bg-white data-[state=checked]:text-neutral-500"
+            />
+
+          <p
+              className={cn(
+                !interactionModeFilters.includes("solo") && "text-[#BBBBBB]",
+              )}
+            >
+              Solo
+            </p>
+            <Checkbox
+              checked={interactionModeFilters.includes("solo")}
+              onCheckedChange={(checked) => {
+                setInteractionModeFilters((prev) =>
+                  checked
+                    ? [...prev, "solo"]
+                    : prev.filter((mode) => mode !== "solo"),
                 );
               }}
               className="border-[1.5px] border-[#BBBBBB] shadow-none data-[state=checked]:border-neutral-500 data-[state=checked]:bg-white data-[state=checked]:text-neutral-500"
