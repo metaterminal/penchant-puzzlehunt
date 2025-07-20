@@ -28,16 +28,16 @@ export default function Landing() {
           <div
             className="absolute rounded-full blur-md  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             style={{
-              width: "80rem",
-              height: "60rem",
+              width: "160rem",
+              height: "120rem",
               background: `radial-gradient(
                             ellipse at center,
-                            rgba(0, 114, 187, 1) 20%,
+                            rgba(0, 114, 187, 1) 10%,
                             rgba(0, 114, 187, 0) 70%
                           )`,
             }}
             />
-            <img src="/catbox.png" alt="Not a puzzle." className="relative z-10"/>
+            <img src="/penchantlogotransparent.svg" alt="Not a puzzle." className="relative z-10 w-xl p-10"/>
             <h1 className="text-main-header lg:text-4xl xl:text-5xl relative z-10">Penchant Puzzlehunt</h1>
             <p className="hidden md:block text-main-header relative z-10 lg:text-xl xl:text-2xl">
               {formatter.format(REMOTE.START_TIME)} –{" "}

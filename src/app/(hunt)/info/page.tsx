@@ -123,7 +123,7 @@ export default function Page() {
               <p>
                 The maximum team size is 
                 6 people. (You may go slightly above this number if you think you'll 
-                have more fun, but please shoot us an email at FIXME EMAIL to let us 
+                have more fun, but please shoot us an email at penchantpuzzlehunt(at)gmail(dot)com to let us 
                 know.) These teams will be shown on the <strong>Full Squad</strong>{" "}
                 leaderboard.
               </p>
@@ -142,7 +142,7 @@ export default function Page() {
               <p>
                 You can freely switch between team sizes and leaderboard options 
                 until the hunt starts. If you wish to change your team size after 
-                the hunt has started, send us an email at FIXME EMAIL.
+                the hunt has started, send us an email at penchantpuzzlehunt(at)gmail(dot)com.
               </p>
               <p>
                 As always, you may ask for help from people who are not on your team, 
@@ -206,10 +206,6 @@ export default function Page() {
                 This hunt is free to participate in!
               </p>
               <p>
-                If you want to cover some server costs for the 2025 crew, however, 
-                feel free to donate FIXME DONATION LINK.
-              </p>
-              <p>
                 There is no prize for winning, for various legal-temporal reasons.
               </p>
               </TOCSection>
@@ -270,7 +266,7 @@ export default function Page() {
               </p>
               <p>
                 If you have any questions about these rules, or if you want to 
-                contact us for any reason, please email us at FIXME EMAIL.
+                contact us for any reason, please email us at penchantpuzzlehunt(at)gmail(dot)com.
               </p>
             </TOCSection>
             <TOCSection sectionId={8} tocTitle="Credits">
@@ -278,9 +274,27 @@ export default function Page() {
               <p>
                 This event was made possible by the following people in 2025:
               </p>
-              <p>
-                FIXME CREDITS
-              </p>
+              <div className="text-center">
+                <h3>Puzzle Writers</h3>
+                <p>Thomas Gordon / metaterminal<br/>
+                noneuclidean<br/>
+                Rainy<br/>
+                Zach Barnett<br/>
+                Olga Vinogradova</p>
+                <h3>Site Developers</h3>
+                <p>Thomas Gordon / metaterminal<br/>
+                Olga Vinogradova</p>
+                <h3>Additional Testsolvers</h3>
+                <p>Aren Guralp<br/>
+                Cute Mage<br/>
+                lope<br/>
+                Mononoko<br/>
+                ricez cakes<br/>
+                SeptaCube<br/>
+                sus1d1p<br/>
+                Tim / Soni<br/>
+                waltacefur</p>
+              </div>
               <p>
                 Unfortunately, we are legally restricted from providing any 
                 identifiable information about our future employees.

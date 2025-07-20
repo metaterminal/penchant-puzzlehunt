@@ -68,7 +68,7 @@ export async function insertErratum(puzzleId: string, description: string) {
   );
 
   sendEmail(
-    ["brownpuzzlehq@gmail.com"],
+    ["penchantpuzzlehunt@gmail.com"],
     `Erratum Issued [${puzzleName}]`,
     ErratumEmailTemplate({ puzzleName, puzzleId, erratum: description }),
     emails,
