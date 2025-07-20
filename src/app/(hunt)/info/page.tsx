@@ -32,7 +32,7 @@ const HuntTimeline = [
   },
   {
     title: "Hunt Ends",
-    description: `The hunt will end on ${formatter.format(REMOTE.END_TIME)}. Hints will no longer be answered and the leaderboard will be frozen.`,
+    description: `The hunt will end on ${formatter.format(REMOTE.END_TIME)}. Hints will no longer be answered and the leaderboard will be frozen. You can still register a team and progress through the hunt until ${formatter.format(REMOTE.WRAPUP_TIME)}.`,
   },
   {
     title: "Wrap-Up",
@@ -58,8 +58,8 @@ export default function Page() {
             >
               <h2>What is this?</h2>
               <p>
-                Penchant is an online puzzlehunt, beginning on August 15th 
-                (FIXME time), and ending on August 21st (FIXME time), 
+                Penchant is an online puzzlehunt, beginning on {formatter.format(REMOTE.START_TIME)}, 
+                and ending on {formatter.format(REMOTE.END_TIME)}, 
                 for teams of up to 6 people. Anyone in the world can participate.
               </p>
               <p>

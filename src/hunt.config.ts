@@ -4,7 +4,7 @@ import { and, count, eq, ne } from "drizzle-orm";
 
 /** REGISTRATION AND HUNT START */
 export const REGISTRATION_START_TIME = new Date("2024-11-17T17:00:00.000Z");
-export const REGISTRATION_END_TIME = new Date("2030-11-24T17:00:00Z");
+export const REGISTRATION_END_TIME = new Date("2025-09-01T03:59:00.000Z");
 
 /*export const IN_PERSON = {
   KICKOFF_DOOR_TIME: new Date("2024-04-12T15:30:00.000Z"),
@@ -16,9 +16,9 @@ export const REGISTRATION_END_TIME = new Date("2030-11-24T17:00:00Z");
 };*/
 
 export const REMOTE = {
-  START_TIME: new Date("2024-04-19T16:00:00.000Z"),
-  END_TIME: new Date("2030-04-25T16:00:00.000Z"),
-  WRAPUP_TIME: new Date("2030-04-30T17:00:00.000Z"),
+  START_TIME: new Date("2025-08-15T22:00:00.000Z"),
+  END_TIME: new Date("2025-08-21T22:00:00.000Z"),
+  WRAPUP_TIME: new Date("2025-09-01T03:59:00.000Z"),
 };
 
 export type Round = {
