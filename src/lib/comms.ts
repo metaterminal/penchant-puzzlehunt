@@ -66,8 +66,8 @@ export async function sendEmail(
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const response = await resend.emails.send({
-      from: `"Penchant Puzzlehunt" <penchantpuzzlehunt@gmail.com>`,
-      //replyTo: `"Puzzle HQ" <brownpuzzlehq@gmail.com>`,
+      from: `"Penchant Puzzlehunt" <updates@penchantpuzzlehunt.com>`,
+      replyTo: `"Penchant Puzzlehunt" <penchantpuzzlehunt@gmail.com>`,
       to,
       bcc,
       subject,
