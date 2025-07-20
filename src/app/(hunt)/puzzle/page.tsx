@@ -41,14 +41,15 @@ export default async function Home() {
         <div className="mb-12 px-4 pt-6 text-center">
           <h1 className="mb-2">Puzzles</h1>
           <p>
+            If the hunt has started, you can{" "}
             <Link
               href="/login"
               className="text-link hover:underline"
               prefetch={false}
             >
-              Login
+              login
             </Link>{" "}
-            to access puzzles
+            to access puzzles.
           </p>
         </div>
       );
