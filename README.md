@@ -49,7 +49,7 @@ On the development side:
 # openssl rand -base64 32
 # https://next-auth.js.org/configuration/options#secret
 AUTH_SECRET=""
-AUTH_URL="http://penchantpuzzlehunt.com" # Remember to change this for production
+AUTH_URL="http://localhost:3000" # Remember to change this for production
 AUTH_DRIZZLE_URL=postgres://postgres:postgres@127.0.0.1:5432/db
 
 # Database (required)

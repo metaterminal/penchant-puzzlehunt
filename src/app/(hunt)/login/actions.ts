@@ -27,5 +27,5 @@ export async function login(id: string, password: string) {
 }
 
 export async function logout() {
-  await signOut({ redirectTo: "https://penchantpuzzlehunt.com/" });
+  await signOut({ redirectTo: "/" });
 }
