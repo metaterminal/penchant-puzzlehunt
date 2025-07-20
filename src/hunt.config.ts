@@ -48,6 +48,8 @@ export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "playing-with-places": ["playing-with-words", "playing-with-cards"], 
   "playing-with-words": ["playing-with-letters"], 
   "playing-with-cards": ["playing-with-markers"],
+  "playing-with-letters": [],
+  "playing-with-markers": [],
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/

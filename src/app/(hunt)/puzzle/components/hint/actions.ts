@@ -67,7 +67,7 @@ export async function insertHintRequest(puzzleId: string, hint: string) {
     };
   }
 
-  const hintMessage = `🙏 **Hint** [request](https://www.brownpuzzlehunt.com/admin/hints/${result.id}) by [${teamId}](https://www.brownpuzzlehunt.com/teams/${teamId}) on [${puzzleId}](https://www.brownpuzzlehunt.com/puzzle/${puzzleId} ): ${hint} <@&1310029428864057504>`;
+  const hintMessage = `🙏 **Hint** [request](https://penchantpuzzlehunt.com/admin/hints/${result.id}) by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId}) on [${puzzleId}](https://penchantpuzzlehunt.com/puzzle/${puzzleId} ): ${hint} <@&1310029428864057504>`;
   await sendBotMessage(hintMessage, "hint");
 
   return { error: null, id: result.id };
@@ -155,7 +155,7 @@ export async function insertReply({
       }
       // Otherwise, notify admin on Discord that there is a reply
       else if (message !== "[Claimed]") {
-        const hintMessage = `🙏 **Hint** [reply](https://www.brownpuzzlehunt.com/admin/hints/${hintId}?reply=true) by [${teamDisplayName}](https://www.brownpuzzlehunt.com/teams/${teamId}) on [${puzzleName}](https://www.brownpuzzlehunt.com/puzzle/${puzzleId} ): ${message} <@&1310029428864057504>`;
+        const hintMessage = `🙏 **Hint** [reply](https://penchantpuzzlehunt.com/admin/hints/${hintId}?reply=true) by [${teamDisplayName}](https://penchantpuzzlehunt.com/teams/${teamId}) on [${puzzleName}](https://penchantpuzzlehunt.com/puzzle/${puzzleId} ): ${message} <@&1310029428864057504>`;
         await sendBotMessage(hintMessage, "hint");
       }
       return result[0].id;

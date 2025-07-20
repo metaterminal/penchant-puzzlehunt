@@ -285,8 +285,7 @@ export default function Page() {
                 <p>Thomas Gordon / metaterminal<br/>
                 Olga Vinogradova</p>
                 <h3>Additional Testsolvers</h3>
-                <p>aceaceaceaceace<br/>
-                Aren Guralp<br/>
+                <p>Aren Guralp<br/>
                 Cute Mage<br/>
                 lope<br/>
                 Mononoko<br/>
@@ -294,7 +293,7 @@ export default function Page() {
                 SeptaCube<br/>
                 sus1d1p<br/>
                 Tim / Soni<br/>
-                </p>
+                waltacefur</p>
               </div>
               <p>
                 Unfortunately, we are legally restricted from providing any 
