@@ -41,28 +41,6 @@ export function serializeMembers(members: Member[]): string {
       .map((person) => [person.name, person.email]),
   );
 }
-/*
-const zPhone = z.string().transform((arg, ctx) => {
-  if (!arg) {
-    return "";
-  }
-
-  const phone = parsePhoneNumberFromString(arg, {
-    defaultCountry: "US",
-    extract: false,
-  });
-
-  if (phone && phone.isValid()) {
-    return phone.number;
-  }
-
-  ctx.addIssue({
-    code: z.ZodIssueCode.custom,
-    message: "Invalid number",
-  });
-  return z.NEVER;
-});
-*/
 
 export const registerFormSchema = z
   .object({

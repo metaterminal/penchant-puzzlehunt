@@ -177,12 +177,12 @@ export default async function Home() {
   const now = new Date();
 
   return (
-    <div className="mx-auto mb-12 max-w-2xl px-4 pt-6">
+    <div className="mx-auto mb-12 max-w-3xl px-4 pt-6">
       <h1 className="mb-2 text-center">Leaderboard</h1>
       <Tabs defaultValue="full" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 space-x-1 bg-footer-bg text-main-text">
+        <TabsList className="grid w-full grid-cols-3 space-x-1 bg-footer-bg text-main-text">
           <TabsTrigger
-            className="data-[state=active]:bg-[#5e437e] data-[state=active]:text-main-text"
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
             value="full"
           >
             Full Squads
@@ -191,7 +191,7 @@ export default async function Home() {
             )}
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-[#5e437e] data-[state=active]:text-main-text"
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
             value="half"
           >
             Half Squads
@@ -200,7 +200,7 @@ export default async function Home() {
             )}
           </TabsTrigger>
           <TabsTrigger
-            className="data-[state=active]:bg-[#5e437e] data-[state=active]:text-main-text"
+            className="data-[state=active]:bg-main-bg data-[state=active]:text-main-text"
             value="solo"
           >
             Solo Solvers
