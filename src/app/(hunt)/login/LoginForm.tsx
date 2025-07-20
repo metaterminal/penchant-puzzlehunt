@@ -66,7 +66,7 @@ export function LoginForm() {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl className="placeholder:text-white/40 focus-visible:ring-opacity-20">
-                <Input placeholder="jcarberr" {...field} />
+                <Input placeholder="penchantusername" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -79,7 +79,7 @@ export function LoginForm() {
               <div className="flex flex-row items-center justify-between">
                 <FormLabel>Password</FormLabel>
                 <Link
-                  href="mailto:brownpuzzlehq@gmail.com"
+                  href="mailto:penchantpuzzlehunt@gmail.com"
                   className="text-sm text-link hover:underline"
                   tabIndex={-1}
                 >

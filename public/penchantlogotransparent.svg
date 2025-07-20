@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="152.8009mm"
+   height="61.404861mm"
+   viewBox="0 0 152.8009 61.404861"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <color-profile
+       name="Blue"
+       xlink:href="file:///usr/share/color/icc/colord/Bluish.icc"
+       id="color-profile1" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-28.294851,-108.9262)">
+    <circle
+       style="font-variation-settings:normal;fill:#000000;fill-opacity:0;stroke:#ffffff;stroke-width:2.2022;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path1-0-5"
+       cx="58.99728"
+       cy="139.62863"
+       r="29.60133" />
+    <circle
+       style="font-variation-settings:normal;fill:#000000;fill-opacity:0;stroke:#ffffff;stroke-width:2.2022;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path1-3-6-4"
+       cx="120.19991"
+       cy="139.62863"
+       r="29.60133" />
+    <circle
+       style="font-variation-settings:normal;fill:#000000;fill-opacity:0;stroke:#ffffff;stroke-width:2.2022;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path1-3-7-3-7"
+       cx="89.190979"
+       cy="139.62863"
+       r="29.60133" />
+    <circle
+       style="font-variation-settings:normal;fill:#000000;fill-opacity:0;stroke:#ffffff;stroke-width:2.2022;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path1-3-7-0-2-6"
+       cx="150.39333"
+       cy="139.62863"
+       r="29.60133" />
+    <ellipse
+       style="font-variation-settings:normal;fill:#000000;fill-opacity:0;stroke:#ffffff;stroke-width:2.202;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       id="path1-2-0-5"
+       cx="44.493084"
+       cy="139.62863"
+       rx="13.077817"
+       ry="12.988801" />
+  </g>
+</svg>
