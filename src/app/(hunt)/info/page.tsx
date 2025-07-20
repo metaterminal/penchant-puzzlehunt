@@ -287,8 +287,8 @@ export default function Page() {
                 <h3>Additional Testsolvers</h3>
                 <p>aceaceaceaceace<br/>
                 Aren Guralp<br/>
-                clopedion<br/>
                 Cute Mage<br/>
+                lope<br/>
                 Mononoko<br/>
                 ricez cakes<br/>
                 SeptaCube<br/>
