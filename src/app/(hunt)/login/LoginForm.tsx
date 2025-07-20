@@ -66,7 +66,7 @@ export function LoginForm() {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl className="placeholder:text-white/40 focus-visible:ring-opacity-20">
-                <Input placeholder="jcarberr" {...field} />
+                <Input placeholder="penchantusername" {...field} />
               </FormControl>
             </FormItem>
           )}
