@@ -22,7 +22,7 @@ export default {
       /** BEGIN_SNIPPET:COLOR_CONFIG */
       colors: {
         // Main is the primary color of the site
-        "main-bg": "#0072BB", // a bit dark but this is the monopoly park place blue
+        "main-bg": "#0072BB", // a bit dark but this is [REDACTED]
         "main-text": "#f7fdfb", // whiter than it should be, but we need the brightness
         "main-header": "#e3fcfc",
         "main-accent": "#a6e6fc",
