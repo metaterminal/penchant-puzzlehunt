@@ -58,7 +58,7 @@ export async function insertTeam(teamProperties: TeamProperties) {
   } catch (e) {
     // Message dev channel
     const error = ensureError(e);
-    const errorMessage = `🐛 Registration for ${teamProperties.id} failed: ${error.message} <@?1287563929282678795>`;
+    const errorMessage = `🐛 Registration for ${teamProperties.id} failed: ${error.message} <@&1385392344676827215>`;
     await sendBotMessage(errorMessage, "dev");
 
     return { error: "An unexpected error occurred." };

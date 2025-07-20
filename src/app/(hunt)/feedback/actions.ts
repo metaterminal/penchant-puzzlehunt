@@ -22,14 +22,14 @@ export async function insertFeedback(description: string, timestamp: Date) {
     // Message the dev channel
     const error = ensureError(e);
     await sendBotMessage(
-      `🐛 Feedback insert failed: ${error.message} <@?1287563929282678795>`,
+      `🐛 Feedback insert failed: ${error.message} <@&1385392344676827215>`,
       "dev",
     );
     return { error: "Failed to submit feedback." };
   }
 
   // Message the feedback channel and ping HQ
-  const feedbackMessage = `📝 **Feedback** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId} ): ${description} <@&900958940475559969>`;
+  const feedbackMessage = `📝 **Feedback** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId} ): ${description} <@&1396541451948658698>`;
   await sendBotMessage(feedbackMessage, "feedback");
   return { error: null };
 }

@@ -142,7 +142,7 @@ export async function handleGuess(puzzleId: string, guess: string) {
     });
   } catch (e) {
     const error = ensureError(e);
-    const errorMessage = `🐛 Error inserting solve for puzzle ${puzzleId} for team ${teamId}: ${error.message} <@?1287563929282678795>`;
+    const errorMessage = `🐛 Error inserting solve for puzzle ${puzzleId} for team ${teamId}: ${error.message} <@&1385392344676827215>`;
     sendBotMessage(errorMessage, "dev");
     return { error: "An unexpected error occurred. Please try again." };
   }
@@ -154,9 +154,8 @@ export async function handleGuess(puzzleId: string, guess: string) {
   /** END_SNIPPET:DISCORD_MESSAGE */
 
   // If the team has finished the hunt, message the finish channel
-  // Only ping the HQ role if it is the in-person hunt
   if (hasFinishedHunt) {
-    const finishMessage = `🏆 **Hunt Finish** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId}) ${new Date() < REMOTE.END_TIME ? "<@&900958940475559969>" : ""}`;
+    const finishMessage = `🏆 **Hunt Finish** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId}) ${new Date() < REMOTE.END_TIME ? "<@&1396541451948658698>" : ""}`;
     await sendBotMessage(finishMessage, "interaction");
   }
 
