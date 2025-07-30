@@ -94,8 +94,8 @@ export default function Page() {
                 <li>Cryptic clues</li>
                 <li>Mathematical puzzle</li>
                 <li>Acrostic</li>
-                <li>Matchmaker</li>
                 <li>Pen-and-paper logic (or grid logic, if you'd prefer)</li>
+                <li>Matchmaker</li>
                 <li>Criss-cross</li>
                 <li>Word ladder</li>
               </ul>
