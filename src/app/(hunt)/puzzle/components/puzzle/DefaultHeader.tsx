@@ -24,7 +24,7 @@ export default async function DefaultHeader({
   return (
     <div className="mb-8 flex w-full max-w-3xl flex-col items-center space-y-4">
       {/* Subtitle links below */}
-      <div className="flex w-full flex-col items-center text-center">
+      <div className="flex w-full flex-col items-center text-center mt-8">
         <h1>{puzzle.name}</h1>
         <div className="space-x-2 text-sm">
           <Link
