@@ -11,8 +11,8 @@ export const puzzleId = "playing-with-places";
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-  <div className="font-medium text-lg">
-    <div className="max-w-3xl font-medium text-lg/6 mb-4 text-center">
+  <div className="font-medium text-lg/6">
+    <div className="max-w-3xl font-medium mb-4 text-center">
       You're about to challenge your rich uncle from the UK, but there's no utility in playing him at most things.
     </div>
     <div className="mb-4 max-w-3xl text-center">
