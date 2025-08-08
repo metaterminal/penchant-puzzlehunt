@@ -23,7 +23,7 @@ export const inPersonBody = (
     </div>
     <br></br>
     <div className="mb-4 max-w-3xl text-center">
-      18 15 3 5 19 20 4 12 8 22 2 13 21 7 6 14 9 1 17 11 16 10
+      18 &ensp;15 &ensp;3 &ensp;5 &ensp;19 &ensp;20 &ensp;4 &ensp;12 &ensp;8 &ensp;22 &ensp;2 &ensp;13 &ensp;21 &ensp;7 &ensp;6 &ensp;14 &ensp;9 &ensp;1 &ensp;17 &ensp;11 &ensp;16 &ensp;10
     </div>
   </div>
 );
