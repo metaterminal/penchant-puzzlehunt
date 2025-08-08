@@ -1,3 +1,11 @@
+import Image from "next/image";
+import CARD1 from "./img1.png";
+import CARD2 from "./img2.png";
+import CARD3 from "./img3.png";
+import CARD4 from "./img4.png";
+import CARD5 from "./img5.png";
+import FINAL from "./img6.png";
+
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
  * It should be equal to the name of the folder this file is currently under.
@@ -11,13 +19,33 @@ export const puzzleId = "playing-with-markers";
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-  <div>
-    <div className="max-w-3xl space-y-4 text-center">
-      <b>This is a puzzle.</b>
+  <div className="font-medium text-lg/6">
+    <div className="max-w-3xl mb-4 text-center">
+      Your game of Telestrations has gone slightly astray -- everyone has been cluing four different words each time!
     </div>
     <div className="mb-4 max-w-3xl text-center">
-      <i>This is flavortext.</i>
+      Thankfully, you've already peeked at half of the cards. <i>How can you win?</i>
     </div>
+    <div className="w-full text-center mb-4">
+      <span className="text-xl"><b>Cards You've Seen</b></span><br />
+      ADMIRED<br />
+      BEGGED<br />
+      DODGY<br />
+      FIST<br />
+      GYROBALL<br />
+      LADY FRIENDS<br />
+      LEAD-COLORED<br />
+      MEIOSIS<br />
+      ROY GLENN<br />
+      TAILPIECE<br />
+    </div>
+    <Image src={CARD1} alt="" className="max-w-3xl mb-4" />
+    <Image src={CARD2} alt="" className="max-w-3xl mb-4" />
+    <Image src={CARD3} alt="" className="max-w-3xl mb-4" />
+    <Image src={CARD4} alt="" className="max-w-3xl mb-4" />
+    <Image src={CARD5} alt="" className="max-w-3xl mb-10" />
+    <hr/>
+    <Image src={FINAL} alt="" className="max-w-3xl mb-4" />
   </div>
 );
 
