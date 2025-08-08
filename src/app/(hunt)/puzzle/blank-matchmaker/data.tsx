@@ -16,8 +16,8 @@ export const puzzleId = "blank-matchmaker";
 export const inPersonBody = (
    <div className="font-medium text-lg/6">
     <Image src={MATCHMAKER} alt="" className="max-w-4xl mb-4" />
-    <div className="max-w-3xl font-medium mb-4 text-center">
-      <a href="https://docs.google.com/drawings/d/1rANXPkywgLKIgKfAOh6WCdHMByFBJIC8qRRbmMGSE7o/edit?usp=sharing"><u>(Link to editable version.)</u></a>
+    <div className="max-w-3xl mb-4 text-center">
+      <a target="_blank" href="https://docs.google.com/drawings/d/1rANXPkywgLKIgKfAOh6WCdHMByFBJIC8qRRbmMGSE7o/edit?usp=sharing"><u>(Link to editable version.)</u></a>
     </div>
   </div>
 );
