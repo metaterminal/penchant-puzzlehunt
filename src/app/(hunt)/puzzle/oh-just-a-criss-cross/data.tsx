@@ -254,7 +254,6 @@ export const inPersonBody = (
           />
         </div>
         <div className="mt-4 lg:mt-0">
-          <h3 className="font-bold mb-2">Grid 1 Clues</h3>
           <ul className="space-y-1 text-sm list-none">
             <li>27) 9 16 13</li>
             <li>28) 17 2 26</li>
