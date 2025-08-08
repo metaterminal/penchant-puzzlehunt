@@ -41,15 +41,15 @@ export function sanitizeAnswer(answer: any) {
  */
 
 /** Puzzles available at the beginning of the hunt that will never need to be unlocked by the team. */
-export const INITIAL_PUZZLES: string[] = ["playing-with-places", "rereading"];
+export const INITIAL_PUZZLES: string[] = ["playing-with-places", "really-utterly-normal-cryptic", "rereading", "blank-matchmaker"];
 
 /** Adjacency list for puzzles */
 export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "playing-with-places": ["playing-with-words", "playing-with-cards"], 
   "playing-with-words": ["playing-with-letters"], 
   "playing-with-cards": ["playing-with-markers"],
-  "playing-with-letters": [],
-  "playing-with-markers": [],
+  "playing-with-letters": ["playing-with-others"],
+  "playing-with-markers": ["playing-with-others"],
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
@@ -61,7 +61,16 @@ export const ROUNDS: Round[] = [
   "playing-with-letters", 
   "playing-with-markers"] },
   { name: "Feeders", puzzles: [
+    "plainly-indicated",
+    "petri-dish",
+    "youre-missing-something",
+    "really-utterly-normal-cryptic",
+    "gas-water-electricity",
     "rereading",
+    "blank-matchmaker",
+    "pen-paper-logic",
+    "oh-just-a-criss-cross",
+    "ladders"
   ]}
 ];
 
@@ -71,7 +80,8 @@ export const META_PUZZLES: string[] = [
   "playing-with-words", 
   "playing-with-cards", 
   "playing-with-letters", 
-  "playing-with-markers"];
+  "playing-with-markers",
+  "playing-with-others"];
 
 /* HINTING SYSTEM
  * Teams currently get a hint request every three hours since the start of the hunt.
@@ -81,7 +91,7 @@ export const META_PUZZLES: string[] = [
 /** Calculates the total number of hints given to a team */
 export function getTotalHints(role: string, interactionMode: string) {
   const initialNumberOfHints =
-    role == "admin" || role == "testsolver" ? 1e6 : 1;
+    role == "admin" || role == "testsolver" ? 1e6 : 0;
 
   const huntStartTime = REMOTE.START_TIME;
 
@@ -93,7 +103,7 @@ export function getTotalHints(role: string, interactionMode: string) {
 
   const rate = 24 * 60 * 60 * 1000; // 24 hours
 
-  return initialNumberOfHints + Math.max(Math.floor(timeDifference / rate), 0);
+  return initialNumberOfHints + (2 * Math.max(Math.floor(timeDifference / rate), 0));
 }
 
 /** Calculates the total number of hints available to a team */
