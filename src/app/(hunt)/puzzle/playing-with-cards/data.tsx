@@ -22,7 +22,7 @@ export const inPersonBody = (
       Thankfully, you're cheating. With the resources available, you produce the best possible hand you can each time.
     </div>
     <div className="max-w-3xl font-medium mb-4 text-center">
-      But someone's bound to notice that the dealer isn't dealing to you; you need a different strategy. How can you keep winning?
+      But someone's bound to notice that the dealer isn't dealing to you; you need a different strategy. <i>How can you keep winning?</i>
     </div>
     <Image src={TABLE} alt="" className="max-w-3xl mb-4" />
 
