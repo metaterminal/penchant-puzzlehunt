@@ -303,7 +303,11 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
+  <div className="max-w-3xl">This is the solution.
+    <div>
+      https://docs.google.com/spreadsheets/d/1RBnSORAiOVWfbShoWzE-xizm1WCm8e90BW8oMVAO3Lk/edit?gid=2103069547#gid=2103069547
+    </div>
+  </div>
 );
 
 /**
