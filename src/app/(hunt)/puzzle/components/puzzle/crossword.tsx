@@ -111,7 +111,7 @@ const Crossword: React.FunctionComponent<Props> = ({
     left: '1px',
     transform: 'scale(0.67)',
     transformOrigin: 'top left',
-    fontSize: '12px',
+    fontSize: '20px',
     lineHeight: '1',
   };
 
