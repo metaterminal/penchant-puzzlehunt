@@ -63,7 +63,7 @@ export const inPersonBody = (
         <li>Player 2 plays <b className="text-red-500">___</b> for 12 points.</li>
         <li>Player 1 plays <b className="text-red-500">___</b> for 20 points.</li>
         <li>Player 2 plays ___, also making ___ and ___, for 16 points.</li>
-        <li><i>"That's not one of our answers!" says Player 2. "Don't worry, I'll fix it on my next turn."</i></li>
+        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it on my next turn."</i></li>
         <li>Player 1 plays <b className="text-red-500">___</b> for 16 points.</li>
         <li>Player 2 plays <b className="text-red-500">___</b> for 65 points.</li>
       </ul>
@@ -92,7 +92,7 @@ export const solutionBody = (
 /**
  * The `authors` string renders below the `solutionBody`.
  */
-export const authors = "Josiah Carberry";
+export const authors = "noneuclidean, Thomas Gordon";
 
 /**
  * The `copyText` should provide a convenient text representation of the puzzle
