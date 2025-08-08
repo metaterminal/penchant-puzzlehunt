@@ -13,15 +13,13 @@ import { cn } from "~/lib/utils";
  * and interactive puzzle components here.
  */
 
-import Grid from "~/app/(hunt)/puzzle/oh-just-a-criss-cross/grid"
-// import Crossword, { X, _, Borders, Colors } from "~/app/(hunt)/puzzle/oh-just-a-criss-cross/crossword"
-
+import Grid from "~/app/(hunt)/puzzle/components/puzzle/grid"
+// import Crossword, { X, _, Borders, Colors } from "~/app/(hunt)/puzzle/components/puzzle/crossword"
 
 const lt = '⇦'
 const rt = '⇨'
 const up = '⇧'
 const dn = '⇩'
-
 
 const Circle = ({ children }: { children?: React.ReactNode }) => (
   <div
@@ -41,9 +39,7 @@ const Circle = ({ children }: { children?: React.ReactNode }) => (
   </div>
 );
 
-
 const sc = "rgba(255, 255, 255, 0.1)";
-
 
 const G1_content = [
 ['','','','','','','','','','','',dn,'','','','','','','','',''],
