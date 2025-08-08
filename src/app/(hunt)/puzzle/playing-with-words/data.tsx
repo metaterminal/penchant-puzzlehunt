@@ -6,17 +6,73 @@
  */
 export const puzzleId = "playing-with-words";
 
+import Grid from "~/app/(hunt)/puzzle/components/puzzle/grid"
+
+
 /**
  * The body renders above the guess submission form. Put flavor text, images,
  * and interactive puzzle components here.
  */
+
+
+const content = [
+  ['','','','','','','','','2','','','','','',''],
+  ['','','3','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','','6'],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','8','','','','','','','','','1','','',''],
+  ['','','','','','','','','','','7','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','5','','','','',''],
+  ['','4','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+  ['','','','','','','','','','','','','','',''],
+]
+
 export const inPersonBody = (
   <div>
     <div className="max-w-3xl space-y-4 text-center">
-      <b>This is a puzzle.</b>
+      <p>
+        You're playing Scrabble (using the latest CSW24 wordlist) -- and, 
+        <br></br>
+        for added challenge, neither of you can use blanks.
+        <br></br>
+        <i>How can you guarantee a win?</i>
+      </p>
+      <p><i>Note: you may find that using an online board editor is helpful.</i></p>
     </div>
-    <div className="mb-4 max-w-3xl text-center">
-      <i>This is flavortext.</i>
+    <div className="py-4 max-w-3xl text-center">
+      <ul className="list-none">
+        <li>Player 1 plays <b className="text-red-500">___</b> downwards for 84 points.</li>
+        <li>Player 2 plays ___ for 2 points.</li>
+        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it on my next turn."</i></li>
+        <li>Player 1 plays <b className="text-red-500">___</b>, also making ___, for 11 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 119 points.</li>
+        <li>Player 1 plays ___ for 5 points.</li>
+        <li><i>"That's not one of our answers!" says Player 2. "Don't worry, I'll fix it on my next turn."</i></li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 20 points.</li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 64 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b>, also making ___, for 11 points.</li>
+        <li>Player 1 plays <b className="text-red-500">___</b>, also making ___ and ___, for 26 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 12 points.</li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 19 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 12 points.</li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 20 points.</li>
+        <li>Player 2 plays ___, also making ___ and ___, for 16 points.</li>
+        <li><i>"That's not one of our answers!" says Player 2. "Don't worry, I'll fix it on my next turn."</i></li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 16 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 65 points.</li>
+      </ul>
+    </div>
+    <div className="py-8 flex justify-center">
+      <Grid
+        data={content} 
+        lightBorder={true}
+      />
     </div>
   </div>
 );
