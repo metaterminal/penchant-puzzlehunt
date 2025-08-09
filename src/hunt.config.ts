@@ -50,16 +50,26 @@ export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "playing-with-cards": ["playing-with-markers"],
   "playing-with-letters": ["playing-with-others"],
   "playing-with-markers": ["playing-with-others"],
+  "really-utterly-normal-cryptic": ["youre-missing-something","gas-water-electricity"],
+  "rereading": ["gas-water-electricity", "ladders"],
+  "blank-matchmaker": ["ladders", "youre-missing-something"],
+  "youre-missing-something": ["plainly-indicated", "oh-just-a-criss-cross"],
+  "gas-water-electricity": ["plainly-indicated", "oh-just-a-criss-cross"],
+  "ladders": ["plainly-indicated", "oh-just-a-criss-cross"],
+  "plainly-indicated": ["pen-paper-logic", "petri-dish"],
+  "oh-just-a-criss-cross": ["pen-paper-logic", "petri-dish"]
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
 export const ROUNDS: Round[] = [
   { name: "Meta", puzzles: [
-  "playing-with-places", 
-  "playing-with-words", 
-  "playing-with-cards", 
-  "playing-with-letters", 
-  "playing-with-markers"] },
+    "playing-with-places", 
+    "playing-with-words", 
+    "playing-with-cards", 
+    "playing-with-letters", 
+    "playing-with-markers", 
+    "playing-with-others"
+  ]},
   { name: "Feeders", puzzles: [
     "plainly-indicated",
     "petri-dish",
