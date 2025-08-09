@@ -11,12 +11,12 @@ export const puzzleId = "playing-with-places";
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-  <div>
-    <div className="max-w-3xl space-y-4 text-center">
-      <b>This is a puzzle.</b>
+  <div className="font-medium text-lg/6">
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      You're about to challenge your rich uncle from the UK, but there's no utility in playing him at most things.
     </div>
     <div className="mb-4 max-w-3xl text-center">
-      <i>This is flavortext.</i>
+      You count how many places you can buy. <i>What should you play initially in order to win?</i>
     </div>
   </div>
 );

@@ -11,12 +11,19 @@ export const puzzleId = "playing-with-letters";
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-  <div>
-    <div className="max-w-3xl space-y-4 text-center">
-      <b>This is a puzzle.</b>
+   <div className="font-medium text-lg/6">
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      Good idea!
     </div>
     <div className="mb-4 max-w-3xl text-center">
-      <i>This is flavortext.</i>
+      You put all the tiles back in the Scrabble bag and then make each of the answers separately on the table in front of you.
+    </div>
+    <div className="mb-4 max-w-3xl text-center">
+      <i>How are you going to win this?</i>
+    </div>
+    <br></br>
+    <div className="mb-4 max-w-3xl text-center">
+      18 &ensp;15 &ensp;3 &ensp;5 &ensp;19 &ensp;20 &ensp;4 &ensp;12 &ensp;8 &ensp;22 &ensp;2 &ensp;13 &ensp;21 &ensp;7 &ensp;6 &ensp;14 &ensp;9 &ensp;1 &ensp;17 &ensp;11 &ensp;16 &ensp;10
     </div>
   </div>
 );
