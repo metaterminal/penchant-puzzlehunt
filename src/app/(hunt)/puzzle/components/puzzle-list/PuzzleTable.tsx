@@ -80,7 +80,14 @@ export default function PuzzleTable({
                         href={`/puzzle/${puzzle.id}`}
                         className="grid grid-cols-2 p-2 transition-all hover:bg-white/5"
                       >
-                        <p>{puzzle.name.trim() || "\u200b"}</p>
+                        <span>{puzzle.name.trim()
+                          ? isFeeders
+                            ? <>
+                                <span className="font-extrabold">{puzzle.name.trim()[0]}</span>
+                                {puzzle.name.trim().slice(1)}
+                              </>
+                            : puzzle.name.trim()
+                          : '\u200b'}</span>
                         {isSolved && (
                           <p className="truncate text-ellipsis text-correct-guess">
                             {puzzle.answer}
