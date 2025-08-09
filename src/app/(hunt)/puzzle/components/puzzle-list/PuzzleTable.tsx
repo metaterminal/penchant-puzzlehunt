@@ -15,8 +15,8 @@ const FEEDER_SLUGS = [
   "really-utterly-normal-cryptic",
   "gas-water-electricity",
   "rereading",
-  "blank-matchmaker",
   "pen-paper-logic",
+  "blank-matchmaker",
   "oh-just-a-criss-cross",
   "ladders",
 ];
