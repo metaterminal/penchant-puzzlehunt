@@ -8,6 +8,19 @@ type puzzleList = {
   answer: string;
 }[];
 
+const FEEDER_SLUGS = [
+  "plainly-indicated",
+  "petri-dish",
+  "youre-missing-something",
+  "really-utterly-normal-cryptic",
+  "gas-water-electricity",
+  "rereading",
+  "blank-matchmaker",
+  "pen-paper-logic",
+  "oh-just-a-criss-cross",
+  "ladders",
+];
+
 export default function PuzzleTable({
   availableRounds,
   availablePuzzles,
@@ -19,47 +32,76 @@ export default function PuzzleTable({
 }) {
   return (
     <div>
-      {availableRounds.map((round) => (
-        <div key={round.name}>
-          <h2 className="m-1 pb-2 pt-4 text-center text-xl font-semibold">
-            {round.name}
-          </h2>
-          <div className="w-full overflow-hidden rounded-md text-sm font-medium">
-            <div className="grid grid-cols-2 p-2">
-              <p className="text-secondary-text">Puzzle</p>
-              <p className="text-secondary-text">Answer</p>
-            </div>
-            {availablePuzzles
+      {availableRounds.map((round) => {
+        const isFeeders = round.name === "Feeders";
+
+        const puzzlesToShow = isFeeders
+          ? FEEDER_SLUGS.map((id) =>
+              availablePuzzles.find((p) => p.id === id) ?? {
+                id: id,
+                name: "???",
+                answer: "",
+              },
+            )
+          : availablePuzzles
               .filter((puzzle) => round.puzzles.includes(puzzle.id))
-              .sort((puzzleA, puzzleB) =>
-                META_PUZZLES.includes(puzzleA.id)
-                  ? META_PUZZLES.includes(puzzleB.id)
-                    ? puzzleA.name.localeCompare(puzzleB.name)
+              .sort((a, b) =>
+                META_PUZZLES.includes(a.id)
+                  ? META_PUZZLES.includes(b.id)
+                    ? a.name.localeCompare(b.name)
                     : -1
-                  : META_PUZZLES.includes(puzzleB.id)
-                    ? 1
-                    : puzzleA.name.localeCompare(puzzleB.name),
-              )
-              .map((puzzle) => (
-                <div key={puzzle.id}>
-                  <hr className="w-full" />
-                  <a
-                    href={`/puzzle/${puzzle.id}`}
-                    className="grid grid-cols-2 p-2 transition-all hover:bg-white/5"
-                  >
-                    <p>{puzzle.name.trim() ? puzzle.name : "\u200b"}</p>
-                    {solvedPuzzles.some((sp) => sp.puzzleId === puzzle.id) && (
-                      <p className="truncate text-ellipsis text-correct-guess">
-                        {puzzle.answer}
-                      </p>
+                  : META_PUZZLES.includes(b.id)
+                  ? 1
+                  : a.name.localeCompare(b.name),
+              );
+
+        return (
+          <div key={round.name}>
+            <h2 className="m-1 pb-2 pt-4 text-center text-xl font-semibold">
+              {round.name}
+            </h2>
+            <div className="w-full overflow-hidden rounded-md text-sm font-medium">
+              <div className="grid grid-cols-2 p-2">
+                <p className="text-secondary-text">Puzzle</p>
+                <p className="text-secondary-text">Answer</p>
+              </div>
+
+              {puzzlesToShow.map((puzzle) => {
+                const isUnlocked = puzzle.name !== "???";
+                const isSolved = solvedPuzzles.some(
+                  (sp) => sp.puzzleId === puzzle.id,
+                );
+
+                return (
+                  <div key={puzzle.id}>
+                    <hr className="w-full" />
+                    {isUnlocked ? (
+                      <a
+                        href={`/puzzle/${puzzle.id}`}
+                        className="grid grid-cols-2 p-2 transition-all hover:bg-white/5"
+                      >
+                        <p>{puzzle.name.trim() || "\u200b"}</p>
+                        {isSolved && (
+                          <p className="truncate text-ellipsis text-correct-guess">
+                            {puzzle.answer}
+                          </p>
+                        )}
+                      </a>
+                    ) : (
+                      <div className="grid grid-cols-2 p-2 text-muted">
+                        <p className="italic">???</p>
+                        <p></p>
+                      </div>
                     )}
-                  </a>
-                </div>
-              ))}
-            <hr className="w-full" />
+                  </div>
+                );
+              })}
+
+              <hr className="w-full" />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
