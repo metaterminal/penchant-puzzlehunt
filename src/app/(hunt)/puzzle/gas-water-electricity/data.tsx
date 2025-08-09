@@ -116,6 +116,11 @@ export const inPersonBody = (
         </li>
       </ol>
       </div>
+      <i>What do the circles mean?</i>
+      <div className="text-lg/6 mb-6">
+        Five of the buildings are adjacent to important cells for the installation of connections; 
+        these are marked with flags.
+      </div>
     </div>
   </div>
 );
