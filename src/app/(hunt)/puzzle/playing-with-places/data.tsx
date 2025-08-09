@@ -16,7 +16,7 @@ export const inPersonBody = (
       You're about to challenge your rich uncle from the UK, but there's no utility in playing him at most things.
     </div>
     <div className="mb-4 max-w-3xl text-center">
-      You count how many places you can buy. <i>What should you play initially in order to win?</i>
+      You check your colours and count how many places you can buy. <i>What should you play in order to win?</i>
     </div>
   </div>
 );
