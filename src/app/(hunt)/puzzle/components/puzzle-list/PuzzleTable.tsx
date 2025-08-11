@@ -10,7 +10,7 @@ type puzzleList = {
 
 const FEEDER_SLUGS = [
   "plainly-indicated",
-  "petri-dish",
+  "penchant-word-search",
   "youre-missing-something",
   "reportedly",
   "gas-water-electricity",

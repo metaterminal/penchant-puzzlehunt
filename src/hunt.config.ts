@@ -56,8 +56,8 @@ export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "youre-missing-something": ["plainly-indicated", "oh-just-a-criss-cross"],
   "gas-water-electricity": ["plainly-indicated", "oh-just-a-criss-cross"],
   "ladders": ["plainly-indicated", "oh-just-a-criss-cross"],
-  "plainly-indicated": ["pen-paper-logic", "petri-dish"],
-  "oh-just-a-criss-cross": ["pen-paper-logic", "petri-dish"]
+  "plainly-indicated": ["pen-paper-logic", "penchant-word-search"],
+  "oh-just-a-criss-cross": ["pen-paper-logic", "penchant-word-search"]
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
@@ -72,7 +72,7 @@ export const ROUNDS: Round[] = [
   ]},
   { name: "Feeders", puzzles: [
     "plainly-indicated",
-    "petri-dish",
+    "penchant-word-search",
     "youre-missing-something",
     "reportedly",
     "gas-water-electricity",
