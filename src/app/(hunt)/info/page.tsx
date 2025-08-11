@@ -111,7 +111,7 @@ export default function Page() {
                   className="no-underline hover:underline"
                 >
                   CRUMS Puzzlehunt
-                </Link>, though it is longer.
+                </Link>, though it is longer. Smaller teams be warned!
               </p>
               <p>
                 There will not be a story. Just puzzles.
