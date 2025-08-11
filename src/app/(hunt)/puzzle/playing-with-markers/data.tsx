@@ -44,7 +44,7 @@ export const inPersonBody = (
     <Image src={CARD3} alt="" className="max-w-3xl mb-4" />
     <Image src={CARD4} alt="" className="max-w-3xl mb-4" />
     <Image src={CARD5} alt="" className="max-w-3xl mb-10" />
-    <hr/>
+    <div className="h-1 mb-10 bg-white"></div>
     <Image src={FINAL} alt="" className="max-w-3xl mb-4" />
   </div>
 );
