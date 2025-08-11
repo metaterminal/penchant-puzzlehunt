@@ -41,7 +41,7 @@ export function sanitizeAnswer(answer: any) {
  */
 
 /** Puzzles available at the beginning of the hunt that will never need to be unlocked by the team. */
-export const INITIAL_PUZZLES: string[] = ["playing-with-places", "really-utterly-normal-cryptic", "rereading", "blank-matchmaker"];
+export const INITIAL_PUZZLES: string[] = ["playing-with-places", "reportedly", "rereading", "blank-matchmaker"];
 
 /** Adjacency list for puzzles */
 export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
@@ -50,7 +50,7 @@ export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "playing-with-cards": ["playing-with-markers"],
   "playing-with-letters": ["playing-with-others"],
   "playing-with-markers": ["playing-with-others"],
-  "really-utterly-normal-cryptic": ["youre-missing-something","gas-water-electricity"],
+  "reportedly": ["youre-missing-something","gas-water-electricity"],
   "rereading": ["gas-water-electricity", "ladders"],
   "blank-matchmaker": ["ladders", "youre-missing-something"],
   "youre-missing-something": ["plainly-indicated", "oh-just-a-criss-cross"],
@@ -74,7 +74,7 @@ export const ROUNDS: Round[] = [
     "plainly-indicated",
     "petri-dish",
     "youre-missing-something",
-    "really-utterly-normal-cryptic",
+    "reportedly",
     "gas-water-electricity",
     "rereading",
     "blank-matchmaker",

@@ -12,7 +12,7 @@ const FEEDER_SLUGS = [
   "plainly-indicated",
   "petri-dish",
   "youre-missing-something",
-  "really-utterly-normal-cryptic",
+  "reportedly",
   "gas-water-electricity",
   "rereading",
   "pen-paper-logic",
