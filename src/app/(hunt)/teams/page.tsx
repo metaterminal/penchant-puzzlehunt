@@ -14,6 +14,7 @@ import { teams, solves } from "~/server/db/schema";
 import { REMOTE } from "~/hunt.config";
 import { FormattedTime } from "~/lib/time";
 import { Lock } from "lucide-react";
+import { hints } from "~/server/db/schema";
 
 export const revalidate = 300;
 
@@ -23,6 +24,7 @@ type LeaderboardItem = {
   finishTime: Date | null;
   solves: number;
   lastSolveTime: Date | null;
+  usedHints: boolean;
 };
 
 function Leaderboard({ data }: { data: LeaderboardItem[] }) {
@@ -34,9 +36,6 @@ function Leaderboard({ data }: { data: LeaderboardItem[] }) {
             #
           </TableHead>
           <TableHead className="w-full text-main-header">Team Name</TableHead>
-          <TableHead className="min-w-fit text-center text-main-header">
-            Solved
-          </TableHead>
           <TableHead className="hidden min-w-40 text-center text-main-header sm:table-cell">
             Finish Time
           </TableHead>
@@ -47,16 +46,17 @@ function Leaderboard({ data }: { data: LeaderboardItem[] }) {
           <TableRow key={`${row.id}`} className="hover:bg-inherit">
             <TableCell className="text-center">{index + 1}</TableCell>
             <TableCell className="w-[20em] break-all">
+              {row.finishTime && (
+                <span className="ml-2 rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
+                  🎉🎉🎉
+                </span>
+              )}
               {row.displayName}
-            </TableCell>
-            <TableCell
-              className={
-                row.finishTime
-                  ? "text-center text-yellow-100 sm:text-main-text"
-                  : "text-center"
-              }
-            >
-              {row.solves ?? 0}
+              {row.finishTime && !row.usedHints && (
+                <span className="ml-2 rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
+                  🫧
+                </span>
+              )}
             </TableCell>
             <TableCell className="hidden text-center sm:block">
               <FormattedTime time={row.finishTime} />
@@ -97,11 +97,25 @@ export default async function Home() {
       solves,
       and(eq(solves.teamId, teams.id), lt(solves.solveTime, REMOTE.END_TIME)),
     )
+    .leftJoin(
+      hints,
+      and(eq(hints.teamId, teams.id), lt(hints.requestTime, REMOTE.END_TIME)),
+    )
     .groupBy(teams.id, teams.displayName, teams.finishTime, teams.createTime)
     .orderBy(
       asc(sql`finish_time`),
       desc(sql`solves`),
       asc(sql`last_solve_time`),
+    )
+    .then((rows) =>
+      rows.map((row) => ({
+        id: row.id,
+        displayName: row.displayName,
+        finishTime: row.finishTime,
+        solves: row.solves,
+        lastSolveTime: row.lastSolveTime,
+        usedHints: (row as any).hintCount > 0,
+      })),
     );
 
     const halfTeams: LeaderboardItem[] = await db
@@ -132,11 +146,25 @@ export default async function Home() {
       solves,
       and(eq(solves.teamId, teams.id), lt(solves.solveTime, REMOTE.END_TIME)),
     )
+    .leftJoin(
+      hints,
+      and(eq(hints.teamId, teams.id), lt(hints.requestTime, REMOTE.END_TIME)),
+    )
     .groupBy(teams.id, teams.displayName, teams.finishTime, teams.createTime)
     .orderBy(
       asc(sql`finish_time`),
       desc(sql`solves`),
       asc(sql`last_solve_time`),
+    )
+    .then((rows) =>
+      rows.map((row) => ({
+        id: row.id,
+        displayName: row.displayName,
+        finishTime: row.finishTime,
+        solves: row.solves,
+        lastSolveTime: row.lastSolveTime,
+        usedHints: (row as any).hintCount > 0,
+      })),
     );
 
     const soloTeams: LeaderboardItem[] = await db
@@ -167,11 +195,25 @@ export default async function Home() {
       solves,
       and(eq(solves.teamId, teams.id), lt(solves.solveTime, REMOTE.END_TIME)),
     )
+    .leftJoin(
+      hints,
+      and(eq(hints.teamId, teams.id), lt(hints.requestTime, REMOTE.END_TIME)),
+    )
     .groupBy(teams.id, teams.displayName, teams.finishTime, teams.createTime)
     .orderBy(
       asc(sql`finish_time`),
       desc(sql`solves`),
       asc(sql`last_solve_time`),
+    )
+    .then((rows) =>
+      rows.map((row) => ({
+        id: row.id,
+        displayName: row.displayName,
+        finishTime: row.finishTime,
+        solves: row.solves,
+        lastSolveTime: row.lastSolveTime,
+        usedHints: (row as any).hintCount > 0,
+      })),
     );
 
   const now = new Date();
