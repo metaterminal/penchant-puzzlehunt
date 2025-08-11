@@ -13,7 +13,7 @@ export const puzzleId = "youre-missing-something";
 export const inPersonBody = (
   <div>
     <div className="max-w-3xl space-y-4 text-center">
-      <div className="text-right">
+      <div className="text-center">
         <ul className="list-none p-0 m-0">
           <li>Santa Claus wishes a Glory Christmas to the entire world. (6)</li>
           <li>(5 5)</li>
