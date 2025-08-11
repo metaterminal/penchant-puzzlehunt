@@ -30,7 +30,7 @@ export const inPersonBody = (
 
     <Image src={GRID} alt="" className="max-w-xl mb-4 mx-auto" />
     <div className="mb-4 text-center">
-      <a target="_blank" href="https://swaroopg92.github.io/penpa-edit/?m=solve&p=7VVNb5tKFN37V1gjdTcLZgDHsEvcNJs0Teo8RRGyojEmMQo2KcZNHlby23M/pjVjqPT01O4qzMzlcOeew8C53nzbmiqTysefP5aeVHCEvqZTBQGdnj2u87rI4uGZ2XzQk+GNqbMKA7NeDE+LLK2rPM3rf+Xxtl6WVTy8zNbp0qxrKeWXC3lvik02SGyt2SARSkih4VRi9tZM3xIhpJoNds3XeNfcxcnsVTb/7MPxPpzGO+FHIg6kCDyeFE8+TwFPRzSFI57GNI14wUjzFNJ0xFcRL1Aeo0pzVaW5rNLMqSybsnQqsPmWUIU2z1ZXI4uPbX7E67ViZdrW1/rHNUvVPmvVPsvTllfb59OWV1teHdh1AfLDPl3APkVQIxET2FraaHhIIEvESQsAVidD+cCTiOMWgowuEgKni0Sg0imsItDnVo5AYSsHNKp4B+MtvlF8J0kkRZpXaZHdTYXUsMYf98LBGEV24AjfYRdWXl9xIP5E9JrGa/i6ZOPT+JFGj8aQxnPKOaXxhsYJjQGNI8o5wu9zMEj8Efmo7wj/3vk/d6BfQGsQm7K422yre5NmIqaOIglbb1fzrHKgoiyfinzt5uUP67LKem8hmC0e+vLnZbU4qP5sisIBuJM6EH9qDgQt0rk2VVU+O8jK1EsHmJsauu5mmT+5lbJ17QqojSvRPJoDttX+mV8H4kXQmUDvlwH23ShurmRzBgZtdWbZXEHj/Rw3U+y72KMDMgMlgbXAET/DG7qP0YRB5UF8YWMIbyF0jNlcxklzLQXynNBqDMWq/A5CWQdep+VqDo+SiNZm8J3NdlE+bm2uQkcfH8hFXivX38vFkOVi1CMXxbXknnOh3yo3mr3ya/D+458et/R20/xDHezFWq2set0GcI/hAO01lsU73gK84yIk7BoJ0B4vAXpoJ4C6jgKwYyrAfuErrHpoLVR16C6k6hgMqdoeg55F0Ts="><u>(Link to penpa version.)</u></a>
+      <a target="_blank" href="https://tinyurl.com/24b4pwj8"><u>(Link to penpa version.)</u></a>
     </div>
     <div className="max-w-3xl mb-4 text-lg/10">
       <i>What do A, B, and C refer to on the diagram?</i>
