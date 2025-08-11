@@ -84,7 +84,9 @@ export default function Page() {
             >
               <h2>What will the hunt be like?</h2>
               <p>
-                The hunt consists of one round with ten feeder puzzles. The 
+                The hunt consists of one round with ten feeder puzzles, 
+                and a meta accessible from the start. (According to Penchant Ltd. 
+                best practices, take a look at the meta early!) The 
                 feeder puzzles will have the following mechanics: 
               </p>
               <ul>
@@ -100,15 +102,16 @@ export default function Page() {
                 <li>Word ladder</li>
               </ul>
               <p>
-                Some puzzles will be more challenging; some puzzles will be more 
-                accessible. We think that the overall hunt is similar in difficulty 
+                These puzzles may vary in size and difficulty, but on the 
+                whole, we expect the hunt to be challenging to complete. 
+                We think that the overall hunt is similar in difficulty 
                 to{" "}
                 <Link
                   href="https://crumspuzzlehunt.com/"
                   className="no-underline hover:underline"
                 >
                   CRUMS Puzzlehunt
-                </Link>, though it is slightly larger.
+                </Link>, though it is longer. Smaller teams be warned!
               </p>
               <p>
                 There will not be a story. Just puzzles.
