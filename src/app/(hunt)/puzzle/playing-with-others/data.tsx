@@ -17,7 +17,7 @@ export const puzzleId = "playing-with-others";
 export const inPersonBody = (
    <div className="font-medium text-lg/6">
     <div className="max-w-3xl mb-4 text-center">
-      You've mastered strategy; now you just need to learn Diplomacy.
+      You've mastered strategy; now you just need to learn diplomacy.
     </div>
     <div className="mb-4 max-w-3xl text-center">
       <i>How can you ensure that you always win?</i>
