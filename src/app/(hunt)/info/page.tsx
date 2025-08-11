@@ -102,15 +102,16 @@ export default function Page() {
                 <li>Word ladder</li>
               </ul>
               <p>
-                Some puzzles will be more challenging; some puzzles will be more 
-                accessible. We think that the overall hunt is similar in difficulty 
+                These puzzles may vary in size and difficulty, but on the 
+                whole, we expect the hunt to be challenging to complete. 
+                We think that the overall hunt is similar in difficulty 
                 to{" "}
                 <Link
                   href="https://crumspuzzlehunt.com/"
                   className="no-underline hover:underline"
                 >
                   CRUMS Puzzlehunt
-                </Link>, though it is slightly larger.
+                </Link>, though it is longer.
               </p>
               <p>
                 There will not be a story. Just puzzles.
