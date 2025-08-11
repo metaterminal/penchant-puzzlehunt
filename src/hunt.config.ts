@@ -41,23 +41,20 @@ export function sanitizeAnswer(answer: any) {
  */
 
 /** Puzzles available at the beginning of the hunt that will never need to be unlocked by the team. */
-export const INITIAL_PUZZLES: string[] = ["playing-with-places", "reportedly", "rereading", "blank-matchmaker"];
+export const INITIAL_PUZZLES: string[] = ["playing-with-places", "penchant-word-search", "pen-paper-logic", "blank-matchmaker", "ladders"];
 
 /** Adjacency list for puzzles */
 export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
-  "playing-with-places": ["playing-with-words", "playing-with-cards"], 
+  "playing-with-places": ["playing-with-words", "playing-with-cards", "playing-with-markers"], 
   "playing-with-words": ["playing-with-letters"], 
-  "playing-with-cards": ["playing-with-markers"],
-  "playing-with-letters": ["playing-with-others"],
-  "playing-with-markers": ["playing-with-others"],
-  "reportedly": ["youre-missing-something","gas-water-electricity"],
-  "rereading": ["gas-water-electricity", "ladders"],
-  "blank-matchmaker": ["ladders", "youre-missing-something"],
-  "youre-missing-something": ["plainly-indicated", "oh-just-a-criss-cross"],
-  "gas-water-electricity": ["plainly-indicated", "oh-just-a-criss-cross"],
-  "ladders": ["plainly-indicated", "oh-just-a-criss-cross"],
-  "plainly-indicated": ["pen-paper-logic", "penchant-word-search"],
-  "oh-just-a-criss-cross": ["pen-paper-logic", "penchant-word-search"]
+  "penchant-word-search": ["youre-missing-something", "reportedly"],
+  "pen-paper-logic": ["reportedly", "gas-water-electricity"],
+  "blank-matchmaker": ["gas-water-electricity", "oh-just-a-criss-cross"],
+  "ladders": ["oh-just-a-criss-cross","youre-missing-something"],
+  "reportedly": ["plainly-indicated", "rereading"],
+  "youre-missing-something": ["plainly-indicated", "rereading"],
+  "gas-water-electricity": ["plainly-indicated", "rereading"],
+  "oh-just-a-criss-cross": ["plainly-indicated", "rereading"]
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
