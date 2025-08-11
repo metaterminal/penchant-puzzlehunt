@@ -47,13 +47,13 @@ function Leaderboard({ data }: { data: LeaderboardItem[] }) {
             <TableCell className="text-center">{index + 1}</TableCell>
             <TableCell className="w-[20em] break-all">
               {row.finishTime && (
-                <span className="ml-2 rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
+                <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-green-800">
                   🎉🎉🎉
                 </span>
-              )}
+              )}{" "}
               {row.displayName}
               {row.finishTime && !row.usedHints && (
-                <span className="ml-2 rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800">
+                <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-green-800">
                   🫧
                 </span>
               )}
