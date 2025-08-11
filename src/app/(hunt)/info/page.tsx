@@ -110,6 +110,9 @@ export default function Page() {
                   CRUMS Puzzlehunt
                 </Link>, though it is slightly larger.
               </p>
+              <p>
+                There will not be a story. Just puzzles.
+              </p>
             </TOCSection>
 
             <TOCSection
@@ -186,6 +189,10 @@ export default function Page() {
                 You start with 0 hints, and will receive 2 more for every 24 
                 hours elapsed since event start. You can only have one open 
                 hint request at a time. 
+              </p>
+              <p>
+                Teams that finish without using hints (a "clean" solve) will be 
+                displayed on the leaderboard with a special badge!
               </p>
             </TOCSection>
             <TOCSection sectionId={5} tocTitle="Who is running this hunt?">
