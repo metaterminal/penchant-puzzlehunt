@@ -49,13 +49,13 @@ export const inPersonBody = (
       <ul className="list-none">
         <li>Player 1 plays <b className="text-red-500">___</b> downwards for 84 points.</li>
         <li>Player 2 plays ___ for 2 points.</li>
-        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it on my next turn."</i></li>
-        <li>Player 1 plays <b className="text-red-500">___</b>, also making ___, for 11 points.</li>
-        <li>Player 2 plays <b className="text-red-500">___</b> for 119 points.</li>
+        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it on my next now."</i></li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 119 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b>, also making ___, for 11 points.</li>
         <li>Player 1 plays ___ for 5 points.</li>
-        <li><i>"That's not one of our answers!" says Player 2. "Don't worry, I'll fix it on my next turn."</i></li>
-        <li>Player 2 plays <b className="text-red-500">___</b> for 20 points.</li>
-        <li>Player 1 plays <b className="text-red-500">___</b> for 64 points.</li>
+        <li><i>"That's not one of our answers!" says Player 2. "Don't worry, I'll fix it now."</i></li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 64 points.</li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 20 points.</li>
         <li>Player 2 plays <b className="text-red-500">___</b>, also making ___, for 11 points.</li>
         <li>Player 1 plays <b className="text-red-500">___</b>, also making ___ and ___, for 26 points.</li>
         <li>Player 2 plays <b className="text-red-500">___</b> for 12 points.</li>
@@ -63,9 +63,9 @@ export const inPersonBody = (
         <li>Player 2 plays <b className="text-red-500">___</b> for 12 points.</li>
         <li>Player 1 plays <b className="text-red-500">___</b> for 20 points.</li>
         <li>Player 2 plays ___, also making ___ and ___, for 16 points.</li>
-        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it on my next turn."</i></li>
-        <li>Player 1 plays <b className="text-red-500">___</b> for 16 points.</li>
-        <li>Player 2 plays <b className="text-red-500">___</b> for 65 points.</li>
+        <li><i>"That's not one of our answers!" says Player 1. "Don't worry, I'll fix it now."</i></li>
+        <li>Player 1 plays <b className="text-red-500">___</b> for 65 points.</li>
+        <li>Player 2 plays <b className="text-red-500">___</b> for 16 points.</li>
       </ul>
     </div>
     <div className="py-8 flex justify-center">

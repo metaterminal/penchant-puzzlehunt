@@ -158,12 +158,12 @@ export const inPersonBody = (
       <table className="w-full">
         <thead>
           <tr>
-            <th colSpan={2} className="text-center">Round 1</th>
+            <th colSpan={2} className="text-center">Round 5</th>
           </tr>
         </thead>
         <tbody>
           <tr className="h-10">
-            <td>P5</td>
+            <td>P1</td>
             <td className="max-w-xs">High card (A). (It'd be a straight, if only my A were a 3!)</td>
           </tr>
           <tr className="h-10">
@@ -213,6 +213,30 @@ export const inPersonBody = (
           <tr className="h-10">
             <td>You</td>
             <td className="max-w-xs">???</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div className="text-xl text-center max-w-md mx-auto mb-4">
+      <table className="w-full">
+        <tbody>
+          <tr className="h-10">
+            <td>▮<span className="text-base">▮</span></td>
+            <td><span className="text-base">▮</span>▮</td>
+            <td><span className="text-base">▮</span>▮</td>
+            <td>▮<span className="text-base">▮</span></td>
+            <td><span className="text-base">▮</span>▮</td>
+            <td><span className="text-base">▮</span>▮</td>
+            <td>▮<span className="text-base">▮</span></td>
+          </tr>
+          <tr className="h-10">
+            <td>5</td>
+            <td>1</td>
+            <td>6</td>
+            <td>3</td>
+            <td>2</td>
+            <td>4</td>
+            <td>3</td>
           </tr>
         </tbody>
       </table>

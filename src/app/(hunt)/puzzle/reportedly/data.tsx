@@ -4,7 +4,7 @@
  * Feel free to make this creative, because the route to the puzzle will be
  * example.com/puzzle/puzzleId.
  */
-export const puzzleId = "really-utterly-normal-cryptic";
+export const puzzleId = "reportedly";
 
 import Crossword, { X, _, Borders, Colors } from "~/app/(hunt)/puzzle/components/puzzle/crossword"
 
@@ -48,7 +48,7 @@ export const inPersonBody = (
         Ruffles, Lay's, and beers (4)<br />
         Code word incited a laugh (4)<br />
         Famous tennis player is in nationals (4)<br />
-        The first person had chased us away (5)<br />
+        First person had chased us away (5)<br />
         Oddly, boar laughed with kid (4)<br />
         Decapitated informant after lifting bottom part of the head (4)<br />
         Voiceless gods created resting places (4)<br />
@@ -68,9 +68,9 @@ export const inPersonBody = (
         Transport dense mixture (4)<br />
         I followed sign leading to mountain (5)<br />
         Slides, going through unused expanse in reverse (5)<br />
-        Devoted fan is of partially mixed ancestry (4)<br />
+        Devoted fan hides in annexed Andorra (4)<br />
         Cite uplifting Tchaikovsky overtures and the like (4)<br />
-        Song introduces a fish (4)
+        Song with a fish (4)
       </div>
     </div>
     
