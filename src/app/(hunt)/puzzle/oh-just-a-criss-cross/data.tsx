@@ -6,15 +6,12 @@
  */
 export const puzzleId = "oh-just-a-criss-cross";
 
-import { cn } from "~/lib/utils";
-
 /**
  * The body renders above the guess submission form. Put flavor text, images,
  * and interactive puzzle components here.
  */
 
 import Grid from "~/app/(hunt)/puzzle/components/puzzle/grid"
-// import Crossword, { X, _, Borders, Colors } from "~/app/(hunt)/puzzle/components/puzzle/crossword"
 
 const lt = '⇦'
 const rt = '⇨'

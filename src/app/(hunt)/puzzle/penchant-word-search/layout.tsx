@@ -2,7 +2,7 @@ import { puzzleId, solutionBody } from "./data";
 import DefaultHeader from "~/app/(hunt)/puzzle/components/puzzle/DefaultHeader";
 
 export const metadata = {
-  title: "Penchant Word Search",
+  title: "Penchant Word Search Generator™",
 };
 
 export default async function RootLayout({
