@@ -34,7 +34,7 @@ const content = [
 ]
 
 export const inPersonBody = (
-  <div>
+  <div className="font-medium text-lg/6">
     <div className="max-w-3xl space-y-4 text-center">
       <p>
         You're playing Scrabble (using the latest CSW24 wordlist) -- and, 

@@ -195,7 +195,7 @@ const G2_shade = [
 ]
 
 export const inPersonBody = (
-  <div>
+  <div className="font-medium text-lg/6">
     <div className="grid grid-rows-2 justify-center gap-0 py-10">
 
       {/* grid 1 */}
@@ -209,7 +209,7 @@ export const inPersonBody = (
             />
         </div>
           <div className="mt-4 lg:mt-0">
-            <ul className="space-y-1 text-sm list-none">
+            <ul className="space-y-1 list-none">
               <li>1) 47 34 34</li>
               <li>2) 41 40 52</li>
               <li>3) 33 52 38</li>
@@ -251,7 +251,7 @@ export const inPersonBody = (
           />
         </div>
         <div className="mt-4 lg:mt-0">
-          <ul className="space-y-1 text-sm list-none">
+          <ul className="space-y-1 list-none">
             <li>27) 9 16 13</li>
             <li>28) 17 2 26</li>
             <li>29) 5 11 1 8</li>

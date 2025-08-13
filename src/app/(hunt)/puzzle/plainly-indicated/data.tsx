@@ -25,7 +25,7 @@ const format = [
 ]
 
 export const inPersonBody = (
-  <div>
+  <div className="font-medium text-lg/6">
     <div className="max-w-3xl space-y-4 text-center">
       <div className="py-4">
         <ul className="list-none">
