@@ -60,8 +60,15 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 
-const BoldRed = ({ children }) => <span className="text-red-500 font-mono font-bold">{children}</span>;
-const BoldYellow = ({ children }) => <span className="text-yellow-500 font-mono font-bold">{children}</span>;
+
+const BoldRed = ({ children }: { children?: React.ReactNode }) => (
+  <span className="text-red-500 font-bold ">{children}</span>
+);
+
+const BoldYellow = ({ children }: { children?: React.ReactNode }) => (
+  <span className="text-yellow-500 font-bold">{children}</span>
+);
+
 const tableContent = [
   { col1: "CHEF", col2: "2433", col3: "(2+4)^3-3", col4: "213", col5: "Algeria", col6: "DZA" },
   { col1: "STALE", col2: "78253", col3: "(-7+8)*2*5^3", col4: "250", col5: "Rwanda", col6: "RWA" },
@@ -128,7 +135,7 @@ export const solutionBody = (
         </tbody>
       </table>
       <p>Four of the answers contain these capitals, separated by one or two letters:</p>
-      <ul className="list-none font-mono">
+      <ul className="list-none">
         <li><BoldRed>O</BoldRed>[ST]<BoldRed>RACI</BoldRed>ze</li>
         <li><BoldRed>POL</BoldRed>[A]<BoldRed>RITI</BoldRed>es</li>
         <li><BoldRed>TAI</BoldRed>[L]<BoldRed>PIE</BoldRed>ce</li>
@@ -138,7 +145,7 @@ export const solutionBody = (
 
       <p><b>Meta 3:</b></p>
       <p>Four of the answers end with a pattern of two pairs of letters and one other letter.</p>
-      <ul className="list-none font-mono">
+      <ul className="list-none">
         <li>dr<BoldRed>O</BoldRed><BoldYellow>P</BoldYellow><BoldRed>OFF</BoldRed></li>
         <li>ciga<BoldYellow>R</BoldYellow><BoldRed>ETTE</BoldRed></li>
         <li>me<BoldRed>I</BoldRed><BoldYellow>O</BoldYellow><BoldRed>SIS</BoldRed></li>
@@ -148,7 +155,7 @@ export const solutionBody = (
 
       <p><b>Meta 4:</b></p>
       <p>Four of the answers consist of a four-letter word and a seven-letter word containing a four-letter word. We can take the eigenletters between the four-letter words.</p>
-      <ul className="list-none font-mono">
+      <ul className="list-none">
         <li><BoldYellow>L</BoldYellow>EAD CO<BoldYellow>L</BoldYellow><BoldRed>ORE</BoldRed>D</li>
         <li>SH<BoldYellow>A</BoldYellow>W T<BoldRed>HE</BoldRed><BoldYellow>A</BoldYellow><BoldRed>T</BoldRed>RE</li>
         <li>W<BoldYellow>I</BoldYellow>LD JAS<BoldRed>M</BoldRed><BoldYellow>I</BoldYellow><BoldRed>NE</BoldRed></li>
