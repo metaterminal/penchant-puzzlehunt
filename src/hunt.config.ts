@@ -45,8 +45,9 @@ export const INITIAL_PUZZLES: string[] = ["playing-with-places", "penchant-word-
 
 /** Adjacency list for puzzles */
 export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
-  "playing-with-places": ["playing-with-words", "playing-with-cards", "playing-with-markers"], 
-  "playing-with-words": ["playing-with-letters"], 
+  "playing-with-places": ["playing-with-words", "playing-with-cards"], 
+  "playing-with-words": ["playing-with-letters", "playing-with-markers"], 
+  "playing-with-cards": ["playing-with-markers"], 
   "penchant-word-search": ["youre-missing-something", "reportedly"],
   "pen-paper-logic": ["reportedly", "gas-water-electricity"],
   "blank-matchmaker": ["gas-water-electricity", "oh-just-a-criss-cross"],
@@ -54,7 +55,9 @@ export const PUZZLE_UNLOCK_MAP: Record<string, string[]> = {
   "reportedly": ["plainly-indicated", "rereading"],
   "youre-missing-something": ["plainly-indicated", "rereading"],
   "gas-water-electricity": ["plainly-indicated", "rereading"],
-  "oh-just-a-criss-cross": ["plainly-indicated", "rereading"]
+  "oh-just-a-criss-cross": ["plainly-indicated", "rereading"],
+  "plainly-indicated": ["youre-missing-something", "reportedly", "gas-water-electricity", "oh-just-a-criss-cross"],
+  "rereading": ["youre-missing-something", "reportedly", "gas-water-electricity", "oh-just-a-criss-cross"]
 };
 
 /** List of puzzles in each round. Each puzzle must be in a round. **/
