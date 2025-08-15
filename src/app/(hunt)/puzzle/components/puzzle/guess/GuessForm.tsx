@@ -66,8 +66,8 @@ export default function GuessForm({
       if (result && result.hasFinishedHunt) {
         toast({
           className: "bg-emerald-300",
-          title: "You won the bloscar!",
-          description: "Congratulations on completing BPH 2025 🥳!",
+          title: "Congratulations on completing Penchant Puzzlehunt 🥳!",
+          // description: "Congratulations on completing Penchant Puzzlehunt 🥳!",
         });
       }
       form.reset();

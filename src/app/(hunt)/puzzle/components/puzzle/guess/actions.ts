@@ -209,6 +209,22 @@ export async function handleSolve(
     await tx.insert(unlocks).values(newUnlocks).onConflictDoNothing();
   }
 
+  // hopefully unlock final meta after the 5 normal metas are solved 
+  const prereqs = ["playing-with-places", "playing-with-words", "playing-with-cards", "playing-with-letters", "playing-with-markers"];
+  if (prereqs) {
+    const solvedPuzzles = await tx.select().from(solves).where(eq(solves.teamId, teamId));
+    const solvedIds = solvedPuzzles.map(s => s.puzzleId);
+    
+    const allPrereqsMet = prereqs.every(req => solvedIds.includes(req));
+    if (allPrereqsMet) {
+      await tx.insert(unlocks).values({
+        teamId,
+        puzzleId: "playing-with-others",
+        unlockTime: currDate,
+      }).onConflictDoNothing();
+    }
+  }
+
   // Check if the team has just completed the hunt
   // by solving the six metas
   if (META_PUZZLES.includes(puzzleId)) {
