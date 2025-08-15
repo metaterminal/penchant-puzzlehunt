@@ -85,7 +85,7 @@ export const inPersonBody = (
             <td><Crossword data={clue10_data} cellWidth={45} cellHeight={45} /></td>
           </tr>
           <tr>
-            <td className="align-top pr-6">Group of letters found on old game consoles</td>
+            <td className="align-top pr-6">Group of letters associated with an old game console</td>
             <td><Crossword data={clue11_data} cellWidth={45} cellHeight={45} /></td>
           </tr>
           <tr>

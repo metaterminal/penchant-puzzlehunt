@@ -15,7 +15,7 @@ import { Monospace, Answerize } from "~/app/(hunt)/puzzle/components/puzzle/mono
 export const inPersonBody = (
    <div className="font-medium text-lg/6">
     <div className="max-w-3xl mb-4 text-center">
-      Standard word ladder rules apply; each word is off by one from the previous.
+      Word ladder rules apply; each word is off by one from the previous.
     </div>
     <div className="w-full text-center">
       <span className="text-2xl">Region</span><br />

@@ -2,6 +2,10 @@
 import PuzzleTable from "./PuzzleTable";
 import EventTable from "./event/EventTable";
 import { Round } from "~/hunt.config";
+import Image from "next/image";
+
+import img1 from "./img1.png";
+import img2 from "./img2.png";
 
 export type AvailablePuzzle = {
   unlockTime: Date | null;
@@ -53,15 +57,22 @@ export default function PuzzleListPage({
         }
       >
         <div className="mx-auto mb-6 flex w-full max-w-3xl grow flex-col items-center p-4 pt-6">
-          <h1 className="mb-2">Puzzles</h1>
 
           {hasFinishedHunt && (
-            <div>
-              <p className="text-base italic text-main-text">
-                FIXME FINISHING{" "}
+            <div className="space-y-4">
+              <Image src={img1} alt="" className="w-full max-w-3xl mx-auto mb-4" />
+              <p className="text-6xl text-center italic mb-4">Thanks for Playing!</p>
+              <Image src={img2} alt="" className="w-full max-w-3xl mx-auto mb-4" />
+              <p className="text-xl italic text-main-text text-center">
+                🎉🎉🎉 Congratulations on finishing Penchant Puzzlehunt! 🎉🎉🎉{" "}
+              </p>
+              <p>We are thrilled could join us for this exciting anniversary celebration, a milestone in Penchant's history. You are now welcome to 
+                join the finishers Discord [LINK FIXME]. We also welcome feedback, which you can submit with the form at the top of the site. 
               </p>
             </div>
           )}
+
+          <h1 className="my-2">Puzzles</h1>
 
           {/* Puzzle table */}
           <div className="w-full">
