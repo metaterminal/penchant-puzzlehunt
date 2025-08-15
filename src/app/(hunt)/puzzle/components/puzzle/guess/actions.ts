@@ -142,7 +142,7 @@ export async function handleGuess(puzzleId: string, guess: string) {
     });
   } catch (e) {
     const error = ensureError(e);
-    const errorMessage = `🐛 Error inserting solve for puzzle ${puzzleId} for team ${teamId}: ${error.message} <@&1385392344676827215>`;
+    const errorMessage = `🐛 Error inserting solve for puzzle ${puzzleId} for team ${teamId}: ${error.message}`;
     sendBotMessage(errorMessage, "dev");
     return { error: "An unexpected error occurred. Please try again." };
   }
