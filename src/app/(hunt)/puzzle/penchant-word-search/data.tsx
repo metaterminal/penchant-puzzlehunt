@@ -40,7 +40,7 @@ const gridContent = [
  * The `solutionBody` renders in the solution page.
  * If there are no solutions available, set it null.
  */
-export const solutionBody = (
+export const solutionBody = null; /* (
   <div className="max-w-3xl space-y-4">
     <p>
       This puzzle takes the form of an interactive word search generator. It consists of a dynamic 6x6 grid of numbers 
@@ -130,7 +130,7 @@ export const solutionBody = (
     </p>
 
   </div>
-);
+);*/
 
 /**
  * The `authors` string renders below the `solutionBody`.

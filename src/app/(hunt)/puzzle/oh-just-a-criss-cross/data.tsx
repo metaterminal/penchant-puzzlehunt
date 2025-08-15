@@ -353,7 +353,7 @@ const tableContent2 = [
 ];
 
 
-export const solutionBody = (
+export const solutionBody = null; /*(
   <div className="max-w-3xl space-y-4">
     <p>Each set of "clues" is self-referential to the other set, but using only the first letters. 
       Therefore this turns into a cryptogram, treating the replaced letters as a substitution cipher.</p>
@@ -455,7 +455,7 @@ export const solutionBody = (
     <p>Together, this gives the answer <Answerize>WILD JASMINE</Answerize>.</p>
 
   </div>
-);
+);*/
 
 /**
  * The `authors` string renders below the `solutionBody`.

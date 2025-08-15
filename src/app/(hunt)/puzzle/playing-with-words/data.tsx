@@ -144,7 +144,7 @@ const shade2 = [
   ['','','','','','','','','','','','','','',''],
 ]
 
-export const solutionBody = (
+export const solutionBody = null; /*(
   <div className="max-w-3xl space-y-4">
     <p>This meta uses the 13 individual words from the 10 feeder answers as Scrabble plays. The full game is as follows:</p>
 
@@ -186,7 +186,7 @@ export const solutionBody = (
     </div>
     <p>In order, the numbered cells spell out <Answerize>IT'S IN THE BAG</Answerize>.</p>
   </div>
-);
+);*/
 
 /**
  * The `authors` string renders below the `solutionBody`.

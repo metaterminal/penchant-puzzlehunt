@@ -95,7 +95,8 @@ const cipherText = [
 ]
 
 
-export const solutionBody = (
+export const solutionBody = null; 
+/*(
   <div className="max-w-3xl space-y-4">
     <p>Start by solving the cryptograms, taking note of the cipher keys:</p>
     <p><b>Solved cryptogram</b></p>
@@ -145,7 +146,7 @@ export const solutionBody = (
     />
     <p>The clue resolves to <Answerize>IVORY</Answerize>.</p>
   </div>
-);
+);/*
 
 /**
  * The `authors` string renders below the `solutionBody`.

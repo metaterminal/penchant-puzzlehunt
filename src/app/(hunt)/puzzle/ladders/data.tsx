@@ -102,7 +102,9 @@ export const remoteBody = inPersonBody;
  * The `solutionBody` renders in the solution page.
  * If there are no solutions available, set it null.
  */
-export const solutionBody = (
+export const solutionBody = null;
+
+/*(
   <div className="max-w-3xl space-y-4">
     <p>
       In the first six ladders, each word is "off by one" from the previous in one of seven different ways:
@@ -121,7 +123,6 @@ export const solutionBody = (
     <p>
       Using the clues above each set, each transformation can be mapped to a letter:
     </p>
-    {/* table 1 */}
     <p className="text-center"><b>Region</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -165,7 +166,6 @@ export const solutionBody = (
         </tr>
       </tbody>
     </table>
-    {/* table 2 */}
     <p className="text-center"><b>Piece of paper</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -209,7 +209,6 @@ export const solutionBody = (
         </tr>
       </tbody>
     </table>
-    {/* table 3 */}
     <p className="text-center"><b>Give one's word</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -259,7 +258,6 @@ export const solutionBody = (
         </tr>
       </tbody>
     </table>
-    {/* table 4 */}
     <p className="text-center"><b>In that place</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -309,7 +307,6 @@ export const solutionBody = (
         </tr>
       </tbody>
     </table>
-    {/* table 5 */}
     <p className="text-center"><b>In that place</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -359,8 +356,6 @@ export const solutionBody = (
         </tr>
       </tbody>
     </table>
-
-    {/* table 6 */}
     <p className="text-center"><b>Encircle, as with a lei</b></p>
     <table className="table-auto border-collapse border border-gray-400 w-full">
       <thead className="*:border *:border-gray-400 *:px-2 *:py-1 *:text-left">
@@ -514,7 +509,7 @@ export const solutionBody = (
       Converting the transformations to letters, we get the answer <Answerize>SHAW THEATRE</Answerize>.
     </p>
   </div>
-);
+);*/
 
 /**
  * The `authors` string renders below the `solutionBody`.
