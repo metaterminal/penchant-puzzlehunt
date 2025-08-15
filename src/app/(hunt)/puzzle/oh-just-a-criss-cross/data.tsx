@@ -283,6 +283,10 @@ export const inPersonBody = (
         </div>
       </div>
 
+    <div className="max-w-3xl mb-4 mt-8 text-center">
+      <a target="_blank" href="https://docs.google.com/spreadsheets/d/1dKAvLzcH6ZFDWr0Mu5R54Bz8dqLi-54zn43xAkYYqH0/edit?usp=sharing"><u>(Link to editable version.)</u></a>
+    </div>
+
     </div>
   </div>
 );
