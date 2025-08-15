@@ -69,6 +69,7 @@ export default function PuzzleListPage({
               <p>We are thrilled could join us for this exciting anniversary celebration, a milestone in Penchant's history. You are now welcome to 
                 join the <a href="https://discord.gg/zgS5jJuY57" className="underline">finishers Discord</a>. We also welcome any feedback, which you can submit with the form at the top of the site. 
               </p>
+              <p>If you have any lingering questions about the hunt you'd like a Penchant representative to answer, check out their <a href="https://bsky.app/profile/tazarian.bsky.social" className="underline">Bluesky</a>!</p>
             </div>
           )}
 
