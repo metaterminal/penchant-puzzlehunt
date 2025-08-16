@@ -84,7 +84,7 @@ export default function Page() {
             >
               <h2>What will the hunt be like?</h2>
               <p>
-                The hunt consists of one round with ten feeder puzzles, 
+                The hunt contains one round with ten feeder puzzles, 
                 and a meta accessible from the start. (According to Penchant Ltd. 
                 best practices, take a look at the meta early!) The 
                 feeder puzzles will have the following mechanics: 
