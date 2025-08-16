@@ -107,7 +107,7 @@ export const inPersonBody = (
     <Image src={GRID} alt="" className="max-w-xl my-4" />
 
     <div className="max-w-xl font-medium mb-8 text-center">
-      Consider cells that are shaded twice, and only twice. (Unused Country Road cells are considered shaded.)
+      Consider cells that are unused in the loop twice, and only twice.
     </div>
   </div>
 );
