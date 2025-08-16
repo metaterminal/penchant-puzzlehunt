@@ -100,7 +100,7 @@ export const inPersonBody = (
         <tbody>
           <tr className="h-10">
             <td>P1</td>
-            <td className="max-w-xs">Pair (10s), K/J/5 kickers.</td>
+            <td className="max-w-xs">Pair (10s), K/J/5 kickers... no, wait, K-high spades flush is better.</td>
           </tr>
           <tr className="h-10">
             <td>P2</td>
