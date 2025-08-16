@@ -155,7 +155,7 @@ export async function handleGuess(puzzleId: string, guess: string) {
 
   // If the team has finished the hunt, message the finish channel
   if (hasFinishedHunt) {
-    const finishMessage = `🏆 **Hunt Finish** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId}) ${new Date() < REMOTE.END_TIME ? "<@&1396541451948658698>" : ""}`;
+    const finishMessage = `🏆 **Hunt Finish** by [${teamId}](https://penchantpuzzlehunt.com/teams/${teamId})`;
     await sendBotMessage(finishMessage, "interaction");
   }
 
