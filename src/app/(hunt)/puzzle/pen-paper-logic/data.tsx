@@ -120,14 +120,14 @@ export const remoteBody = inPersonBody;
  * The `solutionBody` renders in the solution page.
  * If there are no solutions available, set it null.
  */
-export const solutionBody = null; /*(
+export const solutionBody = (
   <div className="max-w-3xl">This is the solution.</div>
-);*/
+);
 
 /**
  * The `authors` string renders below the `solutionBody`.
  */
-export const authors = "Josiah Carberry";
+export const authors = "Thomas Gordon, Zach Barnett";
 
 /**
  * The `copyText` should provide a convenient text representation of the puzzle

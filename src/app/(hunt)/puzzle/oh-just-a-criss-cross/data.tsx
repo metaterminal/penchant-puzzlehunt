@@ -357,7 +357,6 @@ const tableContent2 = [
 ];
 
 
-// export const solutionBody = null; /*(
 export const solutionBody = (
   <div className="max-w-3xl space-y-4">
     <p>Each set of "clues" is self-referential to the other set, but using only the first letters. 

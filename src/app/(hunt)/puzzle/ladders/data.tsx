@@ -102,9 +102,7 @@ export const remoteBody = inPersonBody;
  * The `solutionBody` renders in the solution page.
  * If there are no solutions available, set it null.
  */
-export const solutionBody = null;
-
-/*(
+export const solutionBody = (
   <div className="max-w-3xl space-y-4">
     <p>
       In the first six ladders, each word is "off by one" from the previous in one of seven different ways:
@@ -509,7 +507,7 @@ export const solutionBody = null;
       Converting the transformations to letters, we get the answer <Answerize>SHAW THEATRE</Answerize>.
     </p>
   </div>
-);*/
+);
 
 /**
  * The `authors` string renders below the `solutionBody`.
