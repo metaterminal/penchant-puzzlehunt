@@ -110,13 +110,13 @@ export default async function Home() {
               <TableHead className="w-fit py-0 text-center">Solves</TableHead>
               <TableHead className="w-fit py-0 text-center">Guesses</TableHead>
               <TableHead className="w-fit py-0 text-center">Hints</TableHead>
-              <TableHead className="w-fit text-nowrap py-0 text-center">
+              {/* <TableHead className="w-fit text-nowrap py-0 text-center">
                 In-Person
-              </TableHead>
-              <TableHead className="w-fit py-0 text-center">Remote</TableHead>
+              </TableHead> */}
+              {/* <TableHead className="w-fit py-0 text-center">Remote</TableHead> */}
               <TableHead className="w-fit py-0 text-center">Solution</TableHead>
               <TableHead className="w-fit py-0 text-center">Stats</TableHead>
-              <TableHead className="w-fit py-0 text-center">Copy</TableHead>
+              {/* <TableHead className="w-fit py-0 text-center">Copy</TableHead> */}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -167,7 +167,7 @@ export default async function Home() {
                     <TableCell className="text-center">
                       {puzzle.hints}
                     </TableCell>
-                    <TableCell className="justify-center">
+                    {/* <TableCell className="justify-center">
                       {puzzle.inPersonBody && (
                         <div className="flex justify-center">
                           <a
@@ -177,8 +177,9 @@ export default async function Home() {
                           </a>
                         </div>
                       )}
-                    </TableCell>
-                    <TableCell className="justify-center">
+                    </TableCell> */}
+                    {/* idk what this is but it doesn't appear now and it's not solution */}
+                    {/* <TableCell className="justify-center">
                       {puzzle.solutionBody && (
                         <div className="flex justify-center">
                           <a href={`/puzzle/${puzzle.id}/solution`}>
@@ -186,7 +187,16 @@ export default async function Home() {
                           </a>
                         </div>
                       )}
+                    </TableCell> */}
+                    {/* solution link */}
+                    <TableCell className="justify-center">
+                      <div className="flex justify-center">
+                        <a href={`/puzzle/${puzzle.id}/solution`}>
+                          <ChartColumn className="text-black-500 size-5 text-lime-600 hover:opacity-60" />
+                        </a>
+                      </div>
                     </TableCell>
+                    {/* stats link */}
                     <TableCell className="justify-center">
                       <div className="flex justify-center">
                         <a href={`/puzzle/${puzzle.id}/stats`}>
@@ -194,13 +204,13 @@ export default async function Home() {
                         </a>
                       </div>
                     </TableCell>
-                    <TableCell className="justify-center">
+                    {/* <TableCell className="justify-center">
                       {puzzle.copyText && (
                         <div className="flex justify-center hover:opacity-60">
                           <CopyButton copyText={puzzle.copyText} />
                         </div>
                       )}
-                    </TableCell>
+                    </TableCell> */}
                   </TableRow>
                 )),
             )}
