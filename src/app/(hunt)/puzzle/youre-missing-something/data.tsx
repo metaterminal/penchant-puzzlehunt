@@ -100,7 +100,7 @@ export const remoteBody = inPersonBody;
  * The `solutionBody` renders in the solution page.
  * If there are no solutions available, set it null.
  */
-export const solutionBody = null; /*(
+export const solutionBody = (
   <div className="max-w-3xl space-y-4">
     <p>We can start by solving the Printer's Devilry clues:</p>
     <ul className="pl-4">
@@ -232,7 +232,7 @@ export const solutionBody = null; /*(
       <p>Finally, note that these answers together are almost a pangram.</p>
       <p>The missing letters anagram to <Answerize>OSTRACIZE</Answerize>.</p>
   </div>
-); */
+); 
 
 /**
  * The `authors` string renders below the `solutionBody`.
