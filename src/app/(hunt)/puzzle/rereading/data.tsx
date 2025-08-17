@@ -158,7 +158,7 @@ const table_2 = [
 ];
 
 
-export const solutionBody = null; /*
+export const solutionBody = 
 (
   <div className="space-y-4">
     <p>Start by solving the acrostic puzzle:</p>
@@ -213,7 +213,7 @@ export const solutionBody = null; /*
     </div>
     <p>The quote from John Ruskin is "Your faults will <b>drop off</b>, like dead leaves, when their time comes," so the answer is <Answerize>DROP OFF</Answerize>.</p>
   </div>
-); */
+); 
 
 /**
  * The `authors` string renders below the `solutionBody`.

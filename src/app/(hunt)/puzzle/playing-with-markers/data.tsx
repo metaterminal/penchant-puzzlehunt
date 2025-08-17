@@ -99,8 +99,7 @@ const finalGrid = [
 ['A',<Circle>{'A'}</Circle>,'N',<Circle>{'W'}</Circle>,'K'],
 ]
 
-export const solutionBody = null; 
-/*(
+export const solutionBody = (
   <div className="max-w-3xl space-y-4">
     <p>This is a metameta using the ten feeder answers and ten additional answers. Each meta uses four answers: two from the feeders and two of the additional answers.</p>
     <p><b>Meta 1:</b></p>
@@ -198,7 +197,7 @@ export const solutionBody = null;
     <p>The answer is <Answerize>DRAW A BLANK</Answerize>.</p>
   
   </div>
-);*/
+);
 
 /**
  * The `authors` string renders below the `solutionBody`.

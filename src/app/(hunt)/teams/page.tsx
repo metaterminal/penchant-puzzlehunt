@@ -81,6 +81,7 @@ export default async function Home() {
       END`.as("finish_time"),
       solves: count(solves).as("solves"),
       lastSolveTime: max(solves.solveTime).as("last_solve_time"),
+      hintCount: count(hints).as("hint_count"),  
     })
     .from(teams)
     // Filter out admin teams and teams who registered after the hunt end
@@ -114,7 +115,7 @@ export default async function Home() {
         finishTime: row.finishTime,
         solves: row.solves,
         lastSolveTime: row.lastSolveTime,
-        usedHints: (row as any).hintCount > 0,
+        usedHints: row.hintCount > 0,
       })),
     );
 
@@ -130,6 +131,7 @@ export default async function Home() {
       END`.as("finish_time"),
       solves: count(solves).as("solves"),
       lastSolveTime: max(solves.solveTime).as("last_solve_time"),
+      hintCount: count(hints).as("hint_count"),  
     })
     .from(teams)
     // Filter out admin teams and teams who registered after the hunt end
@@ -163,7 +165,7 @@ export default async function Home() {
         finishTime: row.finishTime,
         solves: row.solves,
         lastSolveTime: row.lastSolveTime,
-        usedHints: (row as any).hintCount > 0,
+        usedHints: row.hintCount > 0,
       })),
     );
 
@@ -179,6 +181,7 @@ export default async function Home() {
       END`.as("finish_time"),
       solves: count(solves).as("solves"),
       lastSolveTime: max(solves.solveTime).as("last_solve_time"),
+      hintCount: count(hints).as("hint_count"),  
     })
     .from(teams)
     // Filter out admin teams and teams who registered after the hunt end
@@ -212,7 +215,7 @@ export default async function Home() {
         finishTime: row.finishTime,
         solves: row.solves,
         lastSolveTime: row.lastSolveTime,
-        usedHints: (row as any).hintCount > 0,
+        usedHints: row.hintCount > 0,
       })),
     );
 

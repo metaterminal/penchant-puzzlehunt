@@ -129,7 +129,7 @@ const solutionGrid = [
   ["L", "E", "N", "S", "A", "L", "E", "S"]
 ]
 
-export const solutionBody = null; /*(
+export const solutionBody = (
   <div className="max-w-3xl  space-y-4">
     <p>In this cryptic, all wordplay works on a phonemic basis:</p>
       <table className="table-auto border-collapse border w-full">
@@ -167,7 +167,7 @@ export const solutionBody = null; /*(
     <p>In order, these sound like SICK BASE CANDLE CORE SWIFT, fitting the enumeration below the grid.</p>
     <p>This is another phonetic cryptic clue, with the answer <Answerize>QUICK</Answerize> (last sound of SICK + WICK).</p>
   </div>
-);*/
+);
 
 /**
  * The `authors` string renders below the `solutionBody`.

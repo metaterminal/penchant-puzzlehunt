@@ -73,15 +73,18 @@ export async function canViewSolution(
   // Admin can always view the solution
   if (session.user.role == "admin") return "success";
 
-  // Everyone else needs to have solved the puzzle
-  const solved = await db.query.solves.findFirst({
-    where: and(
-      eq(solves.teamId, session.user.id),
-      eq(solves.puzzleId, puzzleId),
-    ),
-  });
+  // Uncommenting the following will allow anyone who has solved 
+  // a puzzle to view the solution
+  // const solved = await db.query.solves.findFirst({
+  //   where: and(
+  //     eq(solves.teamId, session.user.id),
+  //     eq(solves.puzzleId, puzzleId),
+  //   ),
+  // });
+  // return solved ? "success" : "not_authorized";
 
-  return solved ? "success" : "not_authorized";
+  // default behavior is no solutions
+  return "not_authorized"
 }
 
 export async function canViewStats(
