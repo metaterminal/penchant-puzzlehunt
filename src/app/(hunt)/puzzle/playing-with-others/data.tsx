@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DIAGRAM from "./playing-with-others.svg";
-
+import { Answerize } from "../components/puzzle/monospace";
 
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
@@ -35,7 +35,64 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
+  <div className="max-w-3xl">
+    <p className="mb-4">
+      This is a metameta! It uses the five meta answers from the metas solvers have seen so far (Places, Words, Cards, Letters, 
+      and Markers). Specifically, each of the answers to the previous metas "feeds into" another meta, acting as an instruction or 
+      helpful information to indicate specific letters. As an example, Cards (number 4, on the top) is fed into by the meta at position 1, 
+      and the answer to the Cards meta feeds into position 3.
+    </p>
+    <p className="mb-4">
+      Using the information in the diagram and the meta answers, we can extract new letters from each of the metas:
+    </p>
+    <table className="mb-4">
+        <tr>
+            <th className="text-left">#</th>
+            <th className="text-left">Meta</th>
+            <th className="text-left">Instruction</th>
+            <th className="text-left">Interpretation</th>
+            <th className="text-left">Letters</th>
+        </tr>
+        <tr>
+            <td className="pr-4">1</td>
+            <td>Words</td>
+            <td className="pr-4">ON A DOUBLE VALUED MEANING</td>
+            <td className="pr-4">Take the letters on the double-word tiles (of which there are three, all along the same diagonal).</td>
+            <td>SEA</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Letters</td>
+            <td>DRAW A BLANK</td>
+            <td className="pr-4">Take the two blank tiles, with the same ordering mechanism as in the original meta.</td>
+            <td>SC</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Places</td>
+            <td>SPORT RED HANDED</td>
+            <td className="pr-4">Take just the red properties in your hand (i.e. the ones clued by the feeders), with the same ordering mechanism as in the original meta.</td>
+            <td>ON</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Cards</td>
+            <td>IT'S IN THE BAG</td>
+            <td className="pr-4">Use the 11 letters from ITSINTHEBAG as the 11 red cards in the diagram, and extract using the two cards used to make the best possible hand (a Royal Flush!).</td>
+            <td>TR</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td className="pr-4">Markers</td>
+            <td>HIS OWN GAME</td>
+            <td className="pr-4">Fill the game being played (i.e. Telestrations) into the blanks.</td>
+            <td>OL</td>
+        </tr>
+    </table>
+    <p className="mb-4">
+      After successfully doing this for each of the metas, we discover that we can win if we <Answerize>SEAS CONTROL</Answerize>.
+    </p>
+  </div>
 ); 
 
 /**
