@@ -356,11 +356,93 @@ const tableContent2 = [
   { col1: "52) 11 13 11 4 7 1 8 14", col2: "ELEPHANT" },
 ];
 
+const G1_fill = [
+['','','','','','','','','','','','C','','','','','','','','',''],
+['','','','','','','','','','','P','O','P','','','','','','','',''],
+['','','','','','','','','','','',<Circle>M</Circle>,'','','','','','','','',''],
+['','','','','','','','','','','','F','','F','','','','','','',''],
+['','','','','','','','','','J','','O','',<Circle>A</Circle>,'L','L','','','','',''],
+['','','','','','','','','M','E','T','R','I','C','','Y','E','K','','',''],
+['','','','','','G','','','','L','','T','','E','',<Circle>H</Circle>,'','','','',''],
+['','','','','','L','','','','L','','','','','','T','','','','',''],
+['','','','','W','O','L','L',<Circle>E</Circle>,'Y','','A','','','X','E','R','O',<Circle>X</Circle>,'',''],
+['','','','','','B','','','','','','R','','','','','','P','','',''],
+['','','Y','N',<Circle>W</Circle>,'A','T','','','','','B','','D','N','O','C','E','S','',''],
+['','','','A','','L','','','','','F','E','E','R','','','',<Circle>N</Circle>,'','',''],
+['A','B','A','B','','','','','','','','Z','','A','','E','','','','',''],
+['','','','R','','','','','','','','','','M','','T','','','S','',''],
+['','','Q','U','E','E','N','S','','','','','V','A','N','I','S','H','I','N',<Circle>G</Circle>],
+['','','','','','','A','','','','','','','T','','H','','','U','',''],
+['','','','','H','','M','','','','','','','I','',<Circle>W</Circle>,'','',<Circle>O</Circle>,'',''],
+['','','','','I','C','E','','','','','','','C','','','','','L','',''],
+['','','','','G','','','','','','','','','','','','','','','',''],
+['','','','',<Circle>H</Circle>,'','','','','','','','','','','','','','','',''],
+]
+
+const G2_fill = [
+['','','','','','','','','',<Circle>N</Circle>,'','','','','',''],
+['','','','','','','','',<Circle>X</Circle>,'I','V','','','','',''],
+['','','','','','','','','','G','','','','','',''],
+['','','','','','E','L','E','P','H','A',<Circle>N</Circle>,'T','','',''],
+['','','','','G','',<Circle>I</Circle>,'','','T','','','','','',''],
+['','','','','N','','M','','','E','','V','','','',''],
+['','','','T',<Circle>I</Circle>,'D','E','',<Circle>C</Circle>,'R','E','A','M','','',''],
+['','','','','M','','','','','','','L','','Z','',''],
+['','','',<Circle>D</Circle>,'R','O','P','','G','','','U','N','I','T',''],
+['','B','','','A','','','','A','','','E','','U','',''],
+['R','E','N','E','W','A','L','','M','','','','',<Circle>Q</Circle>,'',''],
+['','A','','','','','w','','B','','','','','','',''],
+['','N','','','Y','N','O','R','I','','','','M','','',''],
+['','','','','A','','','','T','E',<Circle>K</Circle>,'C','A','J','',''],
+['','','','','G','','','','','','','',<Circle>C</Circle>,'','',''],
+['','','','','A','','','','','','','','H','A','N',<Circle>D</Circle>],
+['','','','','','','','','','',<Circle>Z</Circle>,'','I','','',''],
+['','','','','','F','','','','P','O','I','N','T','',''],
+['','','','','','I','','','','','N','','E','','',''],
+['','','','','','S','E','S',<Circle>A</Circle>,'M','E','','','','',''],
+['','','','','',<Circle>H</Circle>,'','','L','','','','','','',''],
+['','','','','','','','','C','','','','','','',''],
+['','','','','','','K','N','O','T','','','','','',''],
+['','','','','','','','',<Circle>H</Circle>,'','','','','','',''],
+['','','','','','','','','O','','','','','','',''],
+['','','','','','','','','L','','','','','','',''],
+]
+
+const phrases = [
+  { word1: "ETHYL", word2: "ALCOHOL" },
+  { word1: "JELLY", word2: "BEAN" },
+  { word1: "ICE", word2: "CREAM" },
+  { word1: "NAME", word2: "DROP" },
+  { word1: "WHITE", word2: "ELEPHANT" },
+  { word1: "ZEBRA", word2: "FISH" },
+  { word1: "QUEENS", word2: "GAMBIT" },
+  { word1: "SECOND", word2: "HAND" },
+  { word1: "DRAMATIC", word2: "IRONY" },
+  { word1: "YELLOW", word2: "JACKET" },
+  { word1: "REEF", word2: "KNOT" },
+  { word1: "KEY", word2: "LIME" },
+  { word1: "XEROX", word2: "MACHINE" },
+  { word1: "ALL", word2: "NIGHTER" },
+  { word1: "TAWNY", word2: "OWL" },
+  { word1: "VANISHING", word2: "POINT" },
+  { word1: "POP", word2: "QUIZ" },
+  { word1: "URBAN", word2: "RENEWAL" },
+  { word1: "OPEN", word2: "SESAME" },
+  { word1: "HIGH", word2: "TIDE" },
+  { word1: "METRIC", word2: "UNIT" },
+  { word1: "FACE", word2: "VALUE" },
+  { word1: "GLOBAL", word2: "WARMING" },
+  { word1: "LOUIS", word2: "XIV" },
+  { word1: "BABA", word2: "YAGA" },
+  { word1: "COMFORT", word2: "ZONE" }
+];
+
 
 export const solutionBody = (
   <div className="max-w-3xl space-y-4">
     <p>Each set of "clues" is self-referential to the other set, but using only the first letters. 
-      Therefore this turns into a cryptogram, treating the replaced letters as a substitution cipher.</p>
+      Therefore this turns into a cryptogram by treating the replaced letters as a substitution cipher. 
+      The cipher could be cracked either with an online tool, or by manually inspecting words with repeated letters. </p>
     <p className="text-center"><b>Set 1</b></p>
     <div className="flex justify-center">
       <table className="table-auto border-collapse border">
@@ -388,12 +470,12 @@ export const solutionBody = (
             return (
               <tr key={row.col1}>
                 <td className="border px-4">
-                  <span className="text-red-500">{before}</span>
-                  <span className="text-yellow-500">{redNumber}</span>
+                  <span className="text-red-500 font-bold">{before}</span>
+                  <span className="text-yellow-500 font-bold">{redNumber}</span>
                   {after}
                 </td>
                 <td className="border px-4">
-                  <span className="text-red-500">{row.col2[0]}</span>
+                  <span className="text-red-500 font-bold">{row.col2[0]}</span>
                   {row.col2.slice(1)}
                 </td>
               </tr>
@@ -430,12 +512,12 @@ export const solutionBody = (
             return (
               <tr key={row.col1}>
                 <td className="border px-4">
-                  <span className="text-yellow-500">{before}</span>
-                  <span className="text-red-500">{redNumber}</span>
+                  <span className="text-yellow-500 font-bold">{before}</span>
+                  <span className="text-red-500 font-bold">{redNumber}</span>
                   {after}
                 </td>
                 <td className="border px-4">
-                  <span className="text-yellow-500">{row.col2[0]}</span>
+                  <span className="text-yellow-500 font-bold">{row.col2[0]}</span>
                   {row.col2.slice(1)}
                 </td>
               </tr>
@@ -445,18 +527,51 @@ export const solutionBody = (
       </table>
     </div>
 
-    <p>The criss-cross grids may then be filled in uniquely in each set.</p>
-    <p>GRID 1</p>
-    <p>GRID 2</p>
-    <p>Highlighted letters at first don't seem to spell much. From the first 
-      grid we get <Monospace>MAHEXWNGWOH</Monospace> and from the second 
-      we get <Monospace>NXNIICDQKCDZAHH</Monospace>. This is another cryptogram. </p>
-    <p>The words between the two sets can be matched to create 26 common phrases. This provides a substitution cipher mapping. </p>
-    <p>TABLE</p>
+    <p>The criss-cross grids may now be filled uniquely for each set.</p>
+    <div className="flex justify-center lg:flex-1">
+      <Grid 
+        data={G1_fill} 
+        lightBorder={true}
+        noBorder={G1_noBorder}
+        shading={G1_shade}
+      />
+    </div>
+    <div className="flex justify-center lg:flex-1">
+      <Grid 
+        data={G2_fill} 
+        lightBorder={true}
+        noBorder={G2_noBorder}
+        shading={G2_shade}
+      />
+    </div>
+    <p>Reading the circled letters left to right, top to bottom, yields seemingly gibberish cluephrases. 
+      From the first grid we get <Monospace>MAHEXWNGWOH</Monospace> and from the second 
+      we get <Monospace>NXNIICDQKCDZAHH</Monospace>, which don't fall as easily to online tools. </p>
+    <p>The next key insight is that this is another cryptogram. 
+      The words between the two sets can be matched to create 26 common phrases. 
+      This provides a mapping for a substitution cipher. </p>
+    <div className="flex justify-center">
+      <table className="table-auto border-collapse border">
+        <thead>
+          <tr>
+            <th className="border-2 px-4 py-2 text-left">Word from Set 1</th>
+            <th className="border-2 px-4 py-2 text-left">Word from Set 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          {phrases.map((row, idx) => (
+            <tr>
+              <td className="border px-4"><span className="text-red-500 font-bold">{row.word1[0]}</span>{row.word1.slice(1)}</td>
+              <td className="border px-4"><span className="text-yellow-500 font=bold">{row.word2[0]}</span>{row.word2.slice(1)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     <p>Using the mapping to convert from Set 1 letters to Set 2 on the first cluephrase, 
-      we get <Monospace>UNTAMED WEST</Monospace>. Conversely converting from Set 2 to Set 1 letters on the second cluephrase
+      we get <Monospace>UNTAMED WEST</Monospace>. Similarly converting from Set 2 to Set 1 letters on the second cluephrase
       gives <Monospace>ALADDIN PRINCESS</Monospace>. </p>
-    <p>Together, this gives the answer <Answerize>WILD JASMINE</Answerize>.</p>
+    <p>Together, this gives the final answer: <Answerize>WILD JASMINE</Answerize>.</p>
 
   </div>
 )
