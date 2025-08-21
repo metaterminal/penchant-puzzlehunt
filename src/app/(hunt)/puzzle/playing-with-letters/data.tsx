@@ -13,7 +13,7 @@ export const puzzleId = "playing-with-letters";
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-   <div className="font-medium text-lg/6 max-w-3xl">
+   <div className="max-w-3xl">
     <p className="mb-4">
       As indicated by the flavortext, this puzzle is about Scrabble letter distributions. If we took a full bag of Scrabble tiles 
       and made each of the answers separately by drawing from the bag (using both blanks when necessary), we would use the 

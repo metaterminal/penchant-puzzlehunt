@@ -134,7 +134,12 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
+  <div className="max-w-3xl">
+    <p className="mb-4">
+      (The solution for this puzzle is not quite finished yet; check back later tonight or some time tomorrow. Thomas will put 
+      it up when he's not answering hints on the side.)
+    </p>
+  </div>
 );
 
 /**

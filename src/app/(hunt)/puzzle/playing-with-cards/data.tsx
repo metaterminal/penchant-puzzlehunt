@@ -1,3 +1,5 @@
+import { Answerize } from "../components/puzzle/monospace";
+
 import Image from "next/image";
 import TABLE from "./playing-with-cards.svg";
 
@@ -253,7 +255,111 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
+  <div className="max-w-3xl">
+    <p className="mb-4">
+      Taking a look at the puzzle page, we might notice a few interesting things:
+    </p>
+    <ul className="mb-4">
+      <li>There are 78 cards played in all six rounds; the same as the number of letters in all our answers!</li>
+      <li>In a deck containing only clubs and spades, there are 26 unique kinds of cards; the 13 spades (2 through A) 
+        and 13 clubs (2 through A).</li>
+    </ul>
+    <p className="mb-4">
+      From this information, and the presentation of the diagram on the puzzle page, we might infer what's going on here: 
+      that each of the letters in our answers represent a club or spade, and all our answers (concatenated together in puzzle 
+      order) act as the 'deck' which these cards are being dealt from. 
+    </p>
+    <p className="mb-4">
+      It is with these cards that the players are playing poker; specifically, a variant known as Greek Hold 'Em, where players 
+      must use both of their "hole" cards, and only three cards on the table, to make the best possible hand. With our wits now 
+      firmly about us and the rules for poker in front of us, we can use what each player says about their hand each 
+      to uniquely determine the card-letter mappings:
+    </p>
+    <table className="mb-4 mx-auto text-center">
+        <tr>
+            <th className="px-4">Rank</th>
+            <th className="px-4">Clubs</th>
+            <th className="px-4">Spades</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>G</td>
+            <td>V</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>J</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>N</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>D</td>
+            <td>I</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>W</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>O</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>P</td>
+            <td>M</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>S</td>
+            <td>Z</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>E</td>
+            <td>K</td>
+        </tr>
+        <tr>
+            <td>J</td>
+            <td>T</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>Q</td>
+            <td>H</td>
+            <td>Q</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>A</td>
+            <td>U</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>R</td>
+            <td>L</td>
+        </tr>
+    </table>
+    <p className="mb-4">
+      (A full logic path to follow when Thomas isn't busy answering hints on the side.)
+    </p>
+    <p className="mb-4">
+      With the card-letter mappings uniquely determined, we can now cheat effectively! As the diagram indicates, we 
+      can choose any two clubs (of different rank) to try to make the best hand that we can. 
+    </p>
+    <p className="mb-4">
+      Finally, ordering these letters in the manner given by the diagram at the bottom (with the "larger" rank being 
+      on the left or right of the bigram, as indicated) tells us how we can win going forward: we need to 
+      <Answerize>SPORT RED HANDED</Answerize>.
+    </p>
+  </div>
 );
 
 /**
