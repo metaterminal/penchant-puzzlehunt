@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MATCHMAKER from "./blank-matchmaker.svg";
+import SOL from "./matchmaker_sol.png";
 
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
@@ -31,7 +32,36 @@ export const remoteBody = inPersonBody;
  * If there are no solutions available, set it null.
  */
 export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
+  <div className="max-w-3xl">
+    <p>
+      We are presented with a matchmaker looking puzzle, however the crossing 
+      lines have already been connected and there is no text except for what 
+      looks like enumerations on the right side. 
+    </p>
+    <p>
+      The first thing that may stand out are some unique looking enumerations such 
+      as "???????? & ???????" or "??? ???: ????????". Using tools like Onelook or 
+      Nutrimatic, we may find that the text in quotation marks can contain names of 
+      popular media (“Dungeons & Dragons” and “Top Gun: Maverick” respectively). 
+    </p>
+    <p>
+      After figuring out more titles or considering the format of the puzzle, we may 
+      guess that the dots on the left represent names and the lines represent where 
+      that name appears. For example, the dots for both Dungeons & Dragons and Top Gun: 
+      Maverick connect to the 11th dot from the top. After some research the solver may 
+      notice that Warlock is a character in Top Gun: Maverick, as well as a class in 
+      Dungeons & Dragons. We can continue this process finding more characters and 
+      franchises through enumeration or from discovered names. The list of media is 
+      also alphabetized for the solver's convenience. 
+    </p>
+    <p>
+      After finding enough names, we may start to consider how to extract. The names are 
+      seemingly grouped in trios on the right, but there doesn't seem to be a semantic connection. 
+      After looking at the letters that make up the names, we may notice that all three names 
+      share a single letter. Taking these common letters gives us the answer BYGONE.
+    </p>
+    <Image src={SOL} alt="" className="max-w-3xl mb-4" />
+  </div>
 );
 
 /**
