@@ -354,10 +354,53 @@ export const solutionBody = (
       With the card-letter mappings uniquely determined, we can now cheat effectively! As the diagram indicates, we 
       can choose any two clubs (of different rank) to try to make the best hand that we can. 
     </p>
+    <table className="mb-4">
+        <tr>
+            <th className="pr-4 text-left">Round</th>
+            <th className="pr-4 text-left">Best Hand</th>
+            <th className="pr-4 text-left">Cards</th>
+            <th className="pr-4 text-left">Letters</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Full House (7s full of As)</td>
+            <td>7 of clubs, A of clubs</td>
+            <td>OR</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>K-high Straight Flush</td>
+            <td>Q of clubs, K of clubs</td>
+            <td>HA</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td className="pr-4">Full House (10s full of 5s)</td>
+            <td className="pr-4">5 of clubs, 10 of clubs</td>
+            <td>DE</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Full House (4s full of 5s)</td>
+            <td>4 of clubs, 5 of clubs</td>
+            <td>ND</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>10-high Straight Flush</td>
+            <td>8 of clubs, 9 of clubs</td>
+            <td>PS</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Royal Flush</td>
+            <td>J of clubs, A of clubs</td>
+            <td>TR</td>
+        </tr>
+    </table>
     <p className="mb-4">
       Finally, ordering these letters in the manner given by the diagram at the bottom (with the "larger" rank being 
-      on the left or right of the bigram, as indicated) tells us how we can win going forward: we need to 
-      <Answerize>SPORT RED HANDED</Answerize>.
+      on the left or right of the bigram, as indicated) tells us how we can win going forward: we need to <Answerize>SPORT RED HANDED</Answerize>.
     </p>
   </div>
 );
