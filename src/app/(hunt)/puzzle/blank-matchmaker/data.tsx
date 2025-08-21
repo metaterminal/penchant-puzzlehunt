@@ -2,6 +2,8 @@ import Image from "next/image";
 import MATCHMAKER from "./blank-matchmaker.svg";
 import SOL from "./matchmaker_sol.png";
 
+import { Answerize } from "../components/puzzle/monospace";
+
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
  * It should be equal to the name of the folder this file is currently under.
@@ -58,7 +60,7 @@ export const solutionBody = (
       After finding enough names, we may start to consider how to extract. The names are 
       seemingly grouped in trios on the right, but there doesn't seem to be a semantic connection. 
       After looking at the letters that make up the names, we may notice that all three names 
-      share a single letter. Taking these common letters gives us the answer BYGONE.
+      share a single letter. Taking these common letters gives us the answer <Answerize>BYGONE</Answerize>.
     </p>
     <Image src={SOL} alt="" className="max-w-3xl mb-4" />
   </div>
