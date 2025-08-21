@@ -1,5 +1,3 @@
-import { Answerize } from "../components/puzzle/monospace";
-
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
  * It should be equal to the name of the folder this file is currently under.
@@ -7,13 +5,40 @@ import { Answerize } from "../components/puzzle/monospace";
  * example.com/puzzle/puzzleId.
  */
 export const puzzleId = "playing-with-letters";
+import { Answerize } from "../components/puzzle/monospace";
 
 /**
  * The body renders above the guess submission form. Put flavor text, images,
  * and interactive puzzle components here.
  */
 export const inPersonBody = (
-   <div className="max-w-3xl">
+   <div className="font-medium text-lg/6">
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      Good idea!
+    </div>
+    <div className="mb-4 max-w-3xl text-center">
+      You put all the tiles back in the Scrabble bag and then make each of the answers separately on the table in front of you.
+    </div>
+    <div className="mb-4 max-w-3xl text-center">
+      <i>How are you going to win this?</i>
+    </div>
+    <br></br>
+    <div className="mb-4 max-w-3xl text-center">
+      18 &ensp;15 &ensp;3 &ensp;5 &ensp;19 &ensp;20 &ensp;4 &ensp;12 &ensp;8 &ensp;22 &ensp;2 &ensp;13 &ensp;21 &ensp;7 &ensp;6 &ensp;14 &ensp;9 &ensp;1 &ensp;17 &ensp;11 &ensp;16 &ensp;10
+    </div>
+  </div>
+);
+
+export const remoteBoxBody = inPersonBody;
+
+export const remoteBody = inPersonBody;
+
+/**
+ * The `solutionBody` renders in the solution page.
+ * If there are no solutions available, set it null.
+ */
+export const solutionBody = (
+  <div className="max-w-3xl">
     <p className="mb-4">
       As indicated by the flavortext, this puzzle is about Scrabble letter distributions. If we took a full bag of Scrabble tiles 
       and made each of the answers separately by drawing from the bag (using both blanks when necessary), we would use the 
@@ -188,18 +213,6 @@ export const inPersonBody = (
       order and then rearranging them as indicated on the puzzle tells us how we can win: <Answerize>ON A DOUBLE VALUED MEANING</Answerize>.
     </p>
   </div>
-);
-
-export const remoteBoxBody = inPersonBody;
-
-export const remoteBody = inPersonBody;
-
-/**
- * The `solutionBody` renders in the solution page.
- * If there are no solutions available, set it null.
- */
-export const solutionBody = (
-  <div className="max-w-3xl">This is the solution.</div>
 );
 
 /**
