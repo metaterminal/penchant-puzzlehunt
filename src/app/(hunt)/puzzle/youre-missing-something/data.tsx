@@ -121,17 +121,17 @@ export const solutionBody = (
     </ul>
     <p>Note that the answers belong to seven certain sets, with two in each set.</p>
 
-      <table className="table-auto border-collapse border border-gray-400 w-full">
+      <table className="table-auto border-collapse border  w-full">
         <tbody>
             <tr>
               <td className="border px-4 bg-red-800">Avengers (from the 2012 movie)</td>
-              <td className="border px-4">IR</td>
-              <td className="border px-4">RADIO</td>
+              <td className="border px-4">HAWKEYE</td>
+              <td className="border px-4">IRON MAN</td>
             </tr>
             <tr>
               <td className="border px-4 bg-orange-800">Electromagnetic spectrum</td>
-              <td className="border px-4">HAWKEYE</td>
-              <td className="border px-4">IRON MAN</td>
+              <td className="border px-4">IR</td>
+              <td className="border px-4">RADIO</td>
             </tr>
             <tr>
               <td className="border px-4 bg-yellow-800">Hydrogen spectral series</td>
@@ -162,71 +162,71 @@ export const solutionBody = (
       </table>
       <p>We can use this information along with alphabetical order and enumerations to fill out the rest of the answers:</p>
 
-      <table className="table-auto border-collapse border border-gray-400 w-full">
+      <table className="table-auto border-collapse border  w-full">
         <tbody>
-          <tr><td className="border px-4 bg-yellow-800"><b>BALMER</b></td><td className="border border-gray-400 px-4">Santa Claus wishes a Glory Christmas to the entire world. (6)</td></tr>
-          <tr><td className="border px-4 bg-red-800">BLACK WIDOW</td><td className="border border-gray-400 px-4">(5 5)</td></tr>
-          <tr><td className="border px-4 bg-yellow-800"><b>BRACKETT</b></td><td className="border border-gray-400 px-4">You can use a square O. Make a smiley face, like so: :] (8)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">CAPTAIN AMERICA</td><td className="border border-gray-400 px-4">(7 7)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">CHEN</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-blue-800"><b>CHOU</b></td><td className="border border-gray-400 px-4">Mike Tyson's punt was popular in the 80s. (4)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">DARK</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">DRAGON</td><td className="border border-gray-400 px-4">(6)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">ELECTRIC</td><td className="border border-gray-400 px-4">(8)</td></tr>
-          <tr><td className="border px-4 bg-blue-800"><b>FAIRY</b></td><td className="border border-gray-400 px-4">If you star tan, a four-spouse will divorce you. (5)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">FIGHTING</td><td className="border border-gray-400 px-4">(8)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">FIRE</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">FLYING</td><td className="border border-gray-400 px-4">(6)</td></tr>
-          <tr><td className="border px-4 bg-orange-800">GAMMA RAY</td><td className="border border-gray-400 px-4">(5 3)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">GHOST</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">GRASS</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">GROUND</td><td className="border border-gray-400 px-4">(6)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">HAI</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-red-800"><b>HAWKEYE</b></td><td className="border border-gray-400 px-4">The scrim's very one wanted was carved from a whale tooth, and its corresponding lock was too. (7)</td></tr>
-          <tr><td className="border px-4 bg-purple-800">HOW</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-yellow-800">HUMPHREYS</td><td className="border border-gray-400 px-4">(9)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">ICE</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-orange-800"><b>IR</b></td><td className="border border-gray-400 px-4">The lactose intolerant must avoid day. (2)</td></tr>
-          <tr><td className="border px-4 bg-red-800"><b>IRON MAN</b></td><td className="border border-gray-400 px-4">There's hay parts of the human body, including the scalp, face, arms, underarms, chest, and legs. (4 3)</td></tr>
-          <tr><td className="border px-4 bg-yellow-800">LYMAN</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">MAO</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-orange-800">MICROWAVE</td><td className="border border-gray-400 px-4">(9)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">NORMAL</td><td className="border border-gray-400 px-4">(6)</td></tr>
-          <tr><td className="border px-4 bg-green-800"><b>OHL</b></td><td className="border border-gray-400 px-4">Winnie the poet's sleeping dogs lie. (3)</td></tr>
-          <tr><td className="border px-4 bg-yellow-800">PASCHEN</td><td className="border border-gray-400 px-4">(7)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">POISON</td><td className="border border-gray-400 px-4">(6)</td></tr>
-          <tr><td className="border px-4 bg-blue-800"><b>PSYCHIC</b></td><td className="border border-gray-400 px-4">In the firs, tau-token nuggets were found in the victim's stomach. (7)</td></tr>
-          <tr><td className="border px-4 bg-orange-800"><b>RADIO</b></td><td className="border border-gray-400 px-4">During the classic ale, genes lived in a ceramic jar. (5)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">ROCK</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">SHEN</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">SI</td><td className="border border-gray-400 px-4">(2)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">STEEL</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-red-800">THOR</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-orange-800">VISIBLE LIGHT</td><td className="border border-gray-400 px-4">(7 5)</td></tr>
-          <tr><td className="border px-4 bg-blue-800">WATER</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">WEI</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-purple-800"><b>WHAT</b></td><td className="border border-gray-400 px-4">Of the Theatergoers, Only a Feed: the new movie; most of them loved it! (4)</td></tr>
-          <tr><td className="border px-4 bg-purple-800">WHEN</td><td className="border border-gray-400 px-4">(4)</td></tr>
-          <tr><td className="border px-4 bg-purple-800">WHERE</td><td className="border border-gray-400 px-4">(5)</td></tr>
-          <tr><td className="border px-4 bg-green-800"><b>WHL</b></td><td className="border border-gray-400 px-4">Whether you're measuring in units of J, cal, or kit, hi! Um... batteries can store the most energy. (3)</td></tr>
-          <tr><td className="border px-4 bg-purple-800"><b>WHO</b></td><td className="border border-gray-400 px-4">The idiom "blot and cold" means to vacillate. (3)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">WU</td><td className="border border-gray-400 px-4">(2)</td></tr>
-          <tr><td className="border px-4 bg-orange-800">X-RAY</td><td className="border border-gray-400 px-4">(1-3)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">YIN</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-pink-800">YOU</td><td className="border border-gray-400 px-4">(3)</td></tr>
-          <tr><td className="border px-4 bg-pink-800"><b>ZI</b></td><td className="border border-gray-400 px-4">Hang is common in fraternities. (2)</td></tr>
+          <tr><td className="border px-4 bg-yellow-800"><b>BALMER</b></td><td className="border  px-4">Santa Claus wishes a Glory Christmas to the entire world. (6)</td></tr>
+          <tr><td className="border px-4 bg-red-800">BLACK WIDOW</td><td className="border  px-4">(5 5)</td></tr>
+          <tr><td className="border px-4 bg-yellow-800"><b>BRACKETT</b></td><td className="border  px-4">You can use a square O. Make a smiley face, like so: :] (8)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">CAPTAIN AMERICA</td><td className="border  px-4">(7 7)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">CHEN</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-blue-800"><b>CHOU</b></td><td className="border  px-4">Mike Tyson's punt was popular in the 80s. (4)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">DARK</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">DRAGON</td><td className="border  px-4">(6)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">ELECTRIC</td><td className="border  px-4">(8)</td></tr>
+          <tr><td className="border px-4 bg-blue-800"><b>FAIRY</b></td><td className="border  px-4">If you star tan, a four-spouse will divorce you. (5)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">FIGHTING</td><td className="border  px-4">(8)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">FIRE</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">FLYING</td><td className="border  px-4">(6)</td></tr>
+          <tr><td className="border px-4 bg-orange-800">GAMMA RAY</td><td className="border  px-4">(5 3)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">GHOST</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">GRASS</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">GROUND</td><td className="border  px-4">(6)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">HAI</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-red-800"><b>HAWKEYE</b></td><td className="border  px-4">The scrim's very one wanted was carved from a whale tooth, and its corresponding lock was too. (7)</td></tr>
+          <tr><td className="border px-4 bg-purple-800">HOW</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-yellow-800">HUMPHREYS</td><td className="border  px-4">(9)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">ICE</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-orange-800"><b>IR</b></td><td className="border  px-4">The lactose intolerant must avoid day. (2)</td></tr>
+          <tr><td className="border px-4 bg-red-800"><b>IRON MAN</b></td><td className="border  px-4">There's hay parts of the human body, including the scalp, face, arms, underarms, chest, and legs. (4 3)</td></tr>
+          <tr><td className="border px-4 bg-yellow-800">LYMAN</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">MAO</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-orange-800">MICROWAVE</td><td className="border  px-4">(9)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">NORMAL</td><td className="border  px-4">(6)</td></tr>
+          <tr><td className="border px-4 bg-green-800"><b>OHL</b></td><td className="border  px-4">Winnie the poet's sleeping dogs lie. (3)</td></tr>
+          <tr><td className="border px-4 bg-yellow-800">PASCHEN</td><td className="border  px-4">(7)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">POISON</td><td className="border  px-4">(6)</td></tr>
+          <tr><td className="border px-4 bg-blue-800"><b>PSYCHIC</b></td><td className="border  px-4">In the firs, tau-token nuggets were found in the victim's stomach. (7)</td></tr>
+          <tr><td className="border px-4 bg-orange-800"><b>RADIO</b></td><td className="border  px-4">During the classic ale, genes lived in a ceramic jar. (5)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">ROCK</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">SHEN</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">SI</td><td className="border  px-4">(2)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">STEEL</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-red-800">THOR</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-orange-800">VISIBLE LIGHT</td><td className="border  px-4">(7 5)</td></tr>
+          <tr><td className="border px-4 bg-blue-800">WATER</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">WEI</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-purple-800"><b>WHAT</b></td><td className="border  px-4">Of the Theatergoers, Only a Feed: the new movie; most of them loved it! (4)</td></tr>
+          <tr><td className="border px-4 bg-purple-800">WHEN</td><td className="border  px-4">(4)</td></tr>
+          <tr><td className="border px-4 bg-purple-800">WHERE</td><td className="border  px-4">(5)</td></tr>
+          <tr><td className="border px-4 bg-green-800"><b>WHL</b></td><td className="border  px-4">Whether you're measuring in units of J, cal, or kit, hi! Um... batteries can store the most energy. (3)</td></tr>
+          <tr><td className="border px-4 bg-purple-800"><b>WHO</b></td><td className="border  px-4">The idiom "blot and cold" means to vacillate. (3)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">WU</td><td className="border  px-4">(2)</td></tr>
+          <tr><td className="border px-4 bg-orange-800">X-RAY</td><td className="border  px-4">(1-3)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">YIN</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-pink-800">YOU</td><td className="border  px-4">(3)</td></tr>
+          <tr><td className="border px-4 bg-pink-800"><b>ZI</b></td><td className="border  px-4">Hang is common in fraternities. (2)</td></tr>
         </tbody>
       </table>
       <p>However, one member of each set is missing:</p>
       <table>
         <tbody>
-          <tr><td className="border px-4">Avengers (from the 2012 movie)</td><td className="border border-gray-400 px-4">HULK</td></tr>
-            <tr><td className="border px-4">Electromagnetic spectrum</td><td className="border border-gray-400 px-4">UV</td></tr>
-            <tr><td className="border px-4">Hydrogen spectral series</td><td className="border border-gray-400 px-4">PFUND</td></tr>
-            <tr><td className="border px-4">Members of the Canadian Hockey League</td><td className="border border-gray-400 px-4">QMJHL</td></tr>
-            <tr><td className="border px-4">Pokemon types</td><td className="border border-gray-400 px-4">BUG</td></tr>
-            <tr><td className="border px-4">Question words</td><td className="border border-gray-400 px-4">WHY</td></tr>
-            <tr><td className="border px-4">Twelve Earthly Branches</td><td className="border border-gray-400 px-4">XU</td></tr>
+          <tr><td className="border px-4">Avengers (from the 2012 movie)</td><td className="border  px-4">HULK</td></tr>
+            <tr><td className="border px-4">Electromagnetic spectrum</td><td className="border  px-4">UV</td></tr>
+            <tr><td className="border px-4">Hydrogen spectral series</td><td className="border  px-4">PFUND</td></tr>
+            <tr><td className="border px-4">Members of the Canadian Hockey League</td><td className="border  px-4">QMJHL</td></tr>
+            <tr><td className="border px-4">Pokemon types</td><td className="border  px-4">BUG</td></tr>
+            <tr><td className="border px-4">Question words</td><td className="border  px-4">WHY</td></tr>
+            <tr><td className="border px-4">Twelve Earthly Branches</td><td className="border  px-4">XU</td></tr>
         </tbody>
       </table>
       <p>Finally, note that these answers together are almost a pangram.</p>
