@@ -18,7 +18,7 @@ export const REGISTRATION_END_TIME = new Date("2025-09-01T03:59:00.000Z");
 export const REMOTE = {
   START_TIME: new Date("2025-08-15T22:00:00.000Z"),
   END_TIME: new Date("2025-08-21T22:00:00.000Z"),
-  WRAPUP_TIME: new Date("2025-09-01T03:59:00.000Z"),
+  WRAPUP_TIME: new Date("2025-10-03T03:59:00.000Z"),
 };
 
 export type Round = {
