@@ -206,7 +206,7 @@ export const solutionBody = (
       listed with the letter grid, we might consider that this is a cluephrase; and if it is, then it shall lead us fairly naturally 
       to the answer, which is <Answerize>CIGARETTE</Answerize>.
     </p>
-    <p>Additionally, here are the nine unique solutions to the grid combinations:</p>
+    <p>Additionally, here are the nine unique solutions to the grid combinations. (Excuse our horrible notation.)</p>
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Koburin / Slalom / Masyu</b>
     </div>
