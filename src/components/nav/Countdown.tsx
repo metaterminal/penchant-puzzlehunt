@@ -41,8 +41,8 @@ export function Countdown({ targetDate }: { targetDate: Date }) {
   }
 
   return (
-    <div className="hidden w-full text-m lg:block">
-      Hunt begins in {String(timeRemaining.days).padStart(2, "0")}:
+    <div className="hidden w-full text-m text-center lg:block">
+      {String(timeRemaining.days).padStart(2, "0")}:
       {String(timeRemaining.hours).padStart(2, "0")}:
       {String(timeRemaining.minutes).padStart(2, "0")}:
       {String(timeRemaining.seconds).padStart(2, "0")}

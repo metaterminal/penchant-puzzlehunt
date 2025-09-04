@@ -36,7 +36,7 @@ const HuntTimeline = [
   },
   {
     title: "Wrap-Up",
-    description: `A written wrap-up will be released on ${formatter.format(REMOTE.WRAPUP_TIME)}.`,
+    description: `A written wrap-up will be released on ${formatter.format(REMOTE.DISPLAY_WRAPUP_TIME)}.`,
   },
 ];
 

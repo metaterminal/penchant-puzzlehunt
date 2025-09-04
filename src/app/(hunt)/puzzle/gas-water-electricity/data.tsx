@@ -9,6 +9,8 @@ import CROSS1 from "./cross-1.png";
 import CROSS2 from "./cross-2.png";
 import CONNECTIONS1 from "./connections-1.png";
 import CONNECTIONS2 from "./connections-2.png";
+import SOLN from "./solution.png";
+import { Answerize } from "../components/puzzle/monospace";
 
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
@@ -136,8 +138,41 @@ export const remoteBody = inPersonBody;
 export const solutionBody = (
   <div className="max-w-3xl">
     <p className="mb-4">
-      (The solution for this puzzle is not quite finished yet; check back later tonight or some time tomorrow. Thomas will put 
-      it up when he's not answering hints on the side.)
+      This is an adaptation of the classic Three Utilities problem, in which solvers are tasked with connecting three "houses" 
+      to three "utilities" (usually framed as gas, water, and electricity). As the <a href="https://en.wikipedia.org/wiki/Three_utilities_problem">Wikipedia page</a> for said problem explicitly 
+      notes, even this standard version of the puzzle is impossible in a 2D plane! It stands to reason that the extra-hard version 
+      presented here would be extra-impossible.
+    </p>
+    <p className="mb-4">
+      Since this puzzle cannot function on a 2D plane, we should think about what other topologies the given grid might be 
+      representing. From the flavortext (which references a "ring"), the way the grid is arranged with identical tunnels on opposite 
+      "edges", or even just researching about this mathematical structure, we can determine that this is in fact a <i>torus</i>. In 
+      practical terms, this means that lines which extend off of the right edge appear on the left, and vice-versa; and likewise for 
+      the top and bottom edges.
+    </p>
+    <p className="mb-4">
+      (In mathematical terms, this is an embedding of a K&#123;3,3,3&#125; graph on a torus. Explicit constructions of this can be 
+      found on the internet in both English and German.)
+    </p>
+    <p className="mb-4">
+      Before we start constructing our solution, it would be helpful to think about what constraints we might need to abide by. 
+      Firstly, each building will have six connections extending from it, since each building connects to six others. Secondly, 
+      by sketching out a rough construction or observing another, we might realize that 
+      each building will alternate which other building it connects to as the connections go around (or, to put it another way, 
+      there are no A-B, B-C, or A-C connections with nothing between them). 
+    </p>
+    <p className="mb-4">
+      With this borne in mind, we can construct the grid. It is difficult to proceed with explicit deductions, so the recommended 
+      solving strategy is to place down lines and get a feel for where space is required. This solution is unique; attempting to 
+      pass the connections through the top-left/bottom-right corner instead will run out of space in the top-right/bottom-left.
+    </p>
+    <Image src={SOLN} alt="" className="max-w-xl mb-4 mx-auto" />
+    <p className="mb-4">
+      Finally, we can extract! As the puzzle notes, five of the buildings are adjacent to important cells that we should look at 
+      for extraction. These cells (which are up-right of the first C, down-right of the first B, down-left of the second C, 
+      down-right of the second B, and right of the third C) each have a connection running through them; which is to say, they each 
+      are associated with two directional values. Interpreting these directional values as semaphore for each of the indicated cells, 
+      in order, provides us with the apt answer: <Answerize>NEXUS</Answerize>.
     </p>
   </div>
 );

@@ -10,6 +10,18 @@ import LOGIC8 from "./logic8.png";
 import LOGIC9 from "./logic9.png";
 import GRAPH from "./graph.png";
 import GRID from "./letters.png";
+import ALLSOLS from "./allsols.png";
+import LETTERSOLS from "./lettersols.png";
+import CBM from "./cbm.png";
+import CCM from "./ccm.png";
+import CSG from "./csg.png";
+import KCB from "./kcb.png";
+import KGM from "./kgm.png";
+import KSM from "./ksm.png";
+import YCG from "./ycg.png";
+import YMM from "./ymm.png";
+import YSB from "./ysb.png";
+import { Answerize } from "../components/puzzle/monospace";
 
 /**
  * The puzzle ID is used to uniquely identify the puzzle in the database.
@@ -123,9 +135,114 @@ export const remoteBody = inPersonBody;
 export const solutionBody = (
   <div className="max-w-3xl">
     <p className="mb-4">
-      (The solution for this puzzle is not quite finished yet; check back later tonight or some time tomorrow. Thomas will put 
-      it up when he's not answering hints on the side.)
+      What a nice easy introductory grid logic puzzle. I'm sure there's nothing horrible in store for us today.
     </p>
+    <p className="mb-4">
+      On first blush, this puzzle appears very simple: there are nine loop-drawing grid logic puzzles provided, along with a 
+      statement that these logic puzzles make nine unique solutions. However, intuition or experimentation will tell us that 
+      these grids do not have unique solutions; in fact, each of them are horribly underconstrained, and have tens of solutions 
+      (at least!)
+    </p>
+    <p className="mb-4">
+      We should therefore think about how we can use the constraints provided by these grids to "make" nine unique solutions. 
+      The diagram with circles and colored lines might give us an idea: perhaps we should combine different grids together, in order 
+      to constrain the loop to be unique! These are indeed all loop-drawing genres, so their constraints can combine together nicely. 
+      In fact, peering at the diagram further, we might intuit specifically that we should combine the genres in sets of three, such 
+      that no two genres are ever used together twice, to make nine different combinations. (You can consider each grid to be a circle 
+      in the diagram, and each colored line to be a combination which makes a unique solution.)
+    </p>
+    <p className="mb-4">
+      With this idea in mind, there are many places to get started. While no genres seem fully incompatible with each other, most 
+      initial pairings only have one other genre which will make them unique. In general, different pairs will constrain different 
+      parts of the grid; it's helpful to pick an initial pair, make all forced deductions, and then determine which of the remaining 
+      genres will either break the existing deductions or fail to fully disambiguate the remaining parts of the grid. For example, 
+      we might combine the Masyu and Yajilin, and observe that only the Moonsun will successfully constrain the loop to be unique. 
+    </p>
+    <p className="mb-4">
+      In this way, we can determine the 3x3 grid, and all of the triplets:
+    </p>
+    <table className="mb-4">
+        <tr>
+          <td>Koburin</td>
+          <td>Slalom</td>
+          <td>Masyu</td>
+        </tr>
+        <tr>
+          <td>Castle Wall</td>
+          <td>Geradeweg</td>
+          <td>Yajilin</td>
+        </tr>
+        <tr>
+          <td>Balance Loop</td>
+          <td>Country Road</td>
+          <td>Moonsun</td>
+        </tr>
+    </table>
+    <ol className="mb-4">
+      <li>Koburin / Slalom / Masyu</li>
+      <li>Koburin / Castle Wall / Balance Loop</li>
+      <li>Koburin / Geradeweg / Moonsun</li>
+      <li>Yajilin / Castle Wall / Geradeweg</li>
+      <li>Yajilin / Masyu / Moonsun</li>
+      <li>Yajilin / Slalom / Balance Loop</li>
+      <li>Country Road / Balance Loop / Moonsun</li>
+      <li>Country Road / Slalom / Geradeweg</li>
+      <li>Country Road / Castle Wall / Masyu</li>
+    </ol>
+    <p className="mb-4">
+      (As a sidenote, but genres with similar mechanics are arranged to never be 
+      combined; so the Koburin and Yajilin are never combined, and the Balance Loop and Geradeweg are never combined. The 
+      two region-based genres, Country Road and Moonsun, act as the sole exception to this rule, because they have quirks which 
+      make them an interesting combination.)
+    </p>
+    <p className="mb-4">
+      With our nine solutions, we can now proceed to extraction. As the instruction states, we should look at the cells which 
+      are not passed through by the loop exactly twice. If we complete the grid correctly, there are ten of these:
+    </p>
+    <Image src={ALLSOLS} alt="" className="max-w-xl mb-4" />
+    <Image src={LETTERSOLS} alt="" className="max-w-xl mb-4" />
+    <p className="mb-4">
+      These ten cells spell TOBACCO ROD. Given that this is not accepted by the answer checker, and that there is a (9) enumeration 
+      listed with the letter grid, we might consider that this is a cluephrase; and if it is, then it shall lead us fairly naturally 
+      to the answer, which is <Answerize>CIGARETTE</Answerize>.
+    </p>
+    <p>Additionally, here are the nine unique solutions to the grid combinations:</p>
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Koburin / Slalom / Masyu</b>
+    </div>
+    <Image src={KSM} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Koburin / Castle Wall / Balance Loop</b>
+    </div>
+    <Image src={KCB} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Koburin / Geradeweg / Moonsun</b>
+    </div>
+    <Image src={KGM} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Yajilin / Castle Wall / Geradeweg</b>
+    </div>
+    <Image src={YCG} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Yajilin / Masyu / Moonsun</b>
+    </div>
+    <Image src={YMM} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Yajilin / Slalom / Balance Loop</b>
+    </div>
+    <Image src={YSB} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Country Road / Balance Loop / Moonsun</b>
+    </div>
+    <Image src={CBM} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Country Road / Slalom / Geradeweg</b>
+    </div>
+    <Image src={CSG} alt="" className="max-w-xl mb-4" />
+    <div className="max-w-3xl font-medium mb-4 text-center">
+      <b>Country Road / Castle Wall / Masyu</b>
+    </div>
+    <Image src={CCM} alt="" className="max-w-xl mb-4" />
   </div>
 );
 

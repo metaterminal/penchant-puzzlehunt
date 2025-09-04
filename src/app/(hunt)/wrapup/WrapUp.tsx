@@ -5,6 +5,8 @@ import {
   TOCSection,
   TableOfContents,
 } from "@/components/toc/TableOfContents";
+import Countdown from "@/components/nav/Countdown";
+import { REMOTE } from "~/hunt.config";
 
 export default function WrapUp() {
   const values = useTOCContextValues();
@@ -13,14 +15,15 @@ export default function WrapUp() {
     <TOCContext.Provider value={values}>
       <div className="flex px-4">
         <TableOfContents />
-
+        
         {/* Spacer since TOC is fixed */}
         <div className="md:w-1/3 xl:w-1/5"></div>
 
         <div className="w-full md:w-2/3 xl:w-3/5">
-          <article className="prose prose-wrapup w-full max-w-none bg-black/30 p-6 prose-img:my-0">
-            <h1>Wrapup</h1>
-            <TOCSection tocTitle="Section 1" sectionId={1} isFirst>
+          <article className="text-white w-full max-w-none bg-black/30 p-6 prose-img:my-0">
+            <h1 className="text-center text-4xl mb-4">Wrapup</h1>
+            {/*
+              <TOCSection tocTitle="Section 1" sectionId={1} isFirst>
               <h2>Section 1</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -80,6 +83,14 @@ export default function WrapUp() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </TOCSection>
+             */}
+            <div>
+                  <Countdown
+                    targetDate={
+                      REMOTE.DISPLAY_WRAPUP_TIME
+                    }
+                  />
+                </div>
           </article>
         </div>
       </div>

@@ -33,7 +33,7 @@ export async function HuntHamburgerMenu() {
 
   const rightMenuItems: MenuItem[] = [];
 
-  if (now > REMOTE.WRAPUP_TIME) {
+  if (now > REMOTE.DISPLAY_WRAPUP_TIME) {
     leftMenuItems.push({
       title: "Wrapup",
       href: "/wrapup",
