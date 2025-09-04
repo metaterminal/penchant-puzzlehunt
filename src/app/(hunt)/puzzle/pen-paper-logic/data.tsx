@@ -161,7 +161,7 @@ export const solutionBody = (
     <p className="mb-4">
       In this way, we can determine the 3x3 grid, and all of the triplets:
     </p>
-    <table className="mb-4">
+    <table className="mb-4 text-center">
         <tr>
           <td>Koburin</td>
           <td>Slalom</td>
@@ -173,9 +173,9 @@ export const solutionBody = (
           <td>Yajilin</td>
         </tr>
         <tr>
-          <td>Balance Loop</td>
-          <td>Country Road</td>
-          <td>Moonsun</td>
+          <td>Balance Loop&nbsp;&nbsp;&nbsp;</td>
+          <td>Country Road&nbsp;&nbsp;&nbsp;</td>
+          <td>Moonsun&nbsp;&nbsp;&nbsp;</td>
         </tr>
     </table>
     <ol className="mb-4">
@@ -199,8 +199,8 @@ export const solutionBody = (
       With our nine solutions, we can now proceed to extraction. As the instruction states, we should look at the cells which 
       are not passed through by the loop exactly twice. If we complete the grid correctly, there are ten of these:
     </p>
-    <Image src={ALLSOLS} alt="" className="max-w-xl mb-4" />
-    <Image src={LETTERSOLS} alt="" className="max-w-xl mb-4" />
+    <Image src={ALLSOLS} alt="" className="max-w-xl mb-4 text-center" />
+    <Image src={LETTERSOLS} alt="" className="max-w-xl mb-4 text-center" />
     <p className="mb-4">
       These ten cells spell TOBACCO ROD. Given that this is not accepted by the answer checker, and that there is a (9) enumeration 
       listed with the letter grid, we might consider that this is a cluephrase; and if it is, then it shall lead us fairly naturally 
@@ -210,39 +210,39 @@ export const solutionBody = (
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Koburin / Slalom / Masyu</b>
     </div>
-    <Image src={KSM} alt="" className="max-w-xl mb-4" />
+    <Image src={KSM} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Koburin / Castle Wall / Balance Loop</b>
     </div>
-    <Image src={KCB} alt="" className="max-w-xl mb-4" />
+    <Image src={KCB} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Koburin / Geradeweg / Moonsun</b>
     </div>
-    <Image src={KGM} alt="" className="max-w-xl mb-4" />
+    <Image src={KGM} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Yajilin / Castle Wall / Geradeweg</b>
     </div>
-    <Image src={YCG} alt="" className="max-w-xl mb-4" />
+    <Image src={YCG} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Yajilin / Masyu / Moonsun</b>
     </div>
-    <Image src={YMM} alt="" className="max-w-xl mb-4" />
+    <Image src={YMM} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Yajilin / Slalom / Balance Loop</b>
     </div>
-    <Image src={YSB} alt="" className="max-w-xl mb-4" />
+    <Image src={YSB} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Country Road / Balance Loop / Moonsun</b>
     </div>
-    <Image src={CBM} alt="" className="max-w-xl mb-4" />
+    <Image src={CBM} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Country Road / Slalom / Geradeweg</b>
     </div>
-    <Image src={CSG} alt="" className="max-w-xl mb-4" />
+    <Image src={CSG} alt="" className="max-w-xl mb-4 text-center" />
     <div className="max-w-3xl font-medium mb-4 text-center">
       <b>Country Road / Castle Wall / Masyu</b>
     </div>
-    <Image src={CCM} alt="" className="max-w-xl mb-4" />
+    <Image src={CCM} alt="" className="max-w-xl mb-4 text-center" />
   </div>
 );
 
