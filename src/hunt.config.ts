@@ -19,7 +19,7 @@ export const REMOTE = {
   START_TIME: new Date("2025-08-15T22:00:00.000Z"),
   END_TIME: new Date("2025-08-21T22:00:00.000Z"),
   WRAPUP_TIME: new Date("2025-09-04T03:59:00.000Z"),
-  DISPLAY_WRAPUP_TIME: new Date("2025-09-19T03:59:00.000Z"),
+  DISPLAY_WRAPUP_TIME: new Date("2025-09-20T03:59:00.000Z"),
 };
 
 export type Round = {
