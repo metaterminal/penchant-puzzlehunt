@@ -194,7 +194,7 @@ export default function WrapUp() {
                 jam instead.
               </p>
               <p className="mb-4">
-                While everyone else was very good about finishing their puzzles on time, I unfortunately was not. Much of 
+                Everyone else was very good about finishing their puzzles on time; I unfortunately was not. Much of 
                 Pen-and-Paper therefore came together at the very last minute, and without the rigorous fact-checking 
                 we used for other puzzles, resulted in a truly embarrassing amount of errata for that puzzle. That one 
                 was my fault! I apologize.
@@ -268,8 +268,8 @@ export default function WrapUp() {
                 was done by Olga, who also does art and tech for teammate's hunts!
               </p>
               <p className="mb-4">
-                While I had helped with technical teams on other hunts, this was my first time taking 
-                point on one. While I learned a great deal during the process, my overall takeaway was 
+                I had helped with technical teams on other hunts, but this was my first time taking 
+                point on one. Though I learned a great deal during the process, my overall takeaway was 
                 that it was fairly doable! Between well-documented repositories like bph-site, and no-programming-required 
                 platforms like <a href="https://www.puzzlehuntmy.us/"><u>myus</u></a>, 
                 I really think that anyone is able to release puzzlehunts on the internet these days.
