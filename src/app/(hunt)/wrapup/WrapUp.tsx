@@ -449,10 +449,10 @@ export default function WrapUp() {
                   <TableHead className="text-main-header">
                     Playing With Places Solves
                   </TableHead>
+                  <TableCell className="text-center">62</TableCell>
                   <TableCell className="text-center">29</TableCell>
-                  <TableCell className="text-center">38</TableCell>
-                  <TableCell className="text-center">139</TableCell>
-                  <TableCell className="text-center">206</TableCell>
+                  <TableCell className="text-center">56</TableCell>
+                  <TableCell className="text-center">147</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableHead className="text-main-header">Hints</TableHead>
