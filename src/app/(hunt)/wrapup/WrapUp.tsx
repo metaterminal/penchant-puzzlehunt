@@ -404,9 +404,9 @@ export default function WrapUp() {
                 Keep an eye out for those!
               </p>
               <p className="mb-4">
-                (Though not a hunt, if you like podcasts, two of the writers for this hunt host the{" "}
-                <a href="https://arguingaboutpuzzles.substack.com/"><u>Arguing About Puzzles</u></a>{" "}
-                podcast, the second season of which is currently releasing.)
+                (Though not a hunt, if you like podcasts, two of the writers for this hunt host{" "}
+                <a href="https://arguingaboutpuzzles.substack.com/"><u>Arguing About Puzzles</u></a>, 
+                the second season of which is currently releasing.)
               </p>
               <p className="mb-4">
                 Thank you for solving Penchant Puzzlehunt. We hoped you enjoyed your time!
