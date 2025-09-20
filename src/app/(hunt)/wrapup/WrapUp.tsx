@@ -8,6 +8,15 @@ import {
 import Countdown from "@/components/nav/Countdown";
 import { REMOTE } from "~/hunt.config";
 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 export default function WrapUp() {
   const values = useTOCContextValues();
 
@@ -272,7 +281,7 @@ export default function WrapUp() {
                 I came in with a fairly firm idea of the visual style and language I wanted. 
                 My original style pitch to Olga was this:
               </p>
-              <p className="mb-5 ml-10">
+              <p className="mb-5 ml-10 mr-20">
                 I am thinking minimal art assets, and anything that we do need, I'll do myself, probably in Inkscape. 
                 (Along the lines of CRUMS?) The aesthetic is clean, clear, technical, minimalist, with maybe a 
                 little bit of quirkiness. 
@@ -284,6 +293,17 @@ export default function WrapUp() {
                 blue-ish. At Olga's suggestion, the main background color (#0072BB) is the color of Dark Blue 
                 properties in Monopoly!
               </p>
+              <p>
+                Olga did end up making some art assets, such as this victory graphic (available to solvers after 
+                completing Playing With Others):
+              </p>
+              <div className="p-5">
+                <img
+                    className="rounded-md"
+                    src="/wrapup/victorygraphic.png"
+                    alt=""
+                  />
+              </div>
               <p className="mb-4">
                 As in all of the hunts Olga works on, there is a hidden cat on the website.
               </p>
@@ -377,7 +397,7 @@ export default function WrapUp() {
                 <a href="https://www.puzzlehunt.net/checker#1#nGD27c31AeCbhtiw#q6LACs6IcyLzLXVSkh7Rhe/kIGnzOcqW#UGxheWluZyBXaXRoIFRoZSBGdXR1cmU="><u>Who can say?</u></a>
               </p>
               <p className="mb-4">
-                A day or two after the hunt concluded, we lost contact with tazarian. If you hear from him, let us know.
+                A day or two after the hunt concluded, we lost contact with <a href="https://bsky.app/profile/tazarian.bsky.social"><u>tazarian</u></a>. If you hear from him, let us know.
               </p>
               <p className="mb-4">
                 However, individual members of the writing team will continue to work on different future projects. 
@@ -397,9 +417,393 @@ export default function WrapUp() {
             </TOCSection>
             <TOCSection tocTitle="Statistics" sectionId={6} isFirst>
               <h2 className="text-center text-2xl my-4">Statistics</h2>
-              <p className="mb-4">
-                FIXME fill this out
+              <p className="text-center text-lg my-4">
+                <u>Overview</u>
               </p>
+              <Table className="my-0 w-fit mx-auto">
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header"></TableHead>
+                  <TableHead className="text-main-header">Full Squad</TableHead>
+                  <TableHead className="text-main-header">Half Squad</TableHead>
+                  <TableHead className="text-main-header">Solo Solver</TableHead>
+                  <TableHead className="text-main-header">Total</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableHead className="text-main-header">Teams</TableHead>
+                  <TableCell className="text-center">83</TableCell>
+                  <TableCell className="text-center">89</TableCell>
+                  <TableCell className="text-center">270</TableCell>
+                  <TableCell className="text-center">442</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHead className="text-main-header">Finishers</TableHead>
+                  <TableCell className="text-center">53</TableCell>
+                  <TableCell className="text-center">15</TableCell>
+                  <TableCell className="text-center">30</TableCell>
+                  <TableCell className="text-center">98</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHead className="text-main-header">
+                    Playing With Places Solves
+                  </TableHead>
+                  <TableCell className="text-center">29</TableCell>
+                  <TableCell className="text-center">38</TableCell>
+                  <TableCell className="text-center">139</TableCell>
+                  <TableCell className="text-center">206</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHead className="text-main-header">Hints</TableHead>
+                  <TableCell className="text-center">136</TableCell>
+                  <TableCell className="text-center">112</TableCell>
+                  <TableCell className="text-center">233</TableCell>
+                  <TableCell className="text-center">481</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHead className="text-main-header">Guesses</TableHead>
+                  <TableCell className="text-center">2352</TableCell>
+                  <TableCell className="text-center">1272</TableCell>
+                  <TableCell className="text-center">2262</TableCell>
+                  <TableCell className="text-center">5886</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableHead className="text-main-header">Solves</TableHead>
+                  <TableCell className="text-center">969</TableCell>
+                  <TableCell className="text-center">512</TableCell>
+                  <TableCell className="text-center">1013</TableCell>
+                  <TableCell className="text-center">2494</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>Fewest Guesses</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Team</TableHead>
+                  <TableHead className="text-main-header">Size</TableHead>
+                  <TableHead className="text-main-header">Guesses</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>Back to the Llama</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>16</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>​​​​c​​​​h​​​​o​​​​c​​​​🔟​​​​M​​​​i​​​​n​​​​t​​​​</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>16</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>ඐ SINHALA HILARIOUS MEME FROM 2054</TableCell>
+                  <TableCell>half</TableCell>
+                  <TableCell>17</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>The Wob Blizzards</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>17</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Projectyl is Sure May 6, 2041 Will Be a Normal Day</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>17</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Callie's Enterprise</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>17</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Inclination, Overly Habitual</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>18</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Cen's Endeavor</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>18</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Duck Gizzards</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>19</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>[title of team]</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>19</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>lumia</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>19</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>Most Guesses</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Team</TableHead>
+                  <TableHead className="text-main-header">Size</TableHead>
+                  <TableHead className="text-main-header">Guesses</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>凑不出-Centennial Board Circumnavigators</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>83</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Puzzle Rojak</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>77</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Pixideria Mixed Fishes</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>76</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>The C@r@line Syzygy</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>73</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>wagons (wolf + dragons)</TableCell>
+                  <TableCell>half</TableCell>
+                  <TableCell>73</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>SOY BOYS</TableCell>
+                  <TableCell>half</TableCell>
+                  <TableCell>72</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Mr Ree Polka (tl)</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>67</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Madmahogany</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>67</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Time Vultures</TableCell>
+                  <TableCell>half</TableCell>
+                  <TableCell>65</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Display name</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>65</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>Most Hints</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Team</TableHead>
+                  <TableHead className="text-main-header">Size</TableHead>
+                  <TableHead className="text-main-header">Hints</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>Puzzle Rojak</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>10</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>I really love Nanahira. Like, a whole lot.</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>10</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Display name</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>9</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>david's dracontomelons</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>9</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Hi, it's just me.</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>9</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>The Puzzledome</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>8</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>凑不出-Centennial Board Circumnavigators</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>7</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Mr Ree Polka (tl)</TableCell>
+                  <TableCell>full</TableCell>
+                  <TableCell>7</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Madmahogany</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>7</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>umsyt</TableCell>
+                  <TableCell>solo</TableCell>
+                  <TableCell>7</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>Shortest Guesses</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Puzzle</TableHead>
+                  <TableHead className="text-main-header">Guess</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>Gas, Water, Electricity</TableCell>
+                  <TableCell>7</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Places</TableCell>
+                  <TableCell>12</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Places</TableCell>
+                  <TableCell>26</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Pen-and-Paper Logic Puzzles: An Introduction</TableCell>
+                  <TableCell>AN</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Rereading</TableCell>
+                  <TableCell>BE</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Others</TableCell>
+                  <TableCell>GO</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Places</TableCell>
+                  <TableCell>OH</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Plainly Indicated</TableCell>
+                  <TableCell>PI</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Penchant Word Search</TableCell>
+                  <TableCell>SG</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>Longest Guesses</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Puzzle</TableHead>
+                  <TableHead className="text-main-header">Guess</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>Penchant Word Search</TableCell>
+                  <TableCell>WHYTAKEAGUESSAWAYFORENTERINGCONSIDERVARIANCESEEMSUNNECESSARY</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Places</TableCell>
+                  <TableCell>EIGHTCOLORSFOURSTATIONSTWELFTHSPOTMINUSUTILITY</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Penchant Word Search</TableCell>
+                  <TableCell>SPEARSSPIKEETATTATERROTIISAACCTORRERUNNAVELS</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Rereading</TableCell>
+                  <TableCell>HTTPSPMCNCBINLMNIHGOVARTICLESPMC6918220</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Others</TableCell>
+                  <TableCell>FORMTHEWESTERNTRIPLEANDNOTBEGERMANY</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Places</TableCell>
+                  <TableCell>LITERALLYANYTHINGOTHERTHANMONOPOLY</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Playing With Others</TableCell>
+                  <TableCell>34METHYLENEDIOXYMETHAMPHETAMINE</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Gas, Water, and Electricity</TableCell>
+                  <TableCell>THISISTOPOLOGICALLYIMPOSSIBLE</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Penchant Word Search</TableCell>
+                  <TableCell>OPENTHEMAPKEYTREASURELOOTFIND</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="text-center text-lg my-4">
+                <u>First Solves</u>
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-inherit">
+                  <TableHead className="text-main-header">Size</TableHead>
+                  <TableHead className="text-main-header">Team</TableHead>
+                  <TableHead className="text-main-header">Time</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="pointer-events-none">
+                <TableRow>
+                  <TableCell>Full Squad</TableCell>
+                  <TableCell>ண MALAYALAM PENCHANTLOGOTRANSPARENT.SVG</TableCell>
+                  <TableCell>12m 24.471s</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Half Squad</TableCell>
+                  <TableCell>Society of Literary Spirits</TableCell>
+                  <TableCell>25m 09.256s</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Solo Solver</TableCell>
+                  <TableCell>Cameron :{")"}</TableCell>
+                  <TableCell>12m 8.338s</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="mt-4">
+                (All these solves were for Ladders.)
+            </p>
             </TOCSection>
           </article>
         </div>
