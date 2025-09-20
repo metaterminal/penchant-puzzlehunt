@@ -337,7 +337,7 @@ export default function WrapUp() {
                 (The 🫧 badge, for completing the hunt while submitting zero hints, was borne out of this discussion.)
               </p>
               <p className="mb-4">
-                Over the course of the hunt, we received 481 hints, and we answered 100% of them! Due to our small 
+                Over the course of the hunt, we received 481 hints! Due to our small 
                 hint crew size of five, there were periods (usually between 2AM and 10AM ET) when no hints 
                 were answered because none of these five people were available. We did our best to prevent 
                 the queue from getting too unwieldy, but if you were one of the small fraction of people 
