@@ -409,7 +409,7 @@ export default function WrapUp() {
                 the second season of which is currently releasing.)
               </p>
               <p className="mb-4">
-                Thank you for solving Penchant Puzzlehunt. We hoped you enjoyed your time!
+                Thank you for solving Penchant Puzzlehunt. We hoped you enjoyed your time with it!
               </p>
               <p className="mb-4 text-center">
                 <i>Words by metaterminal. Suggestions by Olga Vinogradova. Puzzle by noneuclidean.</i>
