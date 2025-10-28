@@ -80,7 +80,7 @@ export default function DefaultPostHuntPuzzlePage({
       setError(null);
 
       const guess = data.guess;
-      const isCorrect = data.guess === puzzleAnswer;
+      const isCorrect = data.guess === puzzleAnswer.replace(/[^A-Z]/g, '');
 
       setPreviousGuesses((prevGuesses) => [
         ...prevGuesses,
