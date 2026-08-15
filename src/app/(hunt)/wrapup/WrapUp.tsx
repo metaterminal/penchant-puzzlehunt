@@ -152,7 +152,7 @@ export default function WrapUp() {
                 I felt confident enough to begin working on one or two feeder puzzles for the hunt.
               </p>
               <p className="text-center text-lg mb-4">
-                <u>Initial Idea</u>
+                <u>Feeder Construction</u>
               </p>
               <p className="mb-4">
                 While initially I considered writing all of the feeders on my own, it soon became abundantly clear 
